@@ -11,25 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            //$table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->unsignedBigInteger('review id');
-            $table->foreign('review id')
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
                 ->references('id') // Reference the primary key of 'users' table
-                ->on('review')
+                ->on('user')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger("active_travel_package");
-            $table->foreign("active_travel_package")
+            $table->unsignedBigInteger('package_id');
+            $table->foreign('package_id')
                 ->references('id') // Reference the primary key of 'users' table
                 ->on('travel_package')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->rememberToken();
+            $table->int("ratings");
+            $table->longText("comments");
             $table->timestamps();
         });
     }
@@ -39,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('reviews');
     }
 };

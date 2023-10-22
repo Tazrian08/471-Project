@@ -11,25 +11,25 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('travel__packages', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            //$table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->unsignedBigInteger('review id');
-            $table->foreign('review id')
+            $table->longText('description');
+            $table->decimal("price",10,2);
+            $table->date("start_date");
+            $table->date("return_date");
+            $table->unsignedBigInteger('airline_id');
+            $table->foreign('airline_id')
                 ->references('id') // Reference the primary key of 'users' table
-                ->on('review')
+                ->on('airlines')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger("active_travel_package");
-            $table->foreign("active_travel_package")
+            $table->unsignedBigInteger('destination_id');
+            $table->foreign('destination_id')
                 ->references('id') // Reference the primary key of 'users' table
-                ->on('travel_package')
+                ->on('destination')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('travel__packages');
     }
 };
