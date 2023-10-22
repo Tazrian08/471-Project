@@ -17,12 +17,6 @@ return new class extends Migration
             $table->string('email')->unique();
             //$table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedBigInteger('review id');
-            $table->foreign('review id')
-                ->references('id') // Reference the primary key of 'users' table
-                ->on('review')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
             $table->unsignedBigInteger("active_travel_package");
             $table->foreign("active_travel_package")
                 ->references('id') 
