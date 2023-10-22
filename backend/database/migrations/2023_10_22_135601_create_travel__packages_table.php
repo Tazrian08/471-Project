@@ -20,13 +20,13 @@ return new class extends Migration
             $table->date("return_date");
             $table->unsignedBigInteger('airline_id');
             $table->foreign('airline_id')
-                ->references('id') // Reference the primary key of 'users' table
+                ->references('id') 
                 ->on('airlines')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->unsignedBigInteger('destination_id');
             $table->foreign('destination_id')
-                ->references('id') // Reference the primary key of 'users' table
+                ->references('id') 
                 ->on('destination')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');

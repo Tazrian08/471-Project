@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
-                ->references('id') // Reference the primary key of 'users' table
+                ->references('id') 
                 ->on('user')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->unsignedBigInteger('package_id');
             $table->foreign('package_id')
-                ->references('id') // Reference the primary key of 'users' table
+                ->references('id') 
                 ->on('travel_package')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');

@@ -25,7 +25,7 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->unsignedBigInteger("active_travel_package");
             $table->foreign("active_travel_package")
-                ->references('id') // Reference the primary key of 'users' table
+                ->references('id') 
                 ->on('travel_package')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
