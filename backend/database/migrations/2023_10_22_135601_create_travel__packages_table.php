@@ -19,17 +19,17 @@ return new class extends Migration
             $table->date("start_date");
             $table->date("return_date");
             $table->unsignedBigInteger('airline_id');
-            $table->foreign('airline_id')
-                ->references('id') 
-                ->on('airlines')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            // $table->foreign('airline_id')
+            //     ->references('id') 
+            //     ->on('airlines')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('cascade');
             $table->unsignedBigInteger('destination_id');
-            $table->foreign('destination_id')
-                ->references('id') 
-                ->on('destination')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            // $table->foreign('destination_id')
+            //     ->references('id') 
+            //     ->on('destination')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('cascade');
             $table->timestamps();
         });
     }

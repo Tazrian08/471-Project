@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string("activity");
             $table->longText("details");
             $table->unsignedBigInteger('destination_id');
-            $table->foreign('destination_id')
-                ->references('id') 
-                ->on('destination')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            // $table->foreign('destination_id')
+            //     ->references('id') 
+            //     ->on('destination')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('cascade');
             $table->timestamps();
         });
     }

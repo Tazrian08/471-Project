@@ -18,11 +18,11 @@ return new class extends Migration
             //$table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->unsignedBigInteger("active_travel_package");
-            $table->foreign("active_travel_package")
-                ->references('id') 
-                ->on('travel_package')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            // $table->foreign("active_travel_package")
+            //     ->references('id') 
+            //     ->on('travel_package')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

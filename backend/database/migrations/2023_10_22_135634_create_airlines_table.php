@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string("email");
             $table->decimal('prices', 10, 2);
-            $table->timestamps('departure');
-            $table->timestamps('return_flight');
+            $table->timestamp('departure')->nullable();
+            $table->timestamp('return_flight')->nullable();
             $table->timestamps();
         });
     }
