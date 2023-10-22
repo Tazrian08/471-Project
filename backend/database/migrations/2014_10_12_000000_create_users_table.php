@@ -23,7 +23,7 @@ return new class extends Migration
             //     ->on('travel_package')
             //     ->onUpdate('cascade')
             //     ->onDelete('cascade');
-            $table->rememberToken();
+            // $table->rememberToken();
             $table->timestamps();
         });
     }

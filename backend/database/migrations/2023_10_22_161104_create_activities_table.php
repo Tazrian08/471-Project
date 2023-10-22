@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("activity");
             $table->longText("details");
-            $table->unsignedBigInteger('destination_id');
+            $table->unsignedBigInteger('destination_id')->index();
             // $table->foreign('destination_id')
             //     ->references('id') 
             //     ->on('destination')

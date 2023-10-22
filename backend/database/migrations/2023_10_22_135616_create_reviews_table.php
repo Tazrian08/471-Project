@@ -25,7 +25,7 @@ return new class extends Migration
             //     ->on('travel_package')
             //     ->onUpdate('cascade')
             //     ->onDelete('cascade');
-            $table->unsignedBigInteger("ratings");
+            $table->unsignedBigInteger("ratings")->between(1,5);
             $table->longText("comments");
             $table->timestamps();
         });
