@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->longText('description');
             $table->decimal("price",10,2);
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('airline_id');
             // $table->foreign('airline_id')
             //     ->references('id') 

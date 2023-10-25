@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Airlines extends Model
 {
     use HasFactory;
+
+    public function airlines(){
+        return $this->hasMany(Travel_Package::class);
+        
+    }
 }
