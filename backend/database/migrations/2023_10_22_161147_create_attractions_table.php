@@ -17,11 +17,11 @@ return new class extends Migration
             $table->longText('details');
             $table->unsignedBigInteger('destination_id');
             $table->decimal("cost",10,2);
-            // $table->foreign('destination_id')
-            //     ->references('id') 
-            //     ->on('destination')
-            //     ->onUpdate('cascade')
-            //     ->onDelete('cascade');
+            $table->foreign('destination_id')
+                ->references('id') 
+                ->on('destinations')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

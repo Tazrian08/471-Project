@@ -14,17 +14,17 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            // $table->foreign('user_id')
-            //     ->references('id') 
-            //     ->on('user')
-            //     ->onUpdate('cascade')
-            //     ->onDelete('cascade');
-            $table->unsignedBigInteger('package_id');
-            // $table->foreign('package_id')
-            //     ->references('id') 
-            //     ->on('travel_package')
-            //     ->onUpdate('cascade')
-            //     ->onDelete('cascade');
+            $table->foreign('user_id')
+                ->references('id') 
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->unsignedBigInteger('travel_package_id');
+            $table->foreign('travel_package_id')
+                ->references('id') 
+                ->on('travel__packages')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger("ratings")->between(1,5);
             $table->longText("comments");
             $table->timestamps();

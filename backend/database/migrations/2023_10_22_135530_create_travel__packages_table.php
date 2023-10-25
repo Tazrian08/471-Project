@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    protected $priority = 1;
     /**
      * Run the migrations.
      */
@@ -18,19 +19,32 @@ return new class extends Migration
             $table->decimal("price",10,2);
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('airline_id');
-            // $table->foreign('airline_id')
-            //     ->references('id') 
-            //     ->on('airlines')
-            //     ->onUpdate('cascade')
-            //     ->onDelete('cascade');
+            $table->foreign('airline_id')
+                ->references('id') 
+                ->on('airlines')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger('destination_id');
+            $table->foreign('destination_id')
+                ->references('id') 
+                ->on('destinations')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
             $table->unsignedBigInteger('departure_flight_id');
+            $table->foreign('departure_flight_id')
+                ->references('id') 
+                ->on('flights')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            
             $table->unsignedBigInteger('return_flight_id');
-            // $table->foreign('destination_id')
-            //     ->references('id') 
-            //     ->on('destination')
-            //     ->onUpdate('cascade')
-            //     ->onDelete('cascade');
+            $table->foreign('return_flight_id')
+                ->references('id') 
+                ->on('flights')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

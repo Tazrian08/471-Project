@@ -14,7 +14,17 @@ return new class extends Migration
         Schema::create('flights', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("airlines_id");
+            $table->foreign('airlines_id')
+                ->references('id') 
+                ->on('airlines')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger("destination_id");
+            $table->foreign('destination_id')
+                ->references('id') 
+                ->on('destinations')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamp("departure");
             $table->decimal("prices,10,2");
             $table->timestamps();
