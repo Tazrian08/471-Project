@@ -16,8 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->longText('description');
             $table->decimal("price",10,2);
-            $table->date("start_date");
-            $table->date("return_date");
             $table->unsignedBigInteger('airline_id');
             // $table->foreign('airline_id')
             //     ->references('id') 
@@ -25,6 +23,8 @@ return new class extends Migration
             //     ->onUpdate('cascade')
             //     ->onDelete('cascade');
             $table->unsignedBigInteger('destination_id');
+            $table->unsignedBigInteger('departure_flight_id');
+            $table->unsignedBigInteger('return_flight_id');
             // $table->foreign('destination_id')
             //     ->references('id') 
             //     ->on('destination')

@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger("airlines_id");
             $table->unsignedBigInteger("destination_id");
-            $table->string("departure");
+            $table->unsignedBigInteger("travel_package_id")->nullable();
+            $table->date("departure");
             $table->decimal("prices,10,2");
             $table->timestamps();
         });
