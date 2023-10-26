@@ -9,6 +9,11 @@ class Airlines extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'email',
+    ];
+
     public function airlines(){
         return $this->hasMany(Travel_Package::class);
         

@@ -18,8 +18,13 @@ return new class extends Migration
             $table->longText('description');
             $table->decimal("price",10,2);
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('airline_id');
-            $table->foreign('airline_id')
+            $table->foreign('user_id')
+                ->references('id') 
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->unsignedBigInteger('airlines_id');
+            $table->foreign('airlines_id')
                 ->references('id') 
                 ->on('airlines')
                 ->onUpdate('cascade')
