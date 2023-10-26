@@ -9,6 +9,19 @@ class Travel_Package extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'user_id',
+        'airlines_id',
+        'destination_id',
+        'departure_flight_id',
+        "return_flight_id",
+
+
+    ];
+
     public function booking(){
         return $this->hasMany(Booking::class);
         
@@ -24,10 +37,10 @@ class Travel_Package extends Model
         
     }
 
-    public function airlines(){
-        return $this->belongsTo(Airlines::class);
+    // public function airlines(){
+    //     return $this->belongsTo(Airlines::class);
         
-    }
+    // }
 
     public function destination(){
         return $this->belongsTo(Destination::class);

@@ -9,6 +9,15 @@ class Activity extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'activity',
+        'details',
+        'destination_id',
+        'cost',
+        
+
+    ];
+
     public function destination(){
         return $this->belongsTo(Destination::class);
         

@@ -9,6 +9,13 @@ class Destination extends Model
 {
     use HasFactory;
 
+
+    protected $fillable = [
+        'country',
+        'city',
+        'description',
+    ];
+
     public function destination(){
         return $this->hasMany(Travel_Package::class);
         

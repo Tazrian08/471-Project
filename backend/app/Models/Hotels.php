@@ -9,6 +9,14 @@ class Hotels extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'email',
+        'prices',
+        'destination_id',
+
+    ];
+
     public function destination(){
         return $this->belongsTo(Destination::class);
         

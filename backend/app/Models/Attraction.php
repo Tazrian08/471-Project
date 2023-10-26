@@ -9,6 +9,15 @@ class Attraction extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'attraction',
+        'details',
+        'destination_id',
+        'cost',
+        
+
+    ];
+
     public function destination(){
         return $this->belongsTo(Destination::class);
         
