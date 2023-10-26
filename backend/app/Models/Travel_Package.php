@@ -37,10 +37,10 @@ class Travel_Package extends Model
         
     }
 
-    public function airlines(){
-        return $this->belongsTo(Airlines::class);
+    // public function airlines(){
+    //     return $this->belongsTo(Airlines::class);
         
-    }
+    // }
 
     public function destination(){
         return $this->belongsTo(Destination::class);

@@ -23,12 +23,12 @@ return new class extends Migration
                 ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger('airlines_id');
-            $table->foreign('airlines_id')
-                ->references('id') 
-                ->on('airlines')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            // $table->unsignedBigInteger('airlines_id');
+            // $table->foreign('airlines_id')
+            //     ->references('id') 
+            //     ->on('airlines')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('cascade');
             $table->unsignedBigInteger('destination_id');
             $table->foreign('destination_id')
                 ->references('id') 

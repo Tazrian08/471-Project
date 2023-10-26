@@ -18,4 +18,9 @@ class Airlines extends Model
         return $this->hasMany(Travel_Package::class);
         
     }
+
+    public function flight(){
+        return $this->hasMany(Flight::class);
+        
+    }
 }
