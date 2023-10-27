@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Emitters } from '../emiters/emitters';
 
 @Component({
   selector: 'app-login',
@@ -30,8 +31,11 @@ export class LoginComponent {
   
       this.http.post("http://localhost:8000/api/login",bodyData,{withCredentials: true}).subscribe((resultData: any)=>
       {   
-          alert(resultData);
-          this.router.navigate(['/'])
+          alert(resultData['user'].name + " has been logged in");
+          Emitters.authEmitter.emit(true);
+          Emitters.dataEmitter.emit(resultData['user'])
+          this.router.navigate(['/temp'])
+
       });
       console.log("This runs")
     
