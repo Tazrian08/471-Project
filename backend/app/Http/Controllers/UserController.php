@@ -38,5 +38,10 @@ class UserController extends Controller
         ])->withCookie($cookie);
     }
 
+    public function user()
+    {  
+        return response()->json(Auth::user());
+    }
+
     
 }

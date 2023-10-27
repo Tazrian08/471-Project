@@ -33,11 +33,13 @@ export class LoginComponent {
       {   
           alert(resultData['user'].name + " has been logged in");
           Emitters.authEmitter.emit(true);
-          Emitters.dataEmitter.emit(resultData['user'])
+          //Emitters.dataEmitter.emit(resultData['user']) FOR SENDING DATA TO ANOTHER COMPONENT
           this.router.navigate(['/temp'])
+
 
       });
       console.log("This runs")
+      
     
   }
 

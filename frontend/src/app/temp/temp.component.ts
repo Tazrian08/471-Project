@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';   //for receiving data from another componenet
 import { Emitters } from '../emiters/emitters';
 import { HttpClient } from '@angular/common/http';
 
@@ -10,19 +9,36 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TempComponent {
 
-  user: any;
+  message:any="";
+  auth=false;
 
   constructor(private http: HttpClient) {
   }
 
   ngOnInit(): void {
-    Emitters.dataEmitter.subscribe(
-      (data: any) => {
-        this.user = data;
-        console.log("This is working");
-        console.log(this.user)
+    this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
+      (res: any) => {
+        this.message = `Hi ${res.name}`;
+        console.log("This runs")
+        Emitters.authEmitter.emit(true);
       }
     );
+    Emitters.authEmitter.subscribe(
+      (data: any) => {
+        this.auth= data;
+        console.log("This is working");
+      }
+    );
+  
+
+
+    // Emitters.dataEmitter.subscribe(         FOR RECEIVING DATA FROM ANOTHER COMPONENT
+    //   (data: any) => {
+    //     this.user = data;
+    //     console.log("This is working");
+    //     console.log(this.user)
+    //   }
+    // );
   }
 
 }
