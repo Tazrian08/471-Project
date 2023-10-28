@@ -43,5 +43,14 @@ class UserController extends Controller
         return response()->json(Auth::user());
     }
 
+    public function logout()
+    {
+        $cookie = Cookie::forget('jwt');
+
+        return response([
+            'message' => 'Success'
+        ])->withCookie($cookie);
+    }
+
     
 }

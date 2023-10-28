@@ -1,24 +1,11 @@
-
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <div class="container-fluid">
-      <a routerLink="/home" class="navbar-brand">Home</a>
-  
-      <div>
-        <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="!auth">
-          <li class="nav-item">
-            <a routerLink="/login" class="nav-link">Login</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/register" class="nav-link">Register</a>
-          </li>
-        </ul>
-  
-        <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="auth">
-          <li class="nav-item">
-            <a routerLink="/login" class="nav-link">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<div *ngIf="auth">You're logged in
+  <div *ngIf="admin">
+      You're an admin
+  </div>
+  <div *ngIf="!admin">
+    You're a user but not an admin
+</div>
+  <button (click)="logout()">Logout</button>
+</div>
+<div *ngIf="!auth">You're not logged in</div>
   {{message}}
