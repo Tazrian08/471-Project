@@ -35,7 +35,8 @@ register()
     this.http.post("http://localhost:8000/api/register",bodyData).subscribe((resultData: any)=> 
     {
 
-        alert(resultData["user"].name + " has been registered")
+        alert(resultData["message"] + resultData["user"].name + " has been registered")
+        this.router.navigate(['/login'])
 
     });
     console.log("This runs")
