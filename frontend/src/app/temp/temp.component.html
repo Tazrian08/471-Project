@@ -1,11 +1,20 @@
 <div *ngIf="auth">You're logged in
+  <button (click)="logout()">Logout</button>
   <div *ngIf="admin">
       You're an admin
   </div>
   <div *ngIf="!admin">
     You're a user but not an admin
-</div>
-  <button (click)="logout()">Logout</button>
+  </div>
+  <form>
+    <div class="form-group">
+        <label>Payment</label>
+        <input type="text" [(ngModel)]="price" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Price">
+  
+      </div>
+      <button type="submit" class="btn btn-primary mt-4" (click)="payment()" >Pay with Paypal</button>
+      <!--<p *ngIf="message !== null && message !== undefined">{{message.name}} has been registered</p> -->
+  </form> 
 </div>
 <div *ngIf="!auth">You're not logged in</div>
   {{message}}

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PaypalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post("/register",[UserController::class,"register"]);
 Route::post("/login",[UserController::class,"login"]);
 
+
+//PAYMENT ROUTES
+Route::post('paypal/payment', [PaypalController::class, 'payment']);
+
+
+//SANCTUM PROTECTED ROUTES
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [UserController::class, 'user']);
     Route::post('/logout', [UserController::class, 'logout']);
