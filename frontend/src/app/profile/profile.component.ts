@@ -51,6 +51,7 @@ export class ProfileComponent implements OnInit {
         this.isAuthenticated = data;
         console.log('Authentication status:', this.isAuthenticated);
       }
+      //Billu
     );
 
     Emitters.adminEmitter.subscribe(
