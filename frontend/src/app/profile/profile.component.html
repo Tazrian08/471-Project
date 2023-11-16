@@ -1,1 +1,22 @@
-<p>profile works!</p>
+<!-- src/app/profile/profile.component.html -->
+
+<div class="profile-container" *ngIf="auth">
+    <h1>Your Profile</h1>
+  
+    <div *ngIf="admin">
+      <h2 class="welcome-header">Welcome admin!</h2>
+    </div>
+  
+    <div *ngIf="!admin">
+      <h2 class="welcome-header">Welcome user!</h2>
+    </div>
+  
+    <p>{{ message }} your ID is {{ id }}.</p>
+    <p>Email: {{ email }}</p>
+    <button (click)="logout()" class="logout-button">Logout</button>
+  </div>
+  
+  <div class="profile-container" *ngIf="!auth">
+    <h2>You're not logged in</h2>
+  </div>
+  
