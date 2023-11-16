@@ -1,0 +1,16 @@
+/* src/app/components/travel-packages/travel-packages.component.css */
+
+.photo-container {
+    width: 100%;
+    height: 70vh; /* Adjust as needed */
+    background-image: url(/assets/images/tourist.jpg);
+    background-color: #f2f2f2; /* Add your preferred background color */
+    background-size: cover; /* This makes the background image cover the entire container */
+    background-position: center; /* Center the background image */
+    float: top;
+}
+
+.travel-packages-container {
+    width: 50%;
+    float: left;
+}
