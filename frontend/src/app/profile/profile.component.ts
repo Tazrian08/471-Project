@@ -26,7 +26,7 @@ export class ProfileComponent {
         this.message = `Hi ${res.name}`;
         this.name = `${res.name}`;
         this.id = `${res.id}`;
-        this.email = `email: ${res.email}`;
+        this.email = `${res.email}`;
         console.log(res)
         if (res.admin_access==1){
           Emitters.adminEmitter.emit(true);
