@@ -57,5 +57,8 @@ export class ProfileComponent {
         this.router.navigate(['/login'])
       });
   }
+  goToLogin(): void {
+    this.router.navigate(['/login']);
+  }
 
 }
