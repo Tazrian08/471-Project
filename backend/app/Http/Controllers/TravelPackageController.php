@@ -37,9 +37,13 @@ class TravelPackageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Travel_Package $travel_Package)
+    public function show($id)
     {
-        //
+        $travelPackage = Travel_Package::find($id);
+        if (!$travelPackage){
+            return response()->json(['error'=>'Travel package not found'],404);
+        }
+        return response()->json($travelPackage);
     }
 
     /**

@@ -27,6 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post("/register",[UserController::class,"register"]);
 Route::post("/login",[UserController::class,"login"]);
 Route::get("/travel-packages",[TravelPackageController::class,"index"]);
+Route::get("/travel-packages/{id}", [TravelPackageController::class, "show"]);
 
 
 //PAYMENT ROUTES
