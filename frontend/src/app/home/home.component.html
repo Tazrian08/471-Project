@@ -1,1 +1,46 @@
-<p>home works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Navigation column (col-md-6 takes half of the page on medium and larger screens) -->
+        <div class="col-md-12">
+            <ul class="nav justify-content-end" style="background-color: #aeb4b8; height: 10vh;">
+                <li class="nav-item">
+                    <a class="nav-link custom-link active" aria-current="page" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Image column (col-md-6 takes half of the page on medium and larger screens) -->
+        <div class="col-md-12 d-flex align-items-end" style="height: 90vh; position: relative; background-color: white;">
+            <!-- Apply custom styles for the image container -->
+            <div class="image-container position-relative">
+                <!-- Apply custom styles for the image -->
+                <img src="assets/vertical-aerial-shot-sea-waves-hitting-cliff.jpg" class="img-fluid" alt="Your Alt Text">
+
+                <!-- Add logo and text on the image -->
+                <div class="overlay-content position-absolute top-50 start-50 translate-middle text-center text-white">
+                    <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    <h1 class="mb-0">T.Agency</h1>
+                    <p>Some additional information or description here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Bootstrap
+        </a>
+    </div>
+</nav>
