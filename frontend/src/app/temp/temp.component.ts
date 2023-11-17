@@ -13,6 +13,7 @@ export class TempComponent {
   message:any="";
   auth=false;
   admin=false
+  price:any;
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -61,5 +62,23 @@ export class TempComponent {
         this.router.navigate(['/login'])
       });
   }
+
+  payment(){
+    
+    
+   
+    let bodyData = {
+      "price" : this.price
+    };
+
+
+    this.http.post("http://localhost:8000/api/paypal/payment",bodyData,{withCredentials: true}).subscribe((resultData: any)=>
+    {  
+      window.location.href=resultData['link']
+    });
+    console.log("This runs")
+    
+  
+}
 
 }
