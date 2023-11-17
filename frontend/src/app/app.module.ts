@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { TempComponent } from './temp/temp.component';
 import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { TravelPackageComponent } from './travel-package/travel-package.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     LoginComponent,
     TempComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileComponent,
+    TravelPackageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,28 @@
+<!-- src/app/components/travel-packages/travel-packages.component.html -->
+
+<div class="photo-container">
+  <h2>Explore the World</h2>
+  <p>Discover amazing destinations with our travel packages.</p>
+</div>
+
+<h1>Travel Packages</h1>
+
+<div *ngIf="travelPackages.length > 0; else noPackages" class="travel-packages-container">
+  <div *ngFor="let package of travelPackages" class="package-item">
+      <h2>{{ package.name }}</h2>
+      <p>
+          <strong>ID:</strong> {{ package.id }}<br>
+          <strong>Description:</strong> {{ package.description }}<br>
+          <strong>Airline ID:</strong> {{ package.airlines_id }}<br>
+          <strong>Destination ID:</strong> {{ package.destination_id }}<br>
+          <strong>Departure Flight ID:</strong> {{ package.departure_flight_id }}<br>
+          <strong>Return Flight ID:</strong> {{ package.return_flight_id }}<br>
+          <strong>Price:</strong> ${{ package.price }}
+      </p>
+      <!-- Add more details as needed -->
+  </div>
+</div>
+
+<ng-template #noPackages>
+  <p>No travel packages available.</p>
+</ng-template>
