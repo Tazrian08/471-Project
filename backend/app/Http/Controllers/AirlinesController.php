@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Airlines;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreAirlinesRequest;
 use App\Http\Requests\UpdateAirlinesRequest;
 
@@ -19,9 +20,15 @@ class AirlinesController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $airline=Airlines::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            
+        ]);
+        return response()->json(['message'=>'Airline created!','airline'=>$airline]);
+
     }
 
     /**

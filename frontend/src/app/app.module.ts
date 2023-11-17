@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TravelPackageComponent } from './travel-package/travel-package.component';
 import { DestinationformComponent } from './adminpages/destinationform/destinationform.component';
+import { AirlineformComponent } from './adminpages/airlineform/airlineform.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DestinationformComponent } from './adminpages/destinationform/destinati
     HomeComponent,
     ProfileComponent,
     TravelPackageComponent,
-    DestinationformComponent
+    DestinationformComponent,
+    AirlineformComponent
   ],
   imports: [
     BrowserModule,
