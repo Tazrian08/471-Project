@@ -30,7 +30,7 @@ Route::post("/login",[UserController::class,"login"]);
 Route::get("/travel-packages",[TravelPackageController::class,"index"]);
 
 //DESTINATION ROUTES
-Route::post("/destinationcreate",[DestinationController::class,"create"]);
+Route::post("/destination/create",[DestinationController::class,"create"]);
 
 //PAYMENT ROUTES
 Route::post('paypal/payment', [PaypalController::class, 'payment']);

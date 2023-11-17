@@ -25,7 +25,7 @@ class DestinationController extends Controller
         $destination=Destination::create([
             'country' => $request->input('country'),
             'city' => $request->input('city'),
-            'description' => input('description')
+            'description' =>$request->input('description')
         ]);
         return response()->json(['message'=>'Destination created!','destination'=>$destination]);
 

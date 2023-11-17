@@ -25,10 +25,10 @@ export class DestinationformComponent {
     };
 
 
-    this.http.post("http://localhost:8000/api/destinationcreate",bodyData).subscribe((resultData: any)=> 
+    this.http.post("http://localhost:8000/api/destination/create",bodyData).subscribe((resultData: any)=> 
     {
 
-        alert(resultData["message"] + resultData["destination"].name + " has been registered")
+        alert(resultData["message"] + resultData["destination"].country + " has been registered")
         // this.router.navigate(['/login'])
 
     });
