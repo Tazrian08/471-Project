@@ -11,6 +11,7 @@ import { TempComponent } from './temp/temp.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TravelPackageComponent } from './travel-package/travel-package.component';
+import { DestinationformComponent } from './adminpages/destinationform/destinationform.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TravelPackageComponent } from './travel-package/travel-package.componen
     TempComponent,
     HomeComponent,
     ProfileComponent,
-    TravelPackageComponent
+    TravelPackageComponent,
+    DestinationformComponent
   ],
   imports: [
     BrowserModule,

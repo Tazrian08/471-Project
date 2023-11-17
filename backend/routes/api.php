@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\TravelPackageController;
 
 
@@ -28,6 +29,8 @@ Route::post("/register",[UserController::class,"register"]);
 Route::post("/login",[UserController::class,"login"]);
 Route::get("/travel-packages",[TravelPackageController::class,"index"]);
 
+//DESTINATION ROUTES
+Route::post("/destinationcreate",[DestinationController::class,"create"]);
 
 //PAYMENT ROUTES
 Route::post('paypal/payment', [PaypalController::class, 'payment']);

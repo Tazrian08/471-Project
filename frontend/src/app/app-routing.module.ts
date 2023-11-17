@@ -6,6 +6,7 @@ import { TempComponent } from './temp/temp.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TravelPackageComponent } from './travel-package/travel-package.component';
+import { DestinationformComponent } from './adminpages/destinationform/destinationform.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: "temp", component: TempComponent},
   {path: "", component: HomeComponent },
   {path: "profile", component: ProfileComponent},
-  {path : "travel-packages", component: TravelPackageComponent} 
+  {path : "travel-packages", component: TravelPackageComponent},
+  {path : "admin/destination", component: DestinationformComponent}
 
 ];
 
