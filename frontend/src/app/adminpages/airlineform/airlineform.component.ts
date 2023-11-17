@@ -28,7 +28,7 @@ export class AirlineformComponent {
     this.http.post("http://localhost:8000/api/airline/create",bodyData).subscribe((resultData: any)=> 
     {
 
-        alert(resultData["message"] + resultData["airline"].country + " has been registered")
+        alert(resultData["message"] + resultData["airline"].name + " has been registered")
         // this.router.navigate(['/login'])
 
     });

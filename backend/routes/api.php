@@ -28,7 +28,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //USER ROUTES
 Route::post("/register",[UserController::class,"register"]);
 Route::post("/login",[UserController::class,"login"]);
+
+//TRAVEL PACKAGE ROUTES 
 Route::get("/travel-packages",[TravelPackageController::class,"index"]);
+Route::get("/travel-packages/{id}", [TravelPackageController::class, "show"]);
 
 //DESTINATION ROUTES
 Route::post("/destination/create",[DestinationController::class,"create"]);

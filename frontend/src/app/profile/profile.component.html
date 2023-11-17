@@ -25,8 +25,11 @@
   </div>
   <!-- New container for home button -->
   <div class="home-container">
-    <button class="home-button" (click)="goToLogin()">Home</button>
+    <!-- <button class="home-button" (click)="goToLogin()">Home</button> -->
+    <button class="home-button" routerLink="/login">Go to Login</button>
     <button class="home-button" routerLink="/travel-packages">Travel Package</button>
+    <button *ngIf="admin" class="home-button" routerLink="/admin/destination">Add Destination</button>
+    <button *ngIf="admin" class="home-button" routerLink="/admin/airline">Add Airline</button>
 
   </div>
 
