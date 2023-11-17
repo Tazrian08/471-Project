@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { TempComponent } from './temp/temp.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TravelPackageComponent } from './travel-package/travel-package.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProfileComponent } from './profile/profile.component';
     RegisterComponent,
     LoginComponent,
     TempComponent,
-    ProfileComponent
+    ProfileComponent,
+    TravelPackageComponent
   ],
   imports: [
     BrowserModule,

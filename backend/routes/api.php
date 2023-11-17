@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TravelPackageController;
 
 
 /*
@@ -25,6 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //USER ROUTES
 Route::post("/register",[UserController::class,"register"]);
 Route::post("/login",[UserController::class,"login"]);
+Route::get("/travel-packages",[TravelPackageController::class,"index"]);
 
 
 //PAYMENT ROUTES

@@ -4,12 +4,14 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { TempComponent } from './temp/temp.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TravelPackageComponent } from './travel-package/travel-package.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
   {path: "login", component: LoginComponent},
   {path: "temp", component: TempComponent},
-  {path: "profile", component: ProfileComponent}
+  {path: "profile", component: ProfileComponent},
+  {path : "travel-packages", component: TravelPackageComponent} 
 
 ];
 

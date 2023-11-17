@@ -13,7 +13,9 @@ class TravelPackageController extends Controller
      */
     public function index()
     {
-        //
+        $travelPackage = Travel_Package::all();
+
+        return response()->json($travelPackage);
     }
 
     /**
