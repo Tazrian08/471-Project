@@ -1,0 +1,11 @@
+<h2>{{ package?.name }}</h2>
+<p *ngIf="package">
+    <strong>ID:</strong> {{ package.id }}<br>
+    <strong>Description:</strong> {{ package.description }}<br>
+    <strong>Airline ID:</strong> {{ package.airline_id }}<br>
+    <strong>Destination ID:</strong> {{ package.destination_id }}<br>
+    <strong>Departure Flight ID:</strong> {{ package.departure_flight_id }}<br>
+    <strong>Return Flight ID:</strong> {{ package.return_flight_id }}<br>
+    <strong>Price:</strong> ${{ package.price }}
+</p>
+<p *ngIf="!package">Package not found.</p>

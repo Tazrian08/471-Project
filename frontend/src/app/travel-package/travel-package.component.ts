@@ -1,5 +1,7 @@
+// src/app/components/travel-packages/travel-packages.component.ts
+
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,21 +9,24 @@ import { Router } from '@angular/router';
   templateUrl: './travel-package.component.html',
   styleUrls: ['./travel-package.component.css']
 })
-
-export class TravelPackageComponent{
+export class TravelPackageComponent implements OnInit {
   travelPackages: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.http.get('http://localhost:8000/api/travel-packages', { withCredentials: true }).subscribe(
-      (packages:any) => {
-        // Sort the packages by name in alphabetical order
-        this.travelPackages = packages.sort((a: any, b: any) => (a.name < b.name ? -1 : 1)); 
+      (packages: any) => {
+        this.travelPackages = packages;
       },
       (error) => {
         console.error('Error fetching travel packages:', error);
       }
     );
+  }
+
+  // Method to navigate to the package profile with the specific package ID
+  goToPackageProfile(packageId: any): void {
+    this.router.navigate(['/package-profile', packageId]);
   }
 }
