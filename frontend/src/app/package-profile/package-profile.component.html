@@ -31,4 +31,5 @@
     <strong>Return Flight ID:</strong> {{ package.return_flight_id }}<br>
     <strong>Price:</strong> ${{ package.price }}
 </p>
+<button type="submit" class="btn btn-primary mt-4" (click)="payment(package.price)" >Pay with Paypal</button>
 <p *ngIf="!package">Package not found.</p>

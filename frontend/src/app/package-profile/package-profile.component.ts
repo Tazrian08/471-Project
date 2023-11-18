@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PackageProfileComponent implements OnInit {
   package: any;
 
+
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -30,4 +31,24 @@ export class PackageProfileComponent implements OnInit {
       );
     });
   }
+
+
+
+  payment(price: any){
+    
+    
+   
+    let bodyData = {
+      "price" : price
+    };
+
+
+    this.http.post("http://localhost:8000/api/paypal/payment",bodyData,{withCredentials: true}).subscribe((resultData: any)=>
+    {  
+      window.location.href=resultData['link']
+    });
+    console.log("This runs")
+    
+  
+}
 }
