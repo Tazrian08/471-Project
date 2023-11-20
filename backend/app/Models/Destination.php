@@ -16,12 +16,12 @@ class Destination extends Model
         'description',
     ];
 
-    public function destination(){
+    public function travel_package(){
         return $this->hasMany(Travel_Package::class);
         
     }
 
-    public function hotels(){
+    public function hotel(){
         return $this->hasMany(Hotels::class);
         
     }
@@ -33,6 +33,11 @@ class Destination extends Model
 
     public function attraction(){
         return $this->hasMany(Attraction::class);
+        
+    }
+
+    public function flight(){
+        return $this->hasMany(Flight::class);
         
     }
 }

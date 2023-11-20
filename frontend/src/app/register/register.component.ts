@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  Register: boolean =true
 
   constructor(private http: HttpClient, private router: Router ) 
   {

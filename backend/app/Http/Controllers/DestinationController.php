@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Destination;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreDestinationRequest;
 use App\Http\Requests\UpdateDestinationRequest;
 
@@ -13,15 +14,23 @@ class DestinationController extends Controller
      */
     public function index()
     {
-        //
+        $destinations = Destination::all();
+
+        return response()->json($destinations);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $destination=Destination::create([
+            'country' => $request->input('country'),
+            'city' => $request->input('city'),
+            'description' =>$request->input('description')
+        ]);
+        return response()->json(['message'=>'Destination created!','destination'=>$destination]);
+
     }
 
     /**

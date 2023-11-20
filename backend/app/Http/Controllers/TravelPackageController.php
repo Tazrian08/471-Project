@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Travel_Package;
 use App\Http\Requests\StoreTravel_PackageRequest;
 use App\Http\Requests\UpdateTravel_PackageRequest;
@@ -21,9 +22,20 @@ class TravelPackageController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $package=Travel_Package::create([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'price' =>$request->input('price'),
+            'airline_id' =>$request->input('airline_id'),
+            'destination_id' =>$request->input('destination_id'),
+            'departure_flight_id' =>$request->input('departure'),
+            'return_flight_id' =>$request->input('return')
+
+        ]);
+        return response()->json(['message'=>'Package created! ','package'=>$package]);
+
     }
 
     /**
@@ -37,9 +49,13 @@ class TravelPackageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Travel_Package $travel_Package)
+    public function show($id)
     {
-        //
+        $travelPackage = Travel_Package::find($id);
+        if (!$travelPackage){
+            return response()->json(['error'=>'Travel package not found'],404);
+        }
+        return response()->json($travelPackage);
     }
 
     /**
