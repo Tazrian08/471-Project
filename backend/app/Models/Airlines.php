@@ -14,7 +14,7 @@ class Airlines extends Model
         'email',
     ];
 
-    public function airlines(){
+    public function travel_package(){
         return $this->hasMany(Travel_Package::class);
         
     }

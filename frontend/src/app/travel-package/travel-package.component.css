@@ -8,6 +8,28 @@
     background-size: cover; /* This makes the background image cover the entire container */
     background-position: center; /* Center the background image */
 }
+/* src/app/components/travel-packages/travel-packages.component.css */
+
+.button-container {
+    margin-top: 20px; /* Adjust as needed */
+    margin-left: 20px;
+}
+
+.view-details-button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+}
+
+.view-details-button:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}
+
 
 .travel-packages-container {
     display: flex;
@@ -19,7 +41,7 @@
 .package-item {
     width: calc(33.33% - 20px); /* Adjust as needed for spacing */
     margin: 20px; /* Adjust as needed for spacing */
-    margin-left: 25px;
+    margin-left: 100px;
     box-sizing: border-box;
     border: 1px solid #ddd; /* Add a border for separation, adjust as needed */
     padding: 10px; /* Add padding for better visual appeal, adjust as needed */

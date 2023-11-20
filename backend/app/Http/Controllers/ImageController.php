@@ -2,28 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Flight;
-use Illuminate\Http\Request;
-use App\Http\Requests\StoreFlightRequest;
-use App\Http\Requests\UpdateFlightRequest;
+use App\Models\Image;
+use App\Http\Requests\StoreImageRequest;
+use App\Http\Requests\UpdateImageRequest;
 
-class FlightController extends Controller
+class ImageController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function select($id)
-    {
-
-        $airlineId = $id;
-        $flights=Flight::with('destination')->where('airlines_id', $airlineId)->get();
-        return response()->json($flights);
-    }
-
-
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -37,7 +27,7 @@ class FlightController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreFlightRequest $request)
+    public function store(StoreImageRequest $request)
     {
         //
     }
@@ -45,7 +35,7 @@ class FlightController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Flight $flight)
+    public function show(Image $image)
     {
         //
     }
@@ -53,7 +43,7 @@ class FlightController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Flight $flight)
+    public function edit(Image $image)
     {
         //
     }
@@ -61,7 +51,7 @@ class FlightController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateFlightRequest $request, Flight $flight)
+    public function update(UpdateImageRequest $request, Image $image)
     {
         //
     }
@@ -69,7 +59,7 @@ class FlightController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Flight $flight)
+    public function destroy(Image $image)
     {
         //
     }

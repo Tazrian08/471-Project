@@ -11,15 +11,12 @@
   <div *ngFor="let package of travelPackages" class="package-item">
       <h2>{{ package.name }}</h2>
       <p>
-          <strong>ID:</strong> {{ package.id }}<br>
           <strong>Description:</strong> {{ package.description }}<br>
-          <strong>Airline ID:</strong> {{ package.airlines_id }}<br>
           <strong>Destination ID:</strong> {{ package.destination_id }}<br>
-          <strong>Departure Flight ID:</strong> {{ package.departure_flight_id }}<br>
-          <strong>Return Flight ID:</strong> {{ package.return_flight_id }}<br>
           <strong>Price:</strong> ${{ package.price }}
       </p>
       <!-- Add more details as needed -->
+      <button class="view-details-button" (click)="goToPackageProfile(package.id)">View Details</button>
   </div>
 </div>
 

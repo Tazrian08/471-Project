@@ -1,5 +1,4 @@
 <!-- src/app/profile/profile.component.html -->
-
 <div class="profile-container" *ngIf="auth">
     <h1>Your Profile</h1>
     <i class="fas fa-home fa-3x"></i>
@@ -25,7 +24,12 @@
   </div>
   <!-- New container for home button -->
   <div class="home-container">
-    <button class="home-button" (click)="goToLogin()">Home</button>
+    <!-- <button class="home-button" (click)="goToLogin()">Home</button> -->
+    <button class="home-button" routerLink="/login">Go to Login</button>
+    <button class="home-button" routerLink="/travel-packages">Travel Package</button>
+    <button *ngIf="admin" class="home-button" routerLink="/admin/destination">Add Destination</button>
+    <button *ngIf="admin" class="home-button" routerLink="/admin/airline">Add Airline</button>
+
   </div>
 
   <div class="dashboard-container">

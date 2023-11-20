@@ -13,6 +13,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { TravelPackageComponent } from './travel-package/travel-package.component';
 import { DestinationformComponent } from './adminpages/destinationform/destinationform.component';
 import { AirlineformComponent } from './adminpages/airlineform/airlineform.component';
+import { NavbarComponent } from './partials/navbar/navbar.component';
+import { PackageProfileComponent } from './package-profile/package-profile.component';
+import { TravelPackageformComponent } from './adminpages/travel-packageform/travel-packageform.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { AirlineformComponent } from './adminpages/airlineform/airlineform.compo
     ProfileComponent,
     TravelPackageComponent,
     DestinationformComponent,
-    AirlineformComponent
+    AirlineformComponent,
+    NavbarComponent,
+    PackageProfileComponent,
+    TravelPackageformComponent
   ],
   imports: [
     BrowserModule,
