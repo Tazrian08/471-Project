@@ -28,7 +28,7 @@ class Travel_Package extends Model
     }
 
     public function review(){
-        return $this->hasMany(Booking::class);
+        return $this->hasMany(Review::class);
         
     }
 

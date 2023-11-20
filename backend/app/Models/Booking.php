@@ -18,7 +18,7 @@ class Booking extends Model
         "payment info",
     ];
 
-    public function booking(){
+    public function user(){
         return $this->belongsTo(User::class);
         
     }

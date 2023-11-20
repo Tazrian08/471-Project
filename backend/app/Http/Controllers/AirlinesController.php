@@ -14,7 +14,9 @@ class AirlinesController extends Controller
      */
     public function index()
     {
-        //
+        $airlines = Airlines::all();
+
+        return response()->json($airlines);
     }
 
     /**

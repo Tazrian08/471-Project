@@ -9,6 +9,7 @@ import { TravelPackageComponent } from './travel-package/travel-package.componen
 import { DestinationformComponent } from './adminpages/destinationform/destinationform.component';
 import { AirlineformComponent } from './adminpages/airlineform/airlineform.component';
 import { PackageProfileComponent } from './package-profile/package-profile.component';
+import { TravelPackageformComponent } from './adminpages/travel-packageform/travel-packageform.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: "profile", component: ProfileComponent},
   {path : "travel-packages", component: TravelPackageComponent},
   {path : "admin/destination", component: DestinationformComponent},
+  {path : "admin/travel-package", component: TravelPackageformComponent},
   {path : "admin/airline", component: AirlineformComponent},
   { path: 'travel-packages', component: TravelPackageComponent },
   { path: 'package-profile/:id', component: PackageProfileComponent },

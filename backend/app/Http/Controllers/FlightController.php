@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Flight;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreFlightRequest;
 use App\Http\Requests\UpdateFlightRequest;
 
@@ -11,9 +12,18 @@ class FlightController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function select($id)
+    {
+
+        $airlineId = $id;
+        $flights=Flight::with('destination')->where('airlines_id', $airlineId)->get();
+        return response()->json($flights);
+    }
+
+
     public function index()
     {
-        //
+        
     }
 
     /**

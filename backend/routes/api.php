@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FlightController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AirlinesController;
@@ -35,9 +36,17 @@ Route::get("/travel-packages/{id}", [TravelPackageController::class, "show"]);
 
 //DESTINATION ROUTES
 Route::post("/destination/create",[DestinationController::class,"create"]);
+Route::get("/alldestination",[DestinationController::class,"index"]);
+
+
 
 //AIRLINE ROUTES
 Route::post("/airline/create",[AirlinesController::class,"create"]);
+Route::get("/allairline",[AirlinesController::class,"index"]);
+
+
+//FLIGHT ROUTES
+Route::get('/flightselector/{airlineId}',[FlightController::class,"select"]);
 
 //PAYMENT ROUTES
 Route::post('paypal/payment', [PaypalController::class, 'payment']);
