@@ -89,8 +89,29 @@ getFlight(airlineId: any): void {
 
 
 
-  package_sub(){
-    //
+  package_sub()
+  {
+    let bodyData = {
+      "name" : this.name,
+      "price" : this.price,
+      "description" : this.description,
+      "destination_id" : this.destination_id,
+      "airline_id" : this.airline_id,
+      "departure" : this.departure,
+      "return" : this.return
+    };
+
+
+    this.http.post("http://localhost:8000/api/travel-package/create",bodyData).subscribe((resultData: any)=> 
+    {
+
+        alert(resultData["message"] + resultData["package"].name + " has been registered")
+        // this.router.navigate(['/login'])
+
+    });
+    console.log("This runs")
+    
   }
+  
 
 }
