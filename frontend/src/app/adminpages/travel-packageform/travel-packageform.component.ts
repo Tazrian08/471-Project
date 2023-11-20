@@ -9,6 +9,13 @@ import { Router } from '@angular/router';
 })
 export class TravelPackageformComponent {
 
+  selectedFile: File | null = null;
+
+
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+  }
+
 
   constructor(private http: HttpClient, private router: Router) 
   {
@@ -51,6 +58,7 @@ export class TravelPackageformComponent {
   airlines: any
   airlineflag: boolean =false
   flights: any
+  image:any
   
 
 
@@ -91,22 +99,28 @@ getFlight(airlineId: any): void {
 
   package_sub()
   {
-    let bodyData = {
-      "name" : this.name,
-      "price" : this.price,
-      "description" : this.description,
-      "destination_id" : this.destination_id,
-      "airline_id" : this.airline_id,
-      "departure" : this.departure,
-      "return" : this.return
-    };
+    const formData = new FormData();
+
+    // Append the existing form data
+    formData.append('name', this.name);
+    formData.append('price', this.price);
+    formData.append('description', this.description);
+    formData.append('destination_id', this.destination_id);
+    formData.append('airline_id', this.airline_id);
+    formData.append('departure', this.departure);
+    formData.append('return', this.return);
+
+    if (this.selectedFile) {
+      formData.append('image', this.selectedFile, this.selectedFile.name);
+    }
 
 
-    this.http.post("http://localhost:8000/api/travel-package/create",bodyData).subscribe((resultData: any)=> 
+    this.http.post("http://localhost:8000/api/travel-package/create",formData).subscribe((resultData: any)=> 
     {
 
         alert(resultData["message"] + resultData["package"].name + " has been registered")
         // this.router.navigate(['/login'])
+        this.image=resultData["image"]
 
     });
     console.log("This runs")
