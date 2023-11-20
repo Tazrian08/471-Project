@@ -7,6 +7,7 @@ use App\Http\Controllers\FlightController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AirlinesController;
+use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\TravelPackageController;
 
@@ -39,6 +40,9 @@ Route::post("/travel-package/create",[TravelPackageController::class,"create"]);
 //DESTINATION ROUTES
 Route::post("/destination/create",[DestinationController::class,"create"]);
 Route::get("/alldestination",[DestinationController::class,"index"]);
+
+//ATTRACTION ROUTES
+Route::post("/attraction/create",[AttractionController::class,"create"]);
 
 
 
