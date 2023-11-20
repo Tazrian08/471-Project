@@ -37,6 +37,7 @@ return new class extends Migration
                 ->on('activities')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->string('path');
             $table->timestamps();
         });
     }

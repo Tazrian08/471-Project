@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'travel_package_id',
+        'destination_id',
+        'attraction_id',
+        'activity_id',
+        'path',
+
+
+    ];
 }
