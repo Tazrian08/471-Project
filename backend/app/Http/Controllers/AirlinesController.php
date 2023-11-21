@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Airlines;
+use App\Mail\AirlineMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreAirlinesRequest;
 use App\Http\Requests\UpdateAirlinesRequest;
 
@@ -29,6 +31,9 @@ class AirlinesController extends Controller
             'email' => $request->input('email'),
             
         ]);
+
+        Mail::to($request->input('email'))->send(new AirlineMail());
+
         return response()->json(['message'=>'Airline created!','airline'=>$airline]);
 
     }
