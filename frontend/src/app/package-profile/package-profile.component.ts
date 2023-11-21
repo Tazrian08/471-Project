@@ -11,6 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PackageProfileComponent implements OnInit {
   package: any;
+  selectedColor: string = 'roseGold';
+  selectedNumber: number = 1;
+  showColorDropdown: boolean = false;
+  showDescriptionDropdown: boolean = false;
+
+  colorOptions: string[] = ['roseGold', 'red', 'blue', 'green'];
+  numberOptions: number[] = [1, 2, 3, 4, 5, 6];
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
@@ -29,5 +36,28 @@ export class PackageProfileComponent implements OnInit {
         }
       );
     });
+  }
+  img(anything: string): void {
+    this.package.name = anything;
+  }
+
+  changeColor(color: string): void {
+    this.selectedColor = color;
+  }
+
+  changeNumber(number: number): void {
+    this.selectedNumber = number;
+  }
+
+  addToBag(): void {
+    // Implement the logic for adding the item to the bag
+  }
+
+  toggleColorDropdown(): void {
+    this.showColorDropdown = !this.showColorDropdown;
+  }
+
+  toggleDescriptionDropdown(): void {
+    this.showDescriptionDropdown = !this.showDescriptionDropdown;
   }
 }
