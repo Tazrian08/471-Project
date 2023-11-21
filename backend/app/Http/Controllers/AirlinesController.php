@@ -32,7 +32,7 @@ class AirlinesController extends Controller
             
         ]);
 
-        Mail::to($request->input('email'))->send(new AirlineMail());
+        Mail::to($request->input('email'))->send(new AirlineMail($request->input('name')));
 
         return response()->json(['message'=>'Airline created!','airline'=>$airline]);
 
