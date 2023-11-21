@@ -142,17 +142,17 @@
     margin-left: 20px;
     width: 97%;
     text-align: left;
-    background-color: rgb(244, 240, 240);
+    background-color: rgb(234, 247, 247);
     border-radius: 15px;
-    color: #c1908b;
-    border-color: gray;
+    color: #008080;
+    border-color: rgb(2, 2, 2);
   }
   
   button:hover {
-    background: #35b5ac;
+    background: #35a5ac;
   }
   button.secondary:hover {
-    background: rgb(101, 101, 101);
+    background: #bef0ed;
   }
   
   .color-dropdown-box,
