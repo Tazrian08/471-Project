@@ -163,6 +163,14 @@
     margin-top: 10px;
     margin-bottom: 10px;
   }
+ 
+  .description-dropdown-box2 {
+    font: Montserrat, sans-serif;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
   .downwards-arrow {
     color: #837d7c;
