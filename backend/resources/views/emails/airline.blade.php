@@ -1,5 +1,5 @@
 <x-mail::message>
-{{$airlineName}},
+{{$airlineName}},<br>
 Welcome to our Family. Here's to a long and prosperous journey
 
 
