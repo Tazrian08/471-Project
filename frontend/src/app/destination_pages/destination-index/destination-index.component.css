@@ -1,0 +1,15 @@
+.w3-card {
+    height: 500px; /* Adjust the height as needed */
+    margin-bottom: 20px; /* Add margin to create space between cards */
+  }
+
+  .w3-third {
+    transition: transform 0.3s ease-in-out;
+    width: 30%; /* Adjust the width as needed */
+    margin: 1.2%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  .w3-third:hover {
+    transform: scale(1.05);
+  }
+

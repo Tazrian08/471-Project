@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-destination-index',
@@ -10,4 +12,18 @@ export class DestinationIndexComponent {
 
   destinations:any
 
+  constructor(private http: HttpClient, private router: Router) 
+  {
+    { 
+    
+      this.http.get("http://localhost:8000/api/alldestination")
+    
+      .subscribe((resultData: any)=>
+      {
+        this.destinations=resultData
+        console.log(this.destinations)
+      });
+    }
+
+  }
 }

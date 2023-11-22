@@ -17,4 +17,17 @@ class Image extends Model
 
 
     ];
+
+
+    public function destination(){
+        return $this->belongsTo(Destination::class);
+        
+    }
+
+
+    public function travel(){
+        return $this->belongsTo(Travel_Package::class);
+        
+    }
+
 }

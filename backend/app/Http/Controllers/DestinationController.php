@@ -15,7 +15,7 @@ class DestinationController extends Controller
      */
     public function index()
     {
-        $destinations = Destination::all();
+        $destinations = Destination::with('image')->get();
 
         return response()->json($destinations);
     }
