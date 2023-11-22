@@ -11,6 +11,7 @@ export class DestinationIndexComponent {
 
 
   destinations:any
+  search=""
 
   constructor(private http: HttpClient, private router: Router) 
   {
@@ -25,5 +26,13 @@ export class DestinationIndexComponent {
       });
     }
 
+  }
+
+
+
+  Search(){
+    let data={'search': this.search}
+
+    
   }
 }
