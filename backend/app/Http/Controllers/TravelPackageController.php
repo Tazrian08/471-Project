@@ -65,7 +65,14 @@ class TravelPackageController extends Controller
         if (!$travelPackage){
             return response()->json(['error'=>'Travel package not found'],404);
         }
-        return response()->json($travelPackage);
+        $img=Image::where('travel_package_id', $id)->get();
+
+        if ($img->isEmpty()) {
+            return response()->json(['package' => $travelPackage, 'image' => null]);
+        }
+        $firstImage = $img->first();
+
+        return response()->json(['package'=>$travelPackage,'image'=>asset('images/' . $firstImage->path)]);
     }
 
     /**

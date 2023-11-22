@@ -14,6 +14,7 @@ export class PackageProfileComponent implements OnInit {
   selectedNumber: number = 1;
   showDescriptionDropdown: boolean = false;
   showDescriptionDropdown2: boolean = false;
+  image: any
 
 
 
@@ -28,7 +29,9 @@ export class PackageProfileComponent implements OnInit {
       // Fetch the specific package by ID
       this.http.get(`http://localhost:8000/api/travel-packages/${packageId}`, { withCredentials: true }).subscribe(
         (packageData: any) => {
-          this.package = packageData;
+          this.package = packageData['package'];
+          this.image=packageData['image']
+
         },
         (error) => {
           console.error('Error fetching package profile:', error);

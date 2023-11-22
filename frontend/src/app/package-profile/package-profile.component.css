@@ -38,9 +38,20 @@
     display: flex;
   }
   
+  /* .main_image {
+    width: 100%; 
+    height: auto; 
+  } */
   .main_image {
-    width: 100%; /* Adjusted */
-    height: auto; /* Adjusted */
+    width: 100%; /* Adjusted to take the left half of the container */
+    height: auto;
+    overflow: hidden; /* Ensures that the image won't overflow the container */
+  }
+  
+  .main_image img {
+    width: 100%; /* Ensures that the image inside main_image fits inside */
+    height: auto;
+    display: block; /* Removes extra space below the image */
   }
   
   .option img {
