@@ -50,6 +50,10 @@ export class DestinationIndexComponent {
       this.destinations = resultData;
     });
   }
+
+  goToDestinationProfile(destinationID: any): void {
+    this.router.navigate(['/destination/profile', destinationID]);
+  }
   
   
 }

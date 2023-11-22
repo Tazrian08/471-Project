@@ -54,7 +54,7 @@ class DestinationController extends Controller
     
         $img = Image::create([
             'destination_id' => $destination->id,
-            'path' => $image
+            'path' => asset('images/' . $image)
         ]);
         return response()->json(['message'=>'Destination created!','destination'=>$destination]);
 
@@ -65,15 +65,17 @@ class DestinationController extends Controller
      */
     public function store(StoreDestinationRequest $request)
     {
-        //
+        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Destination $destination)
+    public function show($destinationID)
     {
-        //
+        $destination= Destination::with('image')->find($destinationID);
+
+        return response()->json($destination);
     }
 
     /**

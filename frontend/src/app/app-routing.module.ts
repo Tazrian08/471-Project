@@ -12,6 +12,7 @@ import { PackageProfileComponent } from './package-profile/package-profile.compo
 import { TravelPackageformComponent } from './adminpages/travel-packageform/travel-packageform.component';
 import { AttractionformComponent } from './adminpages/attractionform/attractionform.component';
 import { DestinationIndexComponent } from './destination_pages/destination-index/destination-index.component';
+import { DestinationProfileComponent } from './destination_pages/destination-profile/destination-profile.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'travel-packages', component: TravelPackageComponent },
   { path: 'package-profile/:id', component: PackageProfileComponent },
   {path : "destination/index", component: DestinationIndexComponent},
+  {path : "destination/profile/:id", component: DestinationProfileComponent},
   { path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
 
 ];
