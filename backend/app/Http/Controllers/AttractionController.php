@@ -37,10 +37,10 @@ class AttractionController extends Controller
     
         $img = Image::create([
             'attraction_id' => $attraction->id,
-            'path' => $image
+            'path' => asset('images/' . $image)
         ]);
 
-        return response()->json(['message'=>'Attraction registered ! ','attraction'=>$attraction,'image'=>asset('images/' . $img->path)]);
+        return response()->json(['message'=>'Attraction registered ! ','attraction'=>$attraction,'image'=>$img->path]);
 
     }
 
