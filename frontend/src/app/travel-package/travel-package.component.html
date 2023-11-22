@@ -1,0 +1,32 @@
+<!-- src/app/components/travel-packages/travel-packages.component.html -->
+<div class="photo-container">
+  <!-- <h2>Explore the World</h2>
+  <p>Discover amazing destinations with our travel packages.</p> -->
+</div>
+<div class="heading">
+  <span>Explore the World</span>
+  <h1>Travel Packages</h1>
+  <p>Discover amazing destinations with our travel packages.</p>
+</div>
+
+<div *ngIf="travelPackages.length > 0; else noPackages" class="box-container">
+  <div *ngFor="let package of travelPackages" class="box">
+      <div class="image">
+          <!-- Assuming package.imageSrc is the property containing the image source -->
+          <img class="image" [src]="package.imageSrc" alt="Image not found">
+      </div>
+      <div class="content">
+          <h3>{{ package.name }}</h3>
+          <p>
+              <strong>Description:</strong> {{ package.description }}<br>
+              <strong>Destination ID:</strong> {{ package.destination_id }}<br>
+              <strong>Price:</strong> ${{ package.price }}
+          </p>
+          <button class="view-details-button" (click)="goToPackageProfile(package.id)">View Details</button>
+      </div>
+  </div>
+</div>
+
+<ng-template #noPackages>
+  <p>No travel packages available.</p>
+</ng-template>

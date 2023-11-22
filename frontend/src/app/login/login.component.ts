@@ -6,16 +6,16 @@ import { Emitters } from '../emiters/emitters';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
 
-  constructor(private http: HttpClient,private router: Router  ) 
+  constructor(private http: HttpClient, private router: Router) 
   {
-
+    
   }
 
-
+  Login: boolean =true
   email: string ="";
   password: string ="";
 
@@ -31,10 +31,10 @@ export class LoginComponent {
   
       this.http.post("http://localhost:8000/api/login",bodyData,{withCredentials: true}).subscribe((resultData: any)=>
       {   
-          alert(resultData['user'].name + " has been logged in");
+          //alert(resultData['user'].name + " has been logged in");
           Emitters.authEmitter.emit(true);
           //Emitters.dataEmitter.emit(resultData['user']) FOR SENDING DATA TO ANOTHER COMPONENT
-          this.router.navigate(['/temp'])
+          this.router.navigate(['/profile'])
 
 
       });

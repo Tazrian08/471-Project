@@ -8,13 +8,35 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { TempComponent } from './temp/temp.component';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { TravelPackageComponent } from './travel-package/travel-package.component';
+import { DestinationformComponent } from './adminpages/destinationform/destinationform.component';
+import { AirlineformComponent } from './adminpages/airlineform/airlineform.component';
+import { NavbarComponent } from './partials/navbar/navbar.component';
+import { PackageProfileComponent } from './package-profile/package-profile.component';
+import { TravelPackageformComponent } from './adminpages/travel-packageform/travel-packageform.component';
+import { AttractionformComponent } from './adminpages/attractionform/attractionform.component';
+import { DestinationIndexComponent } from './destination_pages/destination-index/destination-index.component';
+import { DestinationProfileComponent } from './destination_pages/destination-profile/destination-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    TempComponent
+    TempComponent,
+    HomeComponent,
+    ProfileComponent,
+    TravelPackageComponent,
+    DestinationformComponent,
+    AirlineformComponent,
+    NavbarComponent,
+    PackageProfileComponent,
+    TravelPackageformComponent,
+    AttractionformComponent,
+    DestinationIndexComponent,
+    DestinationProfileComponent
   ],
   imports: [
     BrowserModule,

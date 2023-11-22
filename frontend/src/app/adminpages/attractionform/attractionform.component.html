@@ -1,0 +1,44 @@
+<!-- <img src="{{image}}" alt=""> -->
+<div class="container mt-4" >
+
+    <div class="card">
+        <h1>Attraction Form</h1>
+  
+  <form>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" [(ngModel)]="attraction" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+  
+    </div>
+  
+    <div class="form-group">
+        <label>Price</label>
+        <input type="text" [(ngModel)]="cost" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter Price">
+  
+      </div>
+  
+      <div class="form-group">
+        <label>Destination</label>
+        <select [(ngModel)]="destination_id" [ngModelOptions]="{standalone: true}" class="form-control" id="destination">
+          <option *ngFor="let destination of destinations" [value]="destination.id">{{ destination.country }}, {{ destination.city }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Detail</label>
+        <textarea type="text" [(ngModel)]="detail" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter Description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="image">Upload Image</label>
+        <input type="file" (change)="onFileSelected($event)" class="form-control-file" id="image" accept="image/*">
+      </div>
+    
+      <button type="submit" class="btn btn-primary mt-4" (click)="attraction_sub()" >Submit</button>
+      <!--<p *ngIf="message !== null && message !== undefined">{{message.name}} has been registered</p> -->
+  </form>
+    </div>
+  <div>
+
+  
+  
+  
+

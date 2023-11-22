@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<title>Destination Index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+  <div class="photo-container">
+    <div class="centered-text">
+      <h1>Destinations</h1>
+      <div class="w3-row">
+        <div class="w3-col" style="width:80%">
+          <input
+            type="text"
+            [(ngModel)]="search" [ngModelOptions]="{standalone: true}"
+            placeholder="Search destinations..."
+            class="w3-input w3-border transparent-search-bar"
+          />
+        </div>
+        <div class="w3-col" style="width:20%">
+          <button class="w3-btn w3-blue transparent-search-button" (click)="Search(search)">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-third" *ngFor="let destination of destinations">
+      <div class="w3-container" (click)="goToDestinationProfile(destination.id)" style="text-align: center;">
+        <h4>{{destination.city}},{{destination.country}}</h4>
+      </div>
+      <div class="w3-card" (click)="goToDestinationProfile(destination.id)" style="position: relative;">
+        <img [src]="destination.image.path" style="width: 100%; height: 100%;">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
