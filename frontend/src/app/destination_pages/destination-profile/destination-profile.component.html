@@ -1,6 +1,23 @@
 <body>
     <div class="container">
         <app-des-nav [Attractions]="Attractions" [Profile]="Profile" [Packages]="Packages" [Hotels]="Hotels"></app-des-nav>
-        <div *ngIf="Profile">Alibaba</div>
+        <div *ngIf="Profile" class="profile-container">
+            <div class="card">
+                <!-- Add content inside the card if needed -->
+                <div class="card-content">
+                  <img src="{{destination.image.path}}" alt="" class="card-image">
+                </div>
+            </div>
+            <div class="card1">
+                <!-- Add content inside the card if needed -->
+                <div class="card-content1">
+                  <h1>City: {{destination.city}}</h1>
+                  <h1>Country: {{destination.country}}</h1>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="Attractions">Attractions</div>
+        <div *ngIf="Packages">packages</div>
+        <div *ngIf="Hotels">Hotels</div>
     </div>
 </body>

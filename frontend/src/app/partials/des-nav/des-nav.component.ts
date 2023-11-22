@@ -41,8 +41,8 @@ export class DesNavComponent {
     this.Hotels=false
     Emitters.profileEmitter.emit(false);
     Emitters.attractionsEmitter.emit(false);
-    Emitters.packagesEmitter.emit(false);
-    Emitters.hotelsEmitter.emit(true);
+    Emitters.packagesEmitter.emit(true);
+    Emitters.hotelsEmitter.emit(false);
   }
   hotels(){
     this.Profile=false

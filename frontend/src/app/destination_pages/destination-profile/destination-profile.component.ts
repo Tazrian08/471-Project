@@ -11,8 +11,8 @@ import { Emitters } from 'src/app/emiters/emitters';
 export class DestinationProfileComponent {
 
 
-  Profile: boolean = false;
-  Attractions: boolean = true ;
+  Profile: boolean = true;
+  Attractions: boolean = false ;
   Packages: boolean = false ;
   Hotels: boolean = false ;
 
@@ -55,6 +55,11 @@ export class DestinationProfileComponent {
     Emitters.packagesEmitter.subscribe(
       (data: any) => {
         this.Packages= data;
+      }
+    );
+    Emitters.hotelsEmitter.subscribe(
+      (data: any) => {
+        this.Hotels= data;
       }
     );
 
