@@ -12,20 +12,40 @@ export class DestinationformComponent {
   {
 
   }
+
+  selectedFile: File | null = null;
+
+
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+  }
+
+
+
   country=''
   city=''
   description=''
 
 
   des_sub(){
-    let bodyData = {
-      "country" : this.country,
-      "city" : this.city,
-      "description" : this.description
-    };
+    // let bodyData = {
+    //   "country" : this.country,
+    //   "city" : this.city,
+    //   "description" : this.description
+    // };
+    const formData = new FormData();
+
+    // Append the existing form data
+    formData.append('country', this.country);
+    formData.append('city', this.city);
+    formData.append('description', this.description);
+
+    if (this.selectedFile) {
+      formData.append('image', this.selectedFile, this.selectedFile.name);
+    }
 
 
-    this.http.post("http://localhost:8000/api/destination/create",bodyData).subscribe((resultData: any)=> 
+    this.http.post("http://localhost:8000/api/destination/create",formData).subscribe((resultData: any)=> 
     {
 
         alert(resultData["message"] + resultData["destination"].country + " has been registered")

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Destination;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreDestinationRequest;
@@ -28,6 +29,15 @@ class DestinationController extends Controller
             'country' => $request->input('country'),
             'city' => $request->input('city'),
             'description' =>$request->input('description')
+        ]);
+
+        $image = time() . '-' . $request->country . '.' . $request->file('image')->extension();
+
+        $request->file('image')->move(public_path('images'), $image);
+    
+        $img = Image::create([
+            'destination_id' => $destination->id,
+            'path' => $image
         ]);
         return response()->json(['message'=>'Destination created!','destination'=>$destination]);
 

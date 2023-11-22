@@ -20,6 +20,11 @@
         <label>Description</label>
         <textarea type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter Description"></textarea>
       </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Upload Image</label>
+        <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" accept="image/*">
+      </div>
+      
       <button type="submit" class="btn btn-primary mt-4" (click)="des_sub()" >Submit</button>
       <!--<p *ngIf="message !== null && message !== undefined">{{message.name}} has been registered</p> -->
   </form>

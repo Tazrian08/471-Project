@@ -11,6 +11,7 @@ import { AirlineformComponent } from './adminpages/airlineform/airlineform.compo
 import { PackageProfileComponent } from './package-profile/package-profile.component';
 import { TravelPackageformComponent } from './adminpages/travel-packageform/travel-packageform.component';
 import { AttractionformComponent } from './adminpages/attractionform/attractionform.component';
+import { DestinationIndexComponent } from './destination_pages/destination-index/destination-index.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path : "admin/airline", component: AirlineformComponent},
   { path: 'travel-packages', component: TravelPackageComponent },
   { path: 'package-profile/:id', component: PackageProfileComponent },
+  {path : "destination/index", component: DestinationIndexComponent},
   { path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
 
 ];
