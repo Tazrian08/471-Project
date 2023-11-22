@@ -19,6 +19,7 @@ import { TravelPackageformComponent } from './adminpages/travel-packageform/trav
 import { AttractionformComponent } from './adminpages/attractionform/attractionform.component';
 import { DestinationIndexComponent } from './destination_pages/destination-index/destination-index.component';
 import { DestinationProfileComponent } from './destination_pages/destination-profile/destination-profile.component';
+import { DesNavComponent } from './partials/des-nav/des-nav.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DestinationProfileComponent } from './destination_pages/destination-pro
     TravelPackageformComponent,
     AttractionformComponent,
     DestinationIndexComponent,
-    DestinationProfileComponent
+    DestinationProfileComponent,
+    DesNavComponent
   ],
   imports: [
     BrowserModule,

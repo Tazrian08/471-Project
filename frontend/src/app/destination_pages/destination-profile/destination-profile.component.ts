@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Emitters } from 'src/app/emiters/emitters';
 
 @Component({
   selector: 'app-destination-profile',
@@ -8,6 +9,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./destination-profile.component.css']
 })
 export class DestinationProfileComponent {
+
+
+  Profile: boolean = false;
+  Attractions: boolean = true ;
+  Packages: boolean = false ;
+  Hotels: boolean = false ;
+
+
+ 
+
 
   destination:any
 
@@ -30,7 +41,27 @@ export class DestinationProfileComponent {
       );
     });
 
+    Emitters.profileEmitter.subscribe(
+      (data: any) => {
+        this.Profile= data;
+      }
+    );
+
+    Emitters.attractionsEmitter.subscribe(
+      (data: any) => {
+        this.Attractions= data;
+      }
+    );
+    Emitters.packagesEmitter.subscribe(
+      (data: any) => {
+        this.Packages= data;
+      }
+    );
+
+
+
   }
+
 
 
 }
