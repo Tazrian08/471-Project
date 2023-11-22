@@ -20,6 +20,23 @@ class DestinationController extends Controller
         return response()->json($destinations);
     }
 
+
+    public function search($search)
+    {
+        if (!empty($search)) {
+            $destinations = Destination::where('country', 'LIKE', '%' . $search . '%')
+            ->orWhere('city', 'LIKE', '%' . $search . '%')
+            ->with('image')
+            ->get();
+
+        }else{
+
+        $destinations = Destination::with('image')->get();
+        }
+                          
+        return response()->json($destinations);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

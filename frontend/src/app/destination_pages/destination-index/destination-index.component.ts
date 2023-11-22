@@ -30,9 +30,26 @@ export class DestinationIndexComponent {
 
 
 
-  Search(){
-    let data={'search': this.search}
-
-    
+  // Search(search: any): void {
+  //   this.http.get(`http://localhost:8000/api/destination/search/${search}`)
+  //     .subscribe((resultData: any) => {
+  //       this.destinations=resultData
+  //     });
+  // }
+  Search(search: any): void {
+    let apiUrl: string;
+  
+    // Check if the search string is empty
+    if (search !== '') {
+      apiUrl = `http://localhost:8000/api/destination/search/${search}`;
+    } else {
+      apiUrl = 'http://localhost:8000/api/alldestination';
+    }
+  
+    this.http.get(apiUrl).subscribe((resultData: any) => {
+      this.destinations = resultData;
+    });
   }
+  
+  
 }

@@ -40,6 +40,9 @@ Route::post("/travel-package/create",[TravelPackageController::class,"create"]);
 //DESTINATION ROUTES
 Route::post("/destination/create",[DestinationController::class,"create"]);
 Route::get("/alldestination",[DestinationController::class,"index"]);
+Route::get('/destination/search/{search}',[DestinationController::class,"search"]);
+
+
 
 //ATTRACTION ROUTES
 Route::post("/attraction/create",[AttractionController::class,"create"]);
