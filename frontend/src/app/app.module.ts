@@ -16,6 +16,7 @@ import { AirlineformComponent } from './adminpages/airlineform/airlineform.compo
 import { NavbarComponent } from './partials/navbar/navbar.component';
 import { PackageProfileComponent } from './package-profile/package-profile.component';
 import { TravelPackageformComponent } from './adminpages/travel-packageform/travel-packageform.component';
+import { AttractionformComponent } from './adminpages/attractionform/attractionform.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TravelPackageformComponent } from './adminpages/travel-packageform/trav
     AirlineformComponent,
     NavbarComponent,
     PackageProfileComponent,
-    TravelPackageformComponent
+    TravelPackageformComponent,
+    AttractionformComponent
   ],
   imports: [
     BrowserModule,

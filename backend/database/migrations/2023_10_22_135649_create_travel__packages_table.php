@@ -50,6 +50,14 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
+            $table->unsignedBigInteger('hotel_id');
+            $table->foreign('hotel_id')
+                ->references('id') 
+                ->on('hotels')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+                $table->boolean("custom_status")->default(0);
+
             $table->timestamps();
         });
     }
