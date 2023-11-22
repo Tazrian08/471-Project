@@ -1,4 +1,6 @@
 <body>
+    <div class="photo-container">
+    <img src="" alt="">
     <div class="container">
         <app-des-nav [Attractions]="Attractions" [Profile]="Profile" [Packages]="Packages" [Hotels]="Hotels"></app-des-nav>
         <div *ngIf="Profile" class="profile-container">
@@ -10,9 +12,17 @@
             </div>
             <div class="card1">
                 <!-- Add content inside the card if needed -->
-                <div class="card-content1">
-                  <h1>City: {{destination.city}}</h1>
-                  <h1>Country: {{destination.country}}</h1>
+                <div class="card-content1"> 
+                <h1>Destination Profile:</h1>
+                <h2>City: {{destination.city}}</h2>
+                <h2>Country: {{destination.country}}</h2>
+                </div>
+            </div>
+            <div class="card2">
+                <h2>Description:</h2>
+                <!-- Add content inside the card if needed -->
+                <div class="card-content2"> 
+                    <h4>{{destination.description}}</h4>
                 </div>
             </div>
         </div>
@@ -20,4 +30,5 @@
         <div *ngIf="Packages">packages</div>
         <div *ngIf="Hotels">Hotels</div>
     </div>
+</div>
 </body>
