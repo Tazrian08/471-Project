@@ -25,7 +25,7 @@ class Image extends Model
     }
 
 
-    public function travel(){
+    public function travel_package(){
         return $this->belongsTo(Travel_Package::class);
         
     }
@@ -35,7 +35,7 @@ class Image extends Model
         
     }
 
-    public function hotels(){
+    public function hotel(){
         return $this->belongsTo(Hotels::class);
         
     }
