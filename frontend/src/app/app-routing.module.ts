@@ -12,6 +12,8 @@ import { PackageProfileComponent } from './package-profile/package-profile.compo
 import { TravelPackageformComponent } from './adminpages/travel-packageform/travel-packageform.component';
 import { AttractionformComponent } from './adminpages/attractionform/attractionform.component';
 import { DestinationIndexComponent } from './destination_pages/destination-index/destination-index.component';
+import { HotelfromComponent } from './hotelpages/hotelfrom/hotelfrom.component';
+import { HotelindexComponent } from './hotelpages/hotelindex/hotelindex.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
@@ -28,6 +30,8 @@ const routes: Routes = [
   { path: 'package-profile/:id', component: PackageProfileComponent },
   {path : "destination/index", component: DestinationIndexComponent},
   { path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
+  {path: "admin/hotels", component: HotelfromComponent},
+  {path: "hotels", component: HotelindexComponent},
 
 ];
 

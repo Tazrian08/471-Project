@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hotels;
+use App\Models\Image;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreHotelsRequest;
 use App\Http\Requests\UpdateHotelsRequest;
 
@@ -13,15 +15,33 @@ class HotelsController extends Controller
      */
     public function index()
     {
-        //
+        $hotels = Hotels::all();
+
+        return response()->json($hotels);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $hotels = Hotels::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'prices' => $request->input('prices'),
+            'phone_no' => $request->input('phone_no'),
+            'destination_id' => $request->input('destination_id'),
+        ]);
+
+        $image = time() . '-' . $request->name . '.' . $request->file('image')->extension();
+
+        $request->file('image')->move(public_path('images'), $image);
+    
+        $img = Image::create([
+            'hotel_name' => $hotels->name,
+            'path' => $image
+        ]);
+        return response()->json(['message'=>'Hotel created!','hotel_name'=>$hotels]);
     }
 
     /**
@@ -35,9 +55,20 @@ class HotelsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Hotels $hotels)
+    public function show($id)
     {
-        //
+        $hotels = Hotels::find($id);
+        if (!$hotels){
+            return response()->json(['error'=>'Hotel not found'],404);
+        }
+        $img=Image::where('hotel_id', $hotels)->get();
+
+        if ($img->isEmpty()) {
+            return response()->json(['hotel' => $hotels, 'image' => null]);
+        }
+        $firstImage = $img->first();
+
+        return response()->json(['hotel'=>$hotels,'image'=>asset('images/' . $firstImage->path)]);
     }
 
     /**

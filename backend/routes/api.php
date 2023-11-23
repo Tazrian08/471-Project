@@ -10,6 +10,7 @@ use App\Http\Controllers\AirlinesController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\TravelPackageController;
+use App\Http\Controllers\HotelsController;
 
 
 /*
@@ -44,7 +45,9 @@ Route::get("/alldestination",[DestinationController::class,"index"]);
 //ATTRACTION ROUTES
 Route::post("/attraction/create",[AttractionController::class,"create"]);
 
-
+//HOTEL ROUTES
+Route::post("/hotels/create", [HotelsController::class,"create"]);
+Route::get("/hotels", [HotelsController::class, "index"]);
 
 //AIRLINE ROUTES
 Route::post("/airline/create",[AirlinesController::class,"create"]);
