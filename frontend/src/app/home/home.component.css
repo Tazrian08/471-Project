@@ -1,0 +1,6 @@
+/* Define a custom class for the link */
+.custom-link {
+    color: rgba(40, 38, 38, 0.276); /* Set the text color to white */
+    font-family: 'YourFontName', sans-serif; /* Change 'YourFontName' to the desired font family */
+ }
+ 

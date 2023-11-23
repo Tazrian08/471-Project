@@ -14,6 +14,7 @@ class Hotels extends Model
         'email',
         'prices',
         'destination_id',
+        'phone_no',
 
     ];
 

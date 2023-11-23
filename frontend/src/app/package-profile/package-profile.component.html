@@ -1,11 +1,57 @@
-<h2>{{ package?.name }}</h2>
-<p *ngIf="package">
-    <strong>ID:</strong> {{ package.id }}<br>
-    <strong>Description:</strong> {{ package.description }}<br>
-    <strong>Airline ID:</strong> {{ package.airline_id }}<br>
-    <strong>Destination ID:</strong> {{ package.destination_id }}<br>
-    <strong>Departure Flight ID:</strong> {{ package.departure_flight_id }}<br>
-    <strong>Return Flight ID:</strong> {{ package.return_flight_id }}<br>
-    <strong>Price:</strong> ${{ package.price }}
-</p>
-<p *ngIf="!package">Package not found.</p>
+
+  <section>
+    <div class="container flex">
+      <div class="left">
+        <div class="main_image">
+        
+          <img src="{{ image }}" class="slide">
+        </div>
+        <div class="option flex">
+          <!-- You may want to replace the onclick functions with Angular event bindings -->
+          <!-- <img src="image/p1.jpg" (click)="img('image/p1.jpg')">
+          <img src="image/p2.jpg" (click)="img('image/p2.jpg')">
+          <img src="image/p3.jpg" (click)="img('image/p3.jpg')">
+          <img src="image/p4.jpg" (click)="img('image/p4.jpg')">
+          <img src="image/p5.jpg" (click)="img('image/p5.jpg')">
+          <img src="image/p6.jpg" (click)="img('image/p6.jpg')"> -->
+        </div>
+      </div>
+      <div class="right">
+        <h3>{{ package?.name }}</h3>
+        <h4> <small>$</small>{{ package?.price }}</h4>
+        <p>{{ package?.description }}</p>
+        
+        <div class="color flex1">
+          <!-- You may want to dynamically generate these spans based on data -->
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <button>Book a Trip</button>
+        
+
+  
+</div>
+      
+  </div>
+  </section>
+  
+
+  <button class="secondary" (click)="toggleDescriptionDropdown()">Show Description ▼</button>
+  <div *ngIf="showDescriptionDropdown" class="description-dropdown-box">
+    <p>{{ package.description }}</p> 
+  </div>
+  <button class="secondary" (click)="toggleDescriptionDropdown2()">Show Description ▼ </button>
+  <div *ngIf="showDescriptionDropdown2" class="description-dropdown-box2">
+    <p>{{ package.description }}</p>
+    
+  </div>
+ 
+
+    
+
+    

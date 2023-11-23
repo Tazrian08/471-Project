@@ -12,10 +12,10 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private router: Router) 
   {
-
+    
   }
 
-
+  Login: boolean =true
   email: string ="";
   password: string ="";
 

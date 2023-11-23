@@ -14,7 +14,7 @@ class Travel_Package extends Model
         'description',
         'price',
         'user_id',
-        'airlines_id',
+        'airline_id',
         'destination_id',
         'departure_flight_id',
         "return_flight_id",
@@ -28,7 +28,7 @@ class Travel_Package extends Model
     }
 
     public function review(){
-        return $this->hasMany(Booking::class);
+        return $this->hasMany(Review::class);
         
     }
 
