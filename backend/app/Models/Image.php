@@ -13,6 +13,7 @@ class Image extends Model
         'destination_id',
         'attraction_id',
         'activity_id',
+        'hotel_id',
         'path',
 
 

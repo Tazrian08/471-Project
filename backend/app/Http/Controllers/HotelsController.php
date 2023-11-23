@@ -40,7 +40,7 @@ class HotelsController extends Controller
         $request->file('image')->move(public_path('images'), $image);
     
         $img = Image::create([
-            'hotel_name' => $hotels->name,
+            'hotel_id' => $hotels->id,
             'path' => asset('images/' . $image)
         ]);
 
