@@ -30,4 +30,14 @@ class Image extends Model
         
     }
 
+    public function attraction(){
+        return $this->belongsTo(Attraction::class);
+        
+    }
+
+    public function hotels(){
+        return $this->belongsTo(Hotels::class);
+        
+    }
+
 }

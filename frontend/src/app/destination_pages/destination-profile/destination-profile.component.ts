@@ -19,7 +19,7 @@ export class DestinationProfileComponent {
 
  
 
-
+  attractions:any
   destination:any
 
 
@@ -33,6 +33,8 @@ export class DestinationProfileComponent {
       this.http.get(`http://localhost:8000/api/destination/profile/${destinationID}`).subscribe(
         (data: any) => {
           this.destination = data;
+          this.attractions=data.attraction
+          console.log(this.attractions)
 
         },
         (error) => {
