@@ -14,6 +14,7 @@ import { AttractionformComponent } from './adminpages/attractionform/attractionf
 import { DestinationIndexComponent } from './destination_pages/destination-index/destination-index.component';
 import { HotelfromComponent } from './hotelpages/hotelfrom/hotelfrom.component';
 import { HotelindexComponent } from './hotelpages/hotelindex/hotelindex.component';
+import { DestinationProfileComponent } from './destination_pages/destination-profile/destination-profile.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'travel-packages', component: TravelPackageComponent },
   { path: 'package-profile/:id', component: PackageProfileComponent },
   {path : "destination/index", component: DestinationIndexComponent},
+  {path : "destination/profile/:id", component: DestinationProfileComponent},
   { path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
   {path: "admin/hotels", component: HotelfromComponent},
   {path: "hotels", component: HotelindexComponent},

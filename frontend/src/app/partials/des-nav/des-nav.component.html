@@ -1,0 +1,58 @@
+<div class="des-nav-wrapper">
+<ul *ngIf="Profile" class="nav nav-tabs">
+    <li  class="nav-item">
+      <a class="nav-link active" aria-current="page">Profile</a>
+    </li>
+    <li  class="nav-item">
+      <a class="nav-link" (click)="attractions()">Attractions</a>
+    </li>
+    <li  class="nav-item">
+      <a class="nav-link" (click)="packages()">Packages</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="hotels()">Hotels</a>
+    </li>
+  </ul>
+  <ul *ngIf="Attractions" class="nav nav-tabs">
+    <li  class="nav-item">
+      <a class="nav-link" (click)="profile()">Profile</a>
+    </li>
+    <li  class="nav-item">
+      <a class="nav-link active" aria-current="page">Attractions</a>
+    </li>
+    <li  class="nav-item">
+      <a class="nav-link" (click)="packages()">Packages</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="hotels()">Hotels</a>
+    </li>
+  </ul>
+  <ul *ngIf="Packages" class="nav nav-tabs">
+    <li  class="nav-item">
+      <a class="nav-link"  (click)="profile()">Profile</a>
+    </li>
+    <li  class="nav-item">
+      <a class="nav-link" (click)="attractions()">Attractions</a>
+    </li>
+    <li  class="nav-item">
+      <a class="nav-link active" aria-current="page">Packages</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="hotels()">Hotels</a>
+    </li>
+  </ul>
+  <ul *ngIf="Hotels" class="nav nav-tabs">
+    <li  class="nav-item">
+      <a class="nav-link"  (click)="profile()">Profile</a>
+    </li>
+    <li  class="nav-item">
+      <a class="nav-link" (click)="attractions()">Attractions</a>
+    </li>
+    <li  class="nav-item">
+      <a class="nav-link" (click)="packages()">Packages</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page">Hotels</a>
+    </li>
+  </ul>
+</div>

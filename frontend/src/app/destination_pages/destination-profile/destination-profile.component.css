@@ -1,0 +1,251 @@
+/* PROFILE PAGE */
+
+body {
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: absolute;
+    top: 50%; /* Center the container vertically */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    width: 60%; /* Adjusted width to 80% of the viewport width */
+    max-width: 100%;
+    min-height: 80vh; /* Adjusted min-height to 60% of the viewport height */
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    flex-direction: column;
+}
+
+
+.container p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+    width: 50%;
+}
+
+.container span {
+    font-size: 12px;
+}
+
+.container a {
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.profile-container {
+    position: relative;
+    flex: 1;
+  }
+  
+  .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: #f5f5f5; /* Set your desired background color */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add box-shadow for a subtle lift effect */
+    overflow: hidden; /* Hide overflowing content */
+  }
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio while covering the entire container */
+  }
+  
+  /* Additional styles for the content inside the card if needed */
+  .card-content {
+    padding: 20px;
+  }
+
+  .card1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  /* Additional styles for the content inside the card if needed */
+  .card-content1 {
+    padding: 20px;
+  }
+
+  .card2{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  /* Additional styles for the content inside the card if needed */
+  .card-content2 {
+    padding: 20px;
+  }
+
+  .photo-container {
+    width: 100%;
+    height: 100vh; /* Adjust as needed */
+    background-image: url('/assets/images/night-4702174_1920.jpg');
+    background-color: #f2f2f2; /* Add your preferred background color */
+    background-size: cover; /* This makes the background image cover the entire container */
+    background-position: center; /* Center the background image */
+}
+
+
+
+
+
+
+/* ATTRACTION PAGE */
+.w3-card {
+  height: 70%; /* Adjust the height as needed */
+  margin-bottom: 20px; /* Add margin to create space between cards */
+  
+}
+
+.w3-third {
+  transition: transform 0.3s ease-in-out;
+  width: 20%; /* Adjust the width as needed */
+  height: 30vh;
+  margin: 1.2%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.w3-third:hover {
+  transform: scale(1.05);
+}
+
+
+.centered-text {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9); /* Adjust shadow as needed */
+}
+
+.centered-text h1 {
+  font-size: 5em; /* Adjust font size as needed */
+  margin: 0;
+}
+
+.attraction-container {
+  position: relative;
+  flex: 1;
+  overflow: auto;
+  max-height: 73vh; /* Set a fixed maximum height */
+}
+
+
+
+
+
+
+
+/* Package Page */
+
+
+.package-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.package-table th, .package-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.package-table th {
+  background-color: #f2f2f2;
+}
+
+.package-table tbody {
+  display: block;
+  max-height: inherit;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.package-table thead,
+.package-table tbody tr {
+  display: table;
+  width: 95%;
+  table-layout: fixed;
+}
+
+.package-table th:first-child,
+.package-table td:first-child {
+  width: 40%; /* Adjust the width of the "Name" column as needed */
+}
+
+.package-table th:nth-child(2),
+.package-table td:nth-child(2) {
+  width: 10%;
+}
+
+.package-table th:nth-child(3),
+.package-table td:nth-child(3) {
+  width: 15%;
+}
+
+.package-table th:nth-child(4),
+.package-table td:nth-child(4) {
+  width: 10%;
+}
+
+.package-table th:nth-child(5),
+.package-table td:nth-child(5) {
+  width: 10%;
+}
+
+.package-table th:nth-child(6),
+.package-table td:nth-child(6) {
+  width: 15%;
+}
+
+/* Reduce font size for smaller columns if necessary */
+.package-table th:not(:first-child),
+.package-table td:not(:first-child) {
+  font-size: 12px;
+}

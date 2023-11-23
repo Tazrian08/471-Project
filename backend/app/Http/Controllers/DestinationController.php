@@ -15,8 +15,25 @@ class DestinationController extends Controller
      */
     public function index()
     {
-        $destinations = Destination::all();
+        $destinations = Destination::with('image')->get();
 
+        return response()->json($destinations);
+    }
+
+
+    public function search($search)
+    {
+        if (!empty($search)) {
+            $destinations = Destination::where('country', 'LIKE', '%' . $search . '%')
+            ->orWhere('city', 'LIKE', '%' . $search . '%')
+            ->with('image')
+            ->get();
+
+        }else{
+
+        $destinations = Destination::with('image')->get();
+        }
+                          
         return response()->json($destinations);
     }
 
@@ -37,7 +54,7 @@ class DestinationController extends Controller
     
         $img = Image::create([
             'destination_id' => $destination->id,
-            'path' => $image
+            'path' => asset('images/' . $image)
         ]);
         return response()->json(['message'=>'Destination created!','destination'=>$destination]);
 
@@ -48,15 +65,17 @@ class DestinationController extends Controller
      */
     public function store(StoreDestinationRequest $request)
     {
-        //
+        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Destination $destination)
+    public function show($destinationID)
     {
-        //
+        $destination= Destination::with('image',"travel_package.airline",'travel_package.departure_flight','travel_package.return_flight','attraction.image','hotel')->find($destinationID);
+
+        return response()->json($destination);
     }
 
     /**
