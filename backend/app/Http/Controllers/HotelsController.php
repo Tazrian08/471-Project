@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Hotels;
 use App\Models\Image;
+use App\Models\Hotels;
+use App\Mail\HotelMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreHotelsRequest;
 use App\Http\Requests\UpdateHotelsRequest;
 
@@ -39,8 +41,11 @@ class HotelsController extends Controller
     
         $img = Image::create([
             'hotel_name' => $hotels->name,
-            'path' => $image
+            'path' => asset('images/' . $image)
         ]);
+
+        Mail::to($request->input('email'))->send(new HotelMail($request->input('name')));
+
         return response()->json(['message'=>'Hotel created!','hotel_name'=>$hotels]);
     }
 
