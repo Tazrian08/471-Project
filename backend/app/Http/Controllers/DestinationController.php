@@ -73,7 +73,7 @@ class DestinationController extends Controller
      */
     public function show($destinationID)
     {
-        $destination= Destination::with('image',"travel_package",'attraction.image','hotel')->find($destinationID);
+        $destination= Destination::with('image',"travel_package.airline",'travel_package.departure_flight','travel_package.return_flight','attraction.image','hotel')->find($destinationID);
 
         return response()->json($destination);
     }

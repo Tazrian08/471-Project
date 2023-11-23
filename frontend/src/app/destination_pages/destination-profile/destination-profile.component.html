@@ -39,8 +39,50 @@
               </div>
 
         </div>
-        <div *ngIf="Packages">packages</div>
-        <div *ngIf="Hotels">Hotels</div>
+        <div *ngIf="Packages" class="attraction-container">
+          <h1 style="text-align: center;">Packages for {{destination.city}}</h1>
+          <table *ngIf="packages && packages.length > 0" class="package-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Airline</th>
+                <th>Start</th>
+                <th>Return</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Use ngFor to loop through your packages and populate the rows -->
+              <ng-container *ngFor="let package of packages">
+                <tr *ngIf="package.amount > 0">
+                  <td>{{ package.name }}</td>
+                  <td>{{ package.price }}</td>
+                  <td>{{ package.airline.name }}</td>
+                  <td>{{ package.departure_flight.departure | slice:0:10 }}</td>
+                  <td>{{ package.return_flight.departure | slice:0:10 }}</td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+          
+
+        </div>
+        <div *ngIf="Hotels">
+        <div class="w3-row-padding w3-margin-top">
+          <h1 style="text-align: center;">Hotels </h1>
+          <div class="w3-third" *ngFor="let hotel of hotels">
+            <div class="w3-container" style="text-align: center;">
+              <h4>{{hotel.name}}</h4>
+            </div>
+            <div class="w3-card" style="position: relative;">
+              <img [src]="hotel.image.path" class="card-image">
+            </div>
+          </div>
+        </div>
+        </div>
     </div>
 </div>
 </body>
+
+                <!-- <td *ngIf="package.amount===0">No</td>
+                <td *ngIf="package.amount>0">Yes</td> -->

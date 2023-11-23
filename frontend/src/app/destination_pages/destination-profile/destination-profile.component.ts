@@ -21,6 +21,8 @@ export class DestinationProfileComponent {
 
   attractions:any
   destination:any
+  packages: any
+  hotels: any
 
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {
@@ -34,7 +36,9 @@ export class DestinationProfileComponent {
         (data: any) => {
           this.destination = data;
           this.attractions=data.attraction
-          console.log(this.attractions)
+          this.packages=data.travel_package
+          this.hotels=data.hotels
+          console.log(this.hotels)
 
         },
         (error) => {
