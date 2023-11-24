@@ -1,0 +1,8 @@
+<div *ngFor="let airline of airlines">
+    <p>name: {{airline.name}}<br>
+       email: {{airline.email}}<br>
+       id: {{airline.id}}</p>
+       <button class="view-details-button" (click)="goToAirlineProfile(airline.id)">View Details</button>
+
+  </div>
+  

@@ -1,0 +1,25 @@
+<!-- flights.component.html -->
+
+<table>
+    <thead>
+      <tr>
+        <th>Destination Name</th>
+        <th>Airlines Name</th>
+        <th>Departure</th>
+        <th>Prices</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flight of flights">
+        <td>{{ flight.destination_name }}</td>
+        <td>{{ flight.airlines_name }}</td>
+        <td>{{ flight.departure }}</td>
+        <td>{{ flight.prices }}</td>
+        <td>
+          <button (click)="goToAirlineFlights(flight.airlines_id)">View Airline Flights</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

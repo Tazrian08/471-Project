@@ -49,14 +49,36 @@ class AirlinesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Airlines $airlines)
+    public function show($id)
     {
-        //
+        $airline = Airlines::find($id);
+        //dd($airline); // Add this line to debug
+        if (!$airline){
+            return response()->json(['error'=>'Airline not found'],404);
+        }
+        $img=Image::where('airline_id', $id)->get();
+
+        if ($img->isEmpty()) {
+            return response()->json(['airline' => $airline, 'image' => null]);
+        }
+        $firstImage = $img->first();
+
+        return response()->json(['airline'=>$airline,'image'=>asset('images/' . $firstImage->path)]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
+    public function show2($id)
+    {
+        $airline = Airlines::find($id);
+        //dd($airline); // Add this line to debug
+        if (!$airline){
+            return response()->json(['error'=>'Airline not found'],404);
+        }
+
+        return response()->json(['airline'=>$airline]);
+    }
     public function edit(Airlines $airlines)
     {
         //

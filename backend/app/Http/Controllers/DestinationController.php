@@ -54,10 +54,16 @@ class DestinationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Destination $destination)
-    {
-        //
+    public function show2($id)
+{
+    $destination = Destination::find($id);
+    if (!$destination){
+        return response()->json(['error' => 'Destination not found'], 404);
     }
+
+    return response()->json(['destination' => $destination]);
+}
+
 
     /**
      * Show the form for editing the specified resource.
