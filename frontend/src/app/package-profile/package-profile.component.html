@@ -4,7 +4,7 @@
       <div class="left">
         <div class="main_image">
         
-          <img src="{{ image }}" class="slide">
+          <img [src]="image.path" class="slide">
         </div>
         <div class="option flex">
           <!-- You may want to replace the onclick functions with Angular event bindings -->
@@ -45,11 +45,11 @@
   <div *ngIf="showDescriptionDropdown" class="description-dropdown-box">
     <p>{{ package.description }}</p> 
   </div>
-  <button class="secondary" (click)="toggleDescriptionDropdown2()">Show Description ▼ </button>
+  <!-- <button class="secondary" (click)="toggleDescriptionDropdown2()">Show Description ▼ </button>
   <div *ngIf="showDescriptionDropdown2" class="description-dropdown-box2">
     <p>{{ package.description }}</p>
     
-  </div>
+  </div> -->
  
 
     

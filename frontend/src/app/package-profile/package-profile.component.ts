@@ -31,6 +31,7 @@ export class PackageProfileComponent implements OnInit {
         (packageData: any) => {
           this.package = packageData['package'];
           this.image=packageData['image']
+          console.log(this.image)
 
         },
         (error) => {

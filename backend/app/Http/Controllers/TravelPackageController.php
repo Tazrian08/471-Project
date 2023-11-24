@@ -71,9 +71,9 @@ class TravelPackageController extends Controller
         if ($img->isEmpty()) {
             return response()->json(['package' => $travelPackage, 'image' => null]);
         }
-        $firstImage = $img->first();
+    
 
-        return response()->json(['package'=>$travelPackage,'image'=>asset('images/' . $firstImage->path)]);
+        return response()->json(['package'=>$travelPackage,'image'=>$img]);
     }
 
     /**

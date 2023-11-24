@@ -33,7 +33,7 @@ export class TravelPackageformComponent {
 
   { 
     
-    this.http.get("http://localhost:8000/api/allairline")
+    this.http.get("http://localhost:8000/api/airline")
   
     .subscribe((resultData: any)=>
     {
