@@ -15,6 +15,7 @@ export class PackageProfileComponent implements OnInit {
   showDescriptionDropdown: boolean = false;
   showDescriptionDropdown2: boolean = false;
   image: any
+  path: any
 
 
 
@@ -29,8 +30,8 @@ export class PackageProfileComponent implements OnInit {
       // Fetch the specific package by ID
       this.http.get(`http://localhost:8000/api/travel-packages/${packageId}`, { withCredentials: true }).subscribe(
         (packageData: any) => {
-          this.package = packageData['package'];
-          this.image=packageData['image']
+          this.package = packageData["package"];
+          this.image=packageData["image"]
           console.log(this.image)
 
         },
