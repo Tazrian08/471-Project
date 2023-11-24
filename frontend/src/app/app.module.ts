@@ -23,6 +23,8 @@ import { HotelindexComponent } from './hotelpages/hotelindex/hotelindex.componen
 import { AirlineindexComponent } from './airline_pages/airlineindex/airlineindex.component';
 import { AirlineProfileComponent } from './airline_pages/airline-profile/airline-profile.component';
 import { FlightsComponent } from './airline_pages/flights/flights.component';
+import { DestinationProfileComponent } from './destination_pages/destination-profile/destination-profile.component';
+import { DesNavComponent } from './partials/des-nav/des-nav.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { FlightsComponent } from './airline_pages/flights/flights.component';
     AirlineindexComponent,
     AirlineProfileComponent,
     FlightsComponent
+    DestinationProfileComponent,
+    DesNavComponent
   ],
   imports: [
     BrowserModule,

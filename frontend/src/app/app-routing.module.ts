@@ -17,6 +17,7 @@ import { HotelindexComponent } from './hotelpages/hotelindex/hotelindex.componen
 import { AirlineindexComponent } from './airline_pages/airlineindex/airlineindex.component';
 import { AirlineProfileComponent } from './airline_pages/airline-profile/airline-profile.component';
 import { FlightsComponent } from './airline_pages/flights/flights.component';
+import { DestinationProfileComponent } from './destination_pages/destination-profile/destination-profile.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
@@ -33,6 +34,8 @@ const routes: Routes = [
   {path: 'package-profile/:id', component: PackageProfileComponent },
   {path : "destination/index", component: DestinationIndexComponent},
   {path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
+  {path : "destination/profile/:id", component: DestinationProfileComponent},
+  { path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
   {path: "admin/hotels", component: HotelfromComponent},
   {path: "hotels", component: HotelindexComponent},
   {path:"airline", component:AirlineindexComponent},

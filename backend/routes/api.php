@@ -42,6 +42,10 @@ Route::post("/travel-package/create",[TravelPackageController::class,"create"]);
 Route::post("/destination/create",[DestinationController::class,"create"]);
 Route::get("/alldestination",[DestinationController::class,"index"]);
 Route::get("/alldestination/{id}", [DestinationController::class,"show2"]);
+Route::get('/destination/search/{search}',[DestinationController::class,"search"]);
+Route::get('/destination/profile/{destinationID}',[DestinationController::class,"show"]);
+
+
 
 //ATTRACTION ROUTES
 Route::post("/attraction/create",[AttractionController::class,"create"]);
