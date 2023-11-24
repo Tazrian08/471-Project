@@ -42,7 +42,7 @@ const routes: Routes = [
   {path:"airline-profile/:id", component: AirlineProfileComponent},
   {path:"flight", component:FlightsComponent},
   {path:"destination/:id", component: DestinationIndexComponent},
-  {path:"airline/:id", component: AirlineindexComponent},
+  // {path:"airline/:id", component: AirlineindexComponent},
 
 ];
 

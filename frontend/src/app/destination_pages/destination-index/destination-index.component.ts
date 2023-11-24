@@ -1,8 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,14 +12,14 @@ import { Router } from '@angular/router';
 export class DestinationIndexComponent implements OnInit{
 
   destinations:any
-  constructor(private route: ActivatedRoute) {}
+  // constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     // Access the 'id' parameter from the route
-    this.route.params.subscribe(params => {
-      const destinationId = params['id'];
-      // Now you can use 'destinationId' in your component logic
-    });
+    // this.route.params.subscribe(params => {
+    //   const destinationId = params['id'];
+    //   // Now you can use 'destinationId' in your component logic
+    // });
   }
 
   search=""

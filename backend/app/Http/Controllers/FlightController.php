@@ -16,16 +16,17 @@ class FlightController extends Controller
     {
 
         $airlineId = $id;
-        $flights=Flight::with('destination')->where('airlines_id', $airlineId)->get();
+        $flights=Flight::with('destination',"airlines")->where('airlines_id', $airlineId)->get();
         return response()->json($flights);
     }
 
 
     public function index()
     {
-        $flight = Flight::all();
+        // $flight = Flight::all();
+        $flights=Flight::with('destination.image',"airlines")->get();
 
-        return response()->json($flight);
+        return response()->json($flights);
     }
 
     /**

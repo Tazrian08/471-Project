@@ -46,7 +46,7 @@ import { DesNavComponent } from './partials/des-nav/des-nav.component';
     HotelindexComponent,
     AirlineindexComponent,
     AirlineProfileComponent,
-    FlightsComponent
+    FlightsComponent,
     DestinationProfileComponent,
     DesNavComponent
   ],

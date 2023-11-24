@@ -9,7 +9,9 @@ import { forkJoin } from 'rxjs';
   styleUrls: ['./flights.component.css']
 })
 export class FlightsComponent implements OnInit {
-  flights: any[] = [];
+
+
+  flights: any
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -17,10 +19,11 @@ export class FlightsComponent implements OnInit {
     this.http.get('http://localhost:8000/api/flight', { withCredentials: true }).subscribe(
       (packages: any) => {
         this.flights = packages;
+        console.log(this.flights)
 
         // Fetch destination names based on destination IDs
-        this.fetchDestinationNames();
-        this.fetchAirlineNames();
+        // this.fetchDestinationNames();
+        // this.fetchAirlineNames();
       },
       (error) => {
         console.error('Error fetching flights:', error);
@@ -34,44 +37,44 @@ export class FlightsComponent implements OnInit {
   }
 
   // Fetch destination names based on destination IDs
-  fetchDestinationNames(): void {
-    const requests = this.flights.map(flight =>
-      this.http.get(`http://localhost:8000/api/alldestination/${flight.destination_id}`)
-    );
+  // fetchDestinationNames(): void {
+  //   const requests = this.flights.map(flight =>
+  //     this.http.get(`http://localhost:8000/api/alldestination/${flight.destination_id}`)
+  //   );
   
-    forkJoin(requests).subscribe(
-      (destinations: any[]) => {
-        destinations.forEach((destination, index) => {
-          // Check if 'destination' contains 'destination' property
-          if (destination.destination) {
-            this.flights[index].destination_name = destination.destination.city;
-          }
-        });
-      },
-      (error) => {
-        console.error('Error fetching destination name:', error);
-      }
-    );
-  }
-  fetchAirlineNames(): void {
-    const requests = this.flights.map(flight =>
-      this.http.get(`http://localhost:8000/api/airline/${flight.airlines_id}`)
-    );
+  //   forkJoin(requests).subscribe(
+  //     (destinations: any[]) => {
+  //       destinations.forEach((destination, index) => {
+  //         // Check if 'destination' contains 'destination' property
+  //         if (destination.destination) {
+  //           this.flights[index].destination_name = destination.destination.city;
+  //         }
+  //       });
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching destination name:', error);
+  //     }
+  //   );
+  // }
+  // fetchAirlineNames(): void {
+  //   const requests = this.flights.map(flight =>
+  //     this.http.get(`http://localhost:8000/api/airline/${flight.airlines_id}`)
+  //   );
   
-    forkJoin(requests).subscribe(
-      (airlines: any[]) => {
-        console.log('API Response:', airlines);
+  //   forkJoin(requests).subscribe(
+  //     (airlines: any[]) => {
+  //       console.log('API Response:', airlines);
     
-        airlines.forEach((airlines, index) => {
-          if (airlines.airlines) {
-            this.flights[index].airline_name = airlines.airlines.name;
-          }
-        });
-      },
-      (error) => {
-        console.error('Error fetching airline names:', error);
-      }
-    );
+  //       airlines.forEach((airlines, index) => {
+  //         if (airlines.airlines) {
+  //           this.flights[index].airline_name = airlines.airlines.name;
+  //         }
+  //       });
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching airline names:', error);
+  //     }
+  //   );
     
-  }
+  // }
 }
