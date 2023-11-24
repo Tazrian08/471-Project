@@ -17,6 +17,7 @@ class AirlinesController extends Controller
     public function index()
     {
         $airlines = Airlines::all();
+        $airline = Airline::with('image')->get();
 
         return response()->json($airlines);
     }
