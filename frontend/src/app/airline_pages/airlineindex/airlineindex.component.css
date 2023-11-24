@@ -50,4 +50,20 @@
     color: #fff !important;
     box-shadow: 2px 2px 2px rgba(29, 28, 28, 0.4);
   }
+
+
+  .view-details-button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+}
+
+.view-details-button:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}
   
