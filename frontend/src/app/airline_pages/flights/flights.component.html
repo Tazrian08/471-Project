@@ -1,25 +1,40 @@
 <!-- flights.component.html -->
+<!DOCTYPE html>
+<html>
+<title>Destination Index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+  <div class="photo-container">
+    <div class="centered-text">
+      <h1>Flights</h1>
+    </div>
+  </div>
 
-<table>
-    <thead>
-      <tr>
-        <th>Destination Name</th>
-        <th>Airlines Name</th>
-        <th>Departure</th>
-        <th>Prices</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let flight of flights">
-        <td>{{ flight.destination.country }}</td>
-        <td>{{ flight.airlines.name }}</td>
-        <td>{{ flight.departure }}</td>
-        <td>{{ flight.prices }}</td>
-        <td>
-          <button (click)="goToAirlineFlights(flight.airlines_id)">View Airline Flights</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Destination Name</th>
+          <th>Airlines Name</th>
+          <th>Departure</th>
+          <th>Prices</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights">
+          <td>{{ flight.destination.country }}</td>
+          <td>{{ flight.airlines.name }}</td>
+          <td>{{ flight.departure }}</td>
+          <td>{{ flight.prices }}</td>
+          <td>
+            <button (click)="goToAirlineFlights(flight.airlines_id)">View Airline Flights</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
+
