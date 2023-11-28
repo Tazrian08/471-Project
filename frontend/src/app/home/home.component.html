@@ -1,46 +1,173 @@
-<div class="container-fluid">
-    <div class="row">
-        <!-- Navigation column (col-md-6 takes half of the page on medium and larger screens) -->
-        <div class="col-md-12">
-            <ul class="nav justify-content-end" style="background-color: #aeb4b8; height: 10vh;">
-                <li class="nav-item">
-                    <a class="nav-link custom-link active" aria-current="page" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link custom-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link custom-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Image column (col-md-6 takes half of the page on medium and larger screens) -->
-        <div class="col-md-12 d-flex align-items-end" style="height: 90vh; position: relative; background-color: white;">
-            <!-- Apply custom styles for the image container -->
-            <div class="image-container position-relative">
-                <!-- Apply custom styles for the image -->
-                <img src="assets/vertical-aerial-shot-sea-waves-hitting-cliff.jpg" class="img-fluid" alt="Your Alt Text">
-
-                <!-- Add logo and text on the image -->
-                <div class="overlay-content position-absolute top-50 start-50 translate-middle text-center text-white">
-                    <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                    <h1 class="mb-0">T.Agency</h1>
-                    <p>Some additional information or description here.</p>
-                </div>
-            </div>
-        </div>
+<div class="photo-container">
+    <div class="heading">
+        <span>Embark on a Journey</span>
+        <h1>Welcome to Wanderlust Travels.</h1>
+        <p>Uncover extraordinary destinations with our curated travel experiences.</p>
     </div>
+  </div>
+<div class="photo-container2">
+    <div class="container flex">
+    <div class="left">
+        <span>Embark on a Journey</span>
+        <h1>Welcome to Wanderlust Travels.</h1>
+        <p>Uncover extraordinary destinations with our curated travel experiences.</p>
+        
+        <div class="option flex">
+        </div>
+      </div>
+    <div class="right">
+        <p>It was the pure Language of the World. It required no explanation, just as the universe needs
+             none as it travels through endless time.</p><br>
+             <p>
+              Because, when you know that language, it's easy to 
+              understand that someone in the world awaits you, whether it's in the middle of the desert or in some great city. 
+              And when two such people encounter each other, and their eyes meet, the past and the future become unimportant. 
+              There is only that moment, and the incredible certainty that everything under the sun has been written by one hand only. 
+              It is the hand that evokes love, and creates a twin soul for every person in the world. Without such love, one's dreams would 
+              have no meaning.” 
+              -Paulo Coelho, The alchemist
+        </p>
+    </div>
+        <div class="color flex">
+          <!-- You may want to dynamically generate these spans based on data -->
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 </div>
-
-<nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-            Bootstrap
-        </a>
     </div>
-</nav>
+    <div class="photo-container3">
+        <div class="container2">
+          <div class="semi-transparent-box">
+            <span class="step">Step 1</span>
+            <h1>Select your travel package or make your own.</h1>
+          </div>
+          <div class="semi-transparent-box">
+            <span class="step">Step 2</span>
+            <h1>Book your destination.</h1>
+          </div>
+          <div class="semi-transparent-box">
+            <span class="step">Step 3</span>
+            <h1>Confirm payment and hotel.</h1>
+          </div>
+          <div class="semi-transparent-box">
+            <span class="step">Step 4</span>
+            <h1>Enjoy your favourite destination.</h1>
+          </div>
+        </div>
+      </div>
+      <div class="photo-container4">
+        <div class="container flex">
+        <div class="left2">
+    
+            <div class="option flex">
+            </div>
+          </div>
+        <div class="right">
+            <h1>Why us?</h1>
+            <p> Embark on unparalleled adventures with our travel agency. Discover curated experiences, personalized service, and a commitment to crafting unforgettable memories. Explore the world with confidence and let us be your gateway to extraordinary destinations and experiences.</p>
+        <div class = "button-container">
+            <button class="hidden" id="register" [routerLink]="['/register']">Register</button>
+            <button class="hidden" id="register" [routerLink]="['/login']">Login</button>
+
+        </div>
+        </div>
+            <div class="color flex">
+              <!-- You may want to dynamically generate these spans based on data -->
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+    </div>
+        </div>
+        <div class="photo-container5">
+            <!-- <span style="text-align: center;">Don't Know Where to Go? </span> -->
+                <h1 style="text-align: center;">Visit Our Destinations</h1>
+            <div class="container3">
+              <div class="semi-transparent-box2">
+              </div>
+              <div class="semi-transparent-box3">               
+              </div>
+            </div>
+            <div class="container3">
+                <div class="semi-transparent-box4">                 
+                </div>
+                <div class="semi-transparent-box5">
+                </div>
+              </div>
+        </div>    
+        <div class="photo-container6">
+            <div class="container flex">
+            <div class="right">
+                <h1>Looking for hotels?</h1>
+                <p> We got you covered</p>
+                <button class="hidden" id="register" [routerLink]="['/register']">View Hotels</button>
+
+                <div class="option flex">
+                </div>
+              </div>
+            <div class="left3">
+                
+            </div>
+                <div class="color flex">
+                  <!-- You may want to dynamically generate these spans based on data -->
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+        </div>
+            </div>
+            <div class="photo-container7">
+                <div class="container2">
+                  <div class="semi-transparent-box">
+                    <span class="step">Book your trip now!</span>
+                    <h1>Get amazing deals.</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="photo-container8">
+                <div class="container flex">
+                <div class="left4">
+                    
+                    <div class="option flex">
+                    </div>
+                  </div>
+                <div class="right">
+                    <h1>Never miss a flight</h1>
+                    <p> See flight schedules now!</p>
+                    <button class="hidden" id="register" [routerLink]="['/register']">View Flight Schedules</button>
+
+                </div>
+                    <div class="color flex">
+                      <!-- You may want to dynamically generate these spans based on data -->
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+            </div>
+                </div>
+                <div class='footer'>
+                    <div class="contact-info">
+                        <h2>Contact Us</h2>
+                        <p>Email: info@wanderlusttravels.com</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                        <p>Address: 123 Travel Street, Cityville, Country</p>
+                    </div>
+                </div>
+                
