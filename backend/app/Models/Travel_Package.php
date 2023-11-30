@@ -65,4 +65,10 @@ class Travel_Package extends Model
         return $this->belongsTo(Flight::class, 'return_flight_id');
         
     }
+
+
+    public function cart(){
+        return $this->hasMany(Cart::class);
+        
+    }
 }

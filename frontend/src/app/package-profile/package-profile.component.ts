@@ -31,7 +31,7 @@ export class PackageProfileComponent implements OnInit {
       this.http.get(`http://localhost:8000/api/travel-packages/${packageId}`, { withCredentials: true }).subscribe(
         (packageData: any) => {
           this.package = packageData["package"];
-          this.image=packageData["image"]
+          this.image=packageData["image"][0]
           console.log(this.image)
 
         },
