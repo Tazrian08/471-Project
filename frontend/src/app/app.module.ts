@@ -17,6 +17,14 @@ import { NavbarComponent } from './partials/navbar/navbar.component';
 import { PackageProfileComponent } from './package-profile/package-profile.component';
 import { TravelPackageformComponent } from './adminpages/travel-packageform/travel-packageform.component';
 import { AttractionformComponent } from './adminpages/attractionform/attractionform.component';
+import { DestinationIndexComponent } from './destination_pages/destination-index/destination-index.component';
+import { HotelfromComponent } from './hotelpages/hotelfrom/hotelfrom.component';
+import { HotelindexComponent } from './hotelpages/hotelindex/hotelindex.component';
+import { AirlineindexComponent } from './airline_pages/airlineindex/airlineindex.component';
+import { AirlineProfileComponent } from './airline_pages/airline-profile/airline-profile.component';
+import { FlightsComponent } from './airline_pages/flights/flights.component';
+import { DestinationProfileComponent } from './destination_pages/destination-profile/destination-profile.component';
+import { DesNavComponent } from './partials/des-nav/des-nav.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +40,15 @@ import { AttractionformComponent } from './adminpages/attractionform/attractionf
     NavbarComponent,
     PackageProfileComponent,
     TravelPackageformComponent,
-    AttractionformComponent
+    AttractionformComponent,
+    DestinationIndexComponent,
+    HotelfromComponent,
+    HotelindexComponent,
+    AirlineindexComponent,
+    AirlineProfileComponent,
+    FlightsComponent,
+    DestinationProfileComponent,
+    DesNavComponent
   ],
   imports: [
     BrowserModule,

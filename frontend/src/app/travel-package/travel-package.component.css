@@ -10,9 +10,58 @@
 }
 /* src/app/components/travel-packages/travel-packages.component.css */
 
-.button-container {
-    margin-top: 20px; /* Adjust as needed */
-    margin-left: 20px;
+/* src/app/components/travel-packages/travel-packages.component.css */
+
+.heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.heading span {
+    color: blue; /* Assuming $blue is a variable you have defined */
+    font-size: 2rem;
+}
+
+.heading h1 {
+    color: black; /* Assuming $black is a variable you have defined */
+    font-size: 4rem;
+    margin-top: 0.5rem;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(25rem, 1fr));
+    gap: 2rem; /* Adjust the gap between boxes */
+    justify-content: center;
+    max-width: 900px; /* Optional: Add a max-width to limit the container width */
+    margin: 0 auto;  /* Optional: Center the container */
+}
+
+.box {
+    width: 100%;
+    max-width: calc(25% - 20px); /* Adjust as needed for spacing */
+    transition: transform 0.3s ease-in-out; /* Added transition property for hover effect */
+    overflow: hidden;
+}
+
+.box:hover {
+    transform: scale(1.05); /* Scale the container on hover */
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block; /* Make sure the image behaves as a block element */
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+}
+
+.content {
+    padding: 15px;
+    background-color: #fff; /* Add a background color to the content for better visibility */
 }
 
 .view-details-button {
@@ -29,23 +78,3 @@
 .view-details-button:hover {
     background-color: #45a049; /* Darker green color on hover */
 }
-
-
-.travel-packages-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Adjust as needed for spacing */
-    border-radius: 30px;
-}
-
-.package-item {
-    width: calc(33.33% - 20px); /* Adjust as needed for spacing */
-    margin: 20px; /* Adjust as needed for spacing */
-    margin-left: 100px;
-    box-sizing: border-box;
-    border: 1px solid #ddd; /* Add a border for separation, adjust as needed */
-    padding: 10px; /* Add padding for better visual appeal, adjust as needed */
-    border-radius: 30px;
-}
-
-/* Add styling for individual package items if needed */

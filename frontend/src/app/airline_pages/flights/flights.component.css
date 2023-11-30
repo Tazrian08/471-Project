@@ -1,0 +1,69 @@
+.photo-container {
+    width: 100%;
+    height: 55vh; /* Adjust as needed */
+    background-image: url('/assets/images/airport-aircraft-airplane-aviation-transportation-travel.jpg');
+    background-color: #f2f2f2; /* Add your preferred background color */
+    background-size: cover; /* This makes the background image cover the entire container */
+    background-position: center; /* Center the background image */
+    position: relative;
+  }
+
+  .centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9); /* Adjust shadow as needed */
+  }
+
+  .centered-text h1 {
+    font-size: 5em; /* Adjust font size as needed */
+    margin: 0;
+  }
+
+  .container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #4b0c1d;
+    color: #ffffff;
+  }
+
+  tr:nth-child(even) {
+    background-color: #e1c2b7;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+
+  button {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #218838;
+  }

@@ -14,11 +14,16 @@ class Hotels extends Model
         'email',
         'prices',
         'destination_id',
+        'phone_no',
 
     ];
 
     public function destination(){
         return $this->belongsTo(Destination::class);
+        
+    }
+    public function image(){
+        return $this->hasOne(Image::class);
         
     }
 }

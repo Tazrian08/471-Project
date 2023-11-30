@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Destination;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreDestinationRequest;
@@ -14,8 +15,25 @@ class DestinationController extends Controller
      */
     public function index()
     {
-        $destinations = Destination::all();
+        $destinations = Destination::with('image')->get();
 
+        return response()->json($destinations);
+    }
+
+
+    public function search($search)
+    {
+        if (!empty($search)) {
+            $destinations = Destination::where('country', 'LIKE', '%' . $search . '%')
+            ->orWhere('city', 'LIKE', '%' . $search . '%')
+            ->with('image')
+            ->get();
+
+        }else{
+
+        $destinations = Destination::with('image')->get();
+        }
+                          
         return response()->json($destinations);
     }
 
@@ -28,6 +46,15 @@ class DestinationController extends Controller
             'country' => $request->input('country'),
             'city' => $request->input('city'),
             'description' =>$request->input('description')
+        ]);
+
+        $image = time() . '-' . $request->country . '.' . $request->file('image')->extension();
+
+        $request->file('image')->move(public_path('images'), $image);
+    
+        $img = Image::create([
+            'destination_id' => $destination->id,
+            'path' => asset('images/' . $image)
         ]);
         return response()->json(['message'=>'Destination created!','destination'=>$destination]);
 
@@ -44,10 +71,23 @@ class DestinationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Destination $destination)
+    public function show2($id)
+{
+    $destination = Destination::find($id);
+    if (!$destination){
+        return response()->json(['error' => 'Destination not found'], 404);
+
+    }}
+
+    public function show($destinationID)
     {
-        //
+        $destination= Destination::with('image',"travel_package.airline",'travel_package.departure_flight','travel_package.return_flight','attraction.image','hotel.image')->find($destinationID);
+
+        return response()->json($destination);
     }
+
+
+
 
     /**
      * Show the form for editing the specified resource.

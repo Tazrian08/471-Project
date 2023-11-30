@@ -35,16 +35,17 @@ class TravelPackageController extends Controller
             'return_flight_id' =>$request->input('return')
 
         ]);
-        $image = time() . '-' . $request->name . '.' . $request->file('image')->extension();
+        $image =time() . '-' . $request->name . '.' . $request->file('image')->extension();
 
         $request->file('image')->move(public_path('images'), $image);
     
         $img = Image::create([
             'travel_package_id' => $package->id,
-            'path' => $image
+            'path' =>asset('images/' . $image)
         ]);
 
-        return response()->json(['message'=>'Package created! ','package'=>$package,'image'=>asset('images/' . $img->path)]);
+        // return response()->json(['message'=>'Package created! ','package'=>$package,'image'=>asset('images/' . $img->path)]);
+        return response()->json(['message'=>'Package created! ','package'=>$package,'image'=>$img->path]);
 
     }
 
@@ -65,7 +66,14 @@ class TravelPackageController extends Controller
         if (!$travelPackage){
             return response()->json(['error'=>'Travel package not found'],404);
         }
-        return response()->json($travelPackage);
+        $img=Image::where('travel_package_id', $id)->get();
+
+        if ($img->isEmpty()) {
+            return response()->json(['package' => $travelPackage, 'image' => null]);
+        }
+    
+
+        return response()->json(['package'=>$travelPackage,'image'=>$img]);
     }
 
     /**

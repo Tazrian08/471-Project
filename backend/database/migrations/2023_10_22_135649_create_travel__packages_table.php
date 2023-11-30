@@ -57,6 +57,7 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
                 $table->boolean("custom_status")->default(0);
+            $table->unsignedBigInteger("amount")->default(70);
 
             $table->timestamps();
         });

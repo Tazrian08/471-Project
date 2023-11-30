@@ -1,10 +1,10 @@
 <x-mail::message>
-# Introduction
+{{$hotelName}},<br>
+Welcome to our Family. Here's to a long and prosperous journey
 
-The body of your message.
 
-<x-mail::button :url="''">
-Button Text
+<x-mail::button :url="'http://localhost:4200/login'">
+Visit Agency
 </x-mail::button>
 
 Thanks,<br>

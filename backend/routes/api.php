@@ -10,6 +10,7 @@ use App\Http\Controllers\AirlinesController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\TravelPackageController;
+use App\Http\Controllers\HotelsController;
 
 
 /*
@@ -40,18 +41,27 @@ Route::post("/travel-package/create",[TravelPackageController::class,"create"]);
 //DESTINATION ROUTES
 Route::post("/destination/create",[DestinationController::class,"create"]);
 Route::get("/alldestination",[DestinationController::class,"index"]);
+Route::get("/alldestination/{id}", [DestinationController::class,"show2"]);
+Route::get('/destination/search/{search}',[DestinationController::class,"search"]);
+Route::get('/destination/profile/{destinationID}',[DestinationController::class,"show"]);
+
+
 
 //ATTRACTION ROUTES
 Route::post("/attraction/create",[AttractionController::class,"create"]);
 
-
+//HOTEL ROUTES
+Route::post("/hotels/create", [HotelsController::class,"create"]);
+Route::get("/hotels", [HotelsController::class, "index"]);
 
 //AIRLINE ROUTES
 Route::post("/airline/create",[AirlinesController::class,"create"]);
-Route::get("/allairline",[AirlinesController::class,"index"]);
+Route::get("/airline",[AirlinesController::class,"index"]);
+Route::get("/airline/{id}", [AirlinesController::class,"show2"]);
 
 
 //FLIGHT ROUTES
+Route::get("flight", [FlightController::class,"index"]);
 Route::get('/flightselector/{airlineId}',[FlightController::class,"select"]);
 
 //PAYMENT ROUTES

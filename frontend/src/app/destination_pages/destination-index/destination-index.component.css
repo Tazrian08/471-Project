@@ -1,0 +1,52 @@
+.w3-card {
+  height: 500px; /* Adjust the height as needed */
+  margin-bottom: 20px; /* Add margin to create space between cards */
+}
+
+.w3-third {
+  transition: transform 0.3s ease-in-out;
+  width: 30%; /* Adjust the width as needed */
+  margin: 1.2%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.w3-third:hover {
+  transform: scale(1.05);
+}
+
+.photo-container {
+  width: 100%;
+  height: 55vh; /* Adjust as needed */
+  background-image: url('/assets/images/mountains.jpg');
+  background-color: #f2f2f2; /* Add your preferred background color */
+  background-size: cover; /* This makes the background image cover the entire container */
+  background-position: center; /* Center the background image */
+}
+
+.centered-text {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9); /* Adjust shadow as needed */
+}
+
+.centered-text h1 {
+  font-size: 5em; /* Adjust font size as needed */
+  margin: 0;
+}
+.transparent-search-bar {
+  background: rgba(192, 188, 188, 0.5) !important; /* Adjust the alpha value to make it less transparent */
+  /* background: transparent !important; */
+  border: 1px solid #fff !important;
+  color: #ffffffc0 !important;
+  box-shadow: 2px 2px 2px rgba(26, 25, 25, 0.4);
+}
+.transparent-search-button {
+  background: rgba(192, 188, 188, 0.5) !important; /* Adjust the alpha value to make it less transparent */
+  /* background: transparent !important; */
+  border: 1px solid #fff !important;
+  color: #fff !important;
+  box-shadow: 2px 2px 2px rgba(29, 28, 28, 0.4);
+}
