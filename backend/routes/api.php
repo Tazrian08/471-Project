@@ -58,6 +58,8 @@ Route::get("/hotels", [HotelsController::class, "index"]);
 Route::post("/airline/create",[AirlinesController::class,"create"]);
 Route::get("/airline",[AirlinesController::class,"index"]);
 Route::get("/airline/{id}", [AirlinesController::class,"show2"]);
+Route::put("/airline/edit", [AirlinesController::class,"update"]);
+
 
 
 //FLIGHT ROUTES

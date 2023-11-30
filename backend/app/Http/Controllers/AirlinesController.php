@@ -88,9 +88,20 @@ class AirlinesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAirlinesRequest $request, Airlines $airlines)
+    public function update(Request $request)
+
     {
-        //
+        $airline=Airlines::find( $request->input('id'));
+        $airline->update([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+
+            
+        ]);
+
+    
+        return response()->json(['airline'=>$airline]); 
+        
     }
 
     /**
