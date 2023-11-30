@@ -27,6 +27,7 @@ import { DestinationProfileComponent } from './destination_pages/destination-pro
 import { DesNavComponent } from './partials/des-nav/des-nav.component';
 import { DesEditComponent } from './adminpages/editpages/des-edit/des-edit.component';
 import { AirlineEditComponent } from './adminpages/editpages/airline-edit/airline-edit.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { AirlineEditComponent } from './adminpages/editpages/airline-edit/airlin
     DestinationProfileComponent,
     DesNavComponent,
     DesEditComponent,
-    AirlineEditComponent
+    AirlineEditComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

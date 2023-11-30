@@ -30,6 +30,7 @@ class TravelPackageController extends Controller
             'description' => $request->input('description'),
             'price' =>$request->input('price'),
             'airline_id' =>$request->input('airline_id'),
+            'hotel_id' =>$request->input('hotel_id'),
             'destination_id' =>$request->input('destination_id'),
             'departure_flight_id' =>$request->input('departure'),
             'return_flight_id' =>$request->input('return')
@@ -62,7 +63,8 @@ class TravelPackageController extends Controller
      */
     public function show($id)
     {
-        $travelPackage = Travel_Package::find($id);
+        // $travelPackage = Travel_Package::find($id);
+        $travelPackage=Travel_Package::with('destination', 'airline', 'departure_flight','return_flight','hotel')->find($id);
         if (!$travelPackage){
             return response()->json(['error'=>'Travel package not found'],404);
         }

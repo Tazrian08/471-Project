@@ -19,6 +19,7 @@ import { AirlineProfileComponent } from './airline_pages/airline-profile/airline
 import { FlightsComponent } from './airline_pages/flights/flights.component';
 import { DestinationProfileComponent } from './destination_pages/destination-profile/destination-profile.component';
 import { AirlineEditComponent } from './adminpages/editpages/airline-edit/airline-edit.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path:"flight", component:FlightsComponent},
   {path:"destination/:id", component: DestinationIndexComponent},
   {path: "admin/edit/airline/:id", component: AirlineEditComponent},
+  {path: "cart", component: CartComponent},
   // {path:"airline/:id", component: AirlineindexComponent},
 
 ];

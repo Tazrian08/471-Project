@@ -26,4 +26,10 @@ class Hotels extends Model
         return $this->hasOne(Image::class);
         
     }
+
+    public function travel_package(){
+        return $this->hasOne(Travel_Package::class);
+        
+    }
+
 }

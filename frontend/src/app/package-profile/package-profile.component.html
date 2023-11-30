@@ -1,56 +1,72 @@
 
-  <section>
-    <div class="container flex">
-      <div class="left">
-        <div class="main_image">
-        
-          <img [src]="image.path" class="slide">
-        </div>
-        <div class="option flex">
-          <!-- You may want to replace the onclick functions with Angular event bindings -->
-          <!-- <img src="image/p1.jpg" (click)="img('image/p1.jpg')">
-          <img src="image/p2.jpg" (click)="img('image/p2.jpg')">
-          <img src="image/p3.jpg" (click)="img('image/p3.jpg')">
-          <img src="image/p4.jpg" (click)="img('image/p4.jpg')">
-          <img src="image/p5.jpg" (click)="img('image/p5.jpg')">
-          <img src="image/p6.jpg" (click)="img('image/p6.jpg')"> -->
-        </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Total Number of Tourists</h1>
       </div>
-      <div class="right">
-        <h3>{{ package?.name }}</h3>
-        <h4> <small>$</small>{{ package?.price }}</h4>
-        <p>{{ package?.description }}</p>
-        
-        <div class="color flex1">
-          <!-- You may want to dynamically generate these spans based on data -->
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <button>Book a Trip</button>
-        
-
-  
+      <div class="modal-body">
+        <input type="number" id="quantityInput" [(ngModel)]="quantity" name="quantity" min="1" required class="col-12">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary modal-close-btn" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary modal-add-to-cart-btn" data-bs-dismiss="modal" (click)="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+  </div>
 </div>
-      
-  </div>
-  </section>
-  
 
-  <!-- <button class="secondary" (click)="toggleDescriptionDropdown()">Show Description ▼</button>
-  <div *ngIf="showDescriptionDropdown" class="description-dropdown-box">
-    <p>{{ package.description }}</p> 
-  </div> -->
-  <button class="secondary" (click)="toggleDescriptionDropdown2()">Show Description ▼ </button>
-  <div *ngIf="showDescriptionDropdown2" class="description-dropdown-box2">
-    <p>{{ package.description }}</p>
-    
-  </div>
- 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div>
+  <app-navbar></app-navbar>
+<body>
+
+    <div class="photo-container">
+    <img src="" alt="">
+    <div class="container" style="overflow: auto;">
+        <div class="profile-container">
+            <div class="card">
+                <div class="card-content">
+                  <img [src]="image.path" alt="" class="card-image">
+                </div>
+            </div>
+            <div class="card1">
+                <div class="card-content1"> 
+                <h1>Package Profile:</h1>
+                <h2>Name: {{package.name}}</h2>
+                <h2>Price: {{package.price}}</h2>
+                <button *ngIf="auth" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Add to Cart
+                </button>
+                
+                <button *ngIf="!auth" class="btn btn-primary" type="button" routerLink="/login">Login in to book</button>
+                </div>
+            </div>
+            <div class="card2">
+                <h2>Description:</h2>
+                <div class="card-content2"> 
+                    <h4>{{package.description}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-box">
+      <button class="secondary" (click)="toggleDescriptionDropdown()">Show Details ▼</button>
+      <div *ngIf="showDescriptionDropdown" class="description-dropdown-box">
+        <h3>Destination: {{package.destination.country}}, {{package.destination.city}}</h3>
+        <h3>Airline: {{package.airline.name}}</h3>
+        <h3>Hotel: {{package.hotel.name}}</h3>
+        <h3>Departure time: {{package.departure_flight.departure}}</h3>
+        <h3>Return Time: {{package.return_flight.departure}}</h3>
+        <h3> Duration of Package: {{duration}}</h3> 
+        <h3>Price: {{package.price}}</h3>
+        <small>*Rates are for single person. For each aditional person, the price goes up by 200 USD</small>
+      </div>
+    </div>
+    </div>
+</body>
+</div>
+
 
     
 

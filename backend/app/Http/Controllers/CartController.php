@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreCartRequest;
 use App\Http\Requests\UpdateCartRequest;
 
@@ -11,9 +13,23 @@ class CartController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function add(Request $request)
+    {
+        $cart=Cart::create([
+            'user_id' => Auth::user()->id,
+            'travel_package_id' => $request->input('package_id'),
+            'amount' =>$request->input('amount'),
+
+        ]);
+
+        return response()->json($cart);
+    }
+
     public function index()
     {
-        //
+        $cart=Cart::where('user_id',Auth::user()->id)->get();
+
+        return response()->json($cart);
     }
 
     /**

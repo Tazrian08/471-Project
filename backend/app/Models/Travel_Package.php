@@ -17,6 +17,7 @@ class Travel_Package extends Model
         'airline_id',
         'destination_id',
         'departure_flight_id',
+        'hotel_id',
         "return_flight_id",
 
 
@@ -69,6 +70,10 @@ class Travel_Package extends Model
 
     public function cart(){
         return $this->hasMany(Cart::class);
+        
+    }
+    public function hotel(){
+        return $this->belongsTo(Hotels::class);
         
     }
 }
