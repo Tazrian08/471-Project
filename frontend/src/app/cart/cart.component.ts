@@ -12,12 +12,15 @@ export class CartComponent {
 
   auth:boolean=false
   admin:boolean=false
-  packages:any
+  items:any
+  user:any
+  currentDate: any;
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {
 
     this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
       (res: any) => {
+        this.user=res
         if (res.admin_access==1){
           Emitters.adminEmitter.emit(true);
         }
@@ -38,13 +41,21 @@ export class CartComponent {
     this.http.get('http://localhost:8000/api/cart/index', {withCredentials: true}).subscribe(
       (res: any) => {
         console.log(res)
-        this.packages=res
+        this.items=res
       }
     );
     
 
   }
+  ngOnInit() {
+    this.getCurrentDate();
+  }
 
-
-
+  getCurrentDate() {
+    this.currentDate = new Date();
+  }
 }
+
+
+
+

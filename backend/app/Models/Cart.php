@@ -21,7 +21,7 @@ class Cart extends Model
         
     }
 
-    public function atravel_package(){
+    public function travel_package(){
         return $this->belongsTo(Travel_Package::class);
         
     }
