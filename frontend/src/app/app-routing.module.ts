@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: "register", component: RegisterComponent},
   {path: "login", component: LoginComponent},
   {path: "temp", component: TempComponent},
-  {path: "", component: HomeComponent },
+  {path: "home", component: HomeComponent },
   {path: "profile", component: ProfileComponent},
   {path : "travel-packages", component: TravelPackageComponent},
   {path : "admin/destination", component: DestinationformComponent},

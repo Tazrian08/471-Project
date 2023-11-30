@@ -1,6 +1,304 @@
-/* Define a custom class for the link */
-.custom-link {
-    color: rgba(40, 38, 38, 0.276); /* Set the text color to white */
-    font-family: 'YourFontName', sans-serif; /* Change 'YourFontName' to the desired font family */
- }
- 
+@font-face {
+    font-family: 'Alta';
+    src: url('/assets/fonts/Alta-Regular.ttf') format('truetype'); /* Adjust the path as needed */
+    /* You can add additional font formats (e.g., woff, woff2) for better browser compatibility */
+}
+
+.photo-container, .photo-container2 {
+    font: Montserrat, sans-serif;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.heading span {
+    color: white;
+    font-size: 2rem;
+}
+
+.heading h1 {
+    color: white;
+    font-size: 4rem;
+    margin-top: 0.5rem;
+}
+
+.photo-container{
+    width: 100%;
+    height: 110vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url('/assets/images/antibes-town-surrounded-by-french-riveria-during-evening-france.jpg');
+    background-color: #f2f2f2;
+}
+
+.photo-container2 {
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px; /* Specify the unit (e.g., px) for padding */
+    text-decoration-color: #f2f2f2;
+    background-color: black;
+}
+.photo-container3 {
+    background-image: url('/assets/images/vertical-shot-foamy-waves-water-sea.jpg');
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px; /* Specify the unit (e.g., px) for padding */
+    background-color: black;
+}
+.photo-container4{
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px; /* Specify the unit (e.g., px) for padding */
+    color: black;
+    background-color: #001c23;
+}
+.photo-container5 {
+    width: 100%;
+    height: 240vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px; /* Specify the unit (e.g., px) for padding */
+    background-color: #f2f2f2;
+
+}
+.photo-container6{
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px; /* Specify the unit (e.g., px) for padding */
+    background-color: #001c23;
+}
+.photo-container7{
+    background-image: url('/assets/images/lady-holds-straw-hat-woman-beige-dress-with-bag-goes-down-sea.jpg');
+    width: 100%;
+    height: 95vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px; /* Specify the unit (e.g., px) for padding */
+    background-color: black;
+    align-items: left;
+}
+.photo-container8{
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px; /* Specify the unit (e.g., px) for padding */
+    background-color: #0a0e23;}
+
+.left,
+  .right {
+color: #f2f2f2;    
+width: 50%;
+    padding: 30px;
+  }
+  .left2 {
+    background-image: url('/assets/images/beautiful-woman.jpg');
+    background-size: cover; /* Set background size to auto */
+    color: black;    
+    width: 100vh;
+    height: 90%;
+    padding: 30px;
+
+}
+.left3 {
+    background-image: url('/assets/images/modern-tokyo-street-background.jpg');
+    background-size: cover; /* Set background size to auto */
+    color: black;    
+    width: 100vh;
+    height: 90%;
+    padding: 30px;
+
+}
+.left4 {
+    background-image: url('/assets/images/window-airplane-with-view-wing-blue-sky.jpg');
+    background-size: cover; /* Set background size to auto */
+    color: black;    
+    width: 100vh;
+    height: 90%;
+    padding: 30px;
+
+}
+
+  
+  .flex {
+    padding-top: -15px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .flex1 {
+    display: flex;
+  }
+  
+  .container {
+    max-width: 75%;
+    margin: auto;
+    height: 80vh;
+    margin-top: 10px;
+    display: flex;
+  }
+  /* Center text in horizontal boxes */
+.container2 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 42px;
+  }
+  
+  /* Style for each semi-transparent box */
+  .semi-transparent-box {
+    width: 25%; /* Adjust as needed */
+    height: 50vh; /* Adjust as needed */
+    background-color: rgba(254, 251, 251, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    justify-content: center;
+    margin-right: 10px;
+  }
+  
+  /* Style for "Step" spans */
+  .step {
+    font-size: 1.5rem; /* Adjust as needed for smaller text */
+  }
+  
+  /* Style for "h1" elements */
+  .semi-transparent-box h1 {
+    font-size: 2rem; /* Adjust as needed for larger text */
+    text-align: center;
+    margin: 0; /* Remove default margin */
+  }
+  .container3 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 42px;
+  }
+  
+  /* Style for each semi-transparent box */
+  .semi-transparent-box2 {
+    background-image: url('/assets/images/back-view-cute-teenager-woman-wearing-white-dress-walking-amazing-pink-lake.jpg');
+    width: 50%; /* Adjust as needed */
+    height: 100vh; /* Adjust as needed */
+    background-color: rgba(254, 251, 251, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    justify-content: center;
+    margin-right: 10px;
+    background-size: cover;
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+  .semi-transparent-box3 {
+    background-image: url('/assets/images/traditional-mediterranean-island-greece-travel.jpg');
+    width: 50%; /* Adjust as needed */
+    height: 100vh; /* Adjust as needed */
+    background-color: rgba(254, 251, 251, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    justify-content: center;
+    margin-right: 10px;
+    background-size: cover;
+    margin-right: 20px;
+    margin-left: 10px;
+
+  }.semi-transparent-box4{
+    background-image: url('/assets/images/modern-tokyo-street-background(1).jpg');
+    width: 50%; /* Adjust as needed */
+    height: 100vh; /* Adjust as needed */
+    background-color: rgba(254, 251, 251, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    justify-content: center;
+    margin-right: 10px;
+    background-size: cover;
+    margin-left: 20px;
+    margin-right: 10px;
+
+  }.semi-transparent-box5 {
+    background-image: url('/assets/images/interior-zenana-mahal-city-palace-udaipur-rajasthan.jpg');
+    width: 50%; /* Adjust as needed */
+    height: 100vh; /* Adjust as needed */
+    background-color: rgba(254, 251, 251, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    justify-content: center;
+    margin-right: 10px;
+    background-size: cover;
+    margin-right:  20px;
+    margin-left: 10px;
+  }
+  .photo-container5 span {
+    font-size: 2rem;
+    
+}
+
+.photo-container5 h1 {
+    font-size: 4rem;
+    margin-top: 0.5rem;
+}
+.photo-container6 button.hidden{
+    background-color: transparent;
+    border: 2px solid #fff; /* White border */
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 1rem; /* Adjust font size as needed */
+    cursor: pointer; 
+}
+.photo-container6 button.hidden:hover {
+    background-color: #fff; /* White background on hover */
+    color: #000; /* Change text color on hover if needed */
+}
+.photo-container8 button.hidden{
+    background-color: transparent;
+    border: 2px solid #fff; /* White border */
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 1rem; /* Adjust font size as needed */
+    cursor: pointer; 
+}
+.photo-container8 button.hidden:hover {
+    background-color: #fff; /* White background on hover */
+    color: #000; /* Change text color on hover if needed */
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.button-container{
+    display: flex;
+}
+.button-container button.hidden{
+    background-color: transparent;
+    border: 2px solid #fff; /* White border */
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 1rem; /* Adjust font size as needed */
+    cursor: pointer; 
+    margin-right: 40px; 
+}
+.button-container button.hidden:hover {
+    background-color: #fff; /* White background on hover */
+    color: #000; /* Change text color on hover if needed */
+}
