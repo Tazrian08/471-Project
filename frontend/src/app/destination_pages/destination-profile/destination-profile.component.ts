@@ -37,8 +37,8 @@ export class DestinationProfileComponent {
           this.destination = data;
           this.attractions=data.attraction
           this.packages=data.travel_package
-          this.hotels=data.hotels
-          console.log(this.hotels)
+          this.hotels=data.hotel
+          console.log(this.destination)
 
         },
         (error) => {

@@ -15,6 +15,16 @@ class HotelsController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+     public function select($id)
+     {
+ 
+         $hotels=Hotels::where('destination_id', $id)->get();
+         return response()->json($hotels);
+     }
+
+
+
     public function index()
     {
         $hotels = Hotels::with('image', 'destination')->get();

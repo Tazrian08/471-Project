@@ -25,5 +25,8 @@ export class AirlineindexComponent implements OnInit{
     goToAirlineProfile(airlineId: any): void {
       this.router.navigate(['/airline-profile', airlineId]);
     }
+    goToAirlineEdit(airlineId: any): void {
+      this.router.navigate(['/admin/edit/airline', airlineId]);
+    }
   }
   
