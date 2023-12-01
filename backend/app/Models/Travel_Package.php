@@ -17,6 +17,7 @@ class Travel_Package extends Model
         'airline_id',
         'destination_id',
         'departure_flight_id',
+        'custom_status',
         'hotel_id',
         "return_flight_id",
 
