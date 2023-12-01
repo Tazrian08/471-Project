@@ -15,7 +15,23 @@ class HotelsController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function getRoomDetails($hotelId)
+    {
+        // Retrieve prices for different types of rooms for the specified hotel
+        $hotel = Hotels::find($hotelId);
 
+        if (!$hotel) {
+            return response()->json(['error' => 'Hotel not found'], 404);
+        }
+
+        $roomPrices = [
+            'classic' => $hotel->classic_price,
+            'deluxe' => $hotel->deluxe_price,
+            'presidential' => $hotel->presidential_price,
+        ];
+
+        return response()->json($roomPrices);
+    }
      public function select($id)
      {
  

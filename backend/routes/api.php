@@ -71,6 +71,11 @@ Route::get('/flightselector/{airlineId}',[FlightController::class,"select"]);
 //PAYMENT ROUTES
 Route::post('paypal/payment', [PaypalController::class, 'payment']);
 
+//TEMP ROUTE FOR CUSTOM
+// Route::get('/custom-package', [TravelPackageController::class, 'custom']);
+Route::post('/custom-package', [TravelPackageController::class, 'customcreate']);
+Route::get('/hotel-room-details/{hotelId}', [HotelController::class, 'getRoomDetails']);
+
 
 //SANCTUM PROTECTED ROUTES
 Route::middleware('auth:sanctum')->group(function () {
@@ -79,5 +84,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/cart', [CartController::class, 'add']);
     Route::get('/cart/index', [CartController::class, 'index']);
     Route::get('/profile', [ProfileController::class, 'profile']);
-
+    
 });
