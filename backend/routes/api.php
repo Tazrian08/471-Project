@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\HotelsController;
 use App\Http\Controllers\PaypalController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AirlinesController;
 use App\Http\Controllers\AttractionController;
@@ -68,8 +70,15 @@ Route::put("/airline/edit", [AirlinesController::class,"update"]);
 Route::get("flight", [FlightController::class,"index"]);
 Route::get('/flightselector/{airlineId}',[FlightController::class,"select"]);
 
-//PAYMENT ROUTES
-Route::post('paypal/payment', [PaypalController::class, 'payment']);
+//BOOKING ROUTES
+Route::post("/booking", [BookingController::class,"create"]);
+
+
+
+
+//CART ROUTES
+Route::delete("/cart/delete/{id}", [CartController::class,"destroy"]);
+Route::post('/cart/index2', [CartController::class, 'index2']);
 
 
 //SANCTUM PROTECTED ROUTES
@@ -79,5 +88,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/cart', [CartController::class, 'add']);
     Route::get('/cart/index', [CartController::class, 'index']);
     Route::get('/profile', [ProfileController::class, 'profile']);
+    //PAYMENT ROUTES
+    Route::post('paypal/payment', [PaypalController::class, 'payment']);
+
 
 });

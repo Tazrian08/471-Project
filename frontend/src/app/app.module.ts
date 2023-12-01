@@ -28,6 +28,7 @@ import { DesNavComponent } from './partials/des-nav/des-nav.component';
 import { DesEditComponent } from './adminpages/editpages/des-edit/des-edit.component';
 import { AirlineEditComponent } from './adminpages/editpages/airline-edit/airline-edit.component';
 import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { CartComponent } from './cart/cart.component';
     DesNavComponent,
     DesEditComponent,
     AirlineEditComponent,
-    CartComponent
+    CartComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

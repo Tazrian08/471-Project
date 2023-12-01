@@ -39,6 +39,13 @@ export class CartComponent {
       }
     );
 
+    
+    
+
+  }
+  ngOnInit() {
+    this.getCurrentDate();
+
     this.http.get('http://localhost:8000/api/cart/index', {withCredentials: true}).subscribe(
       (res: any) => {
         console.log(res)
@@ -53,16 +60,48 @@ export class CartComponent {
 
       }
     );
-    
 
-  }
-  ngOnInit() {
-    this.getCurrentDate();
+
+
   }
 
   getCurrentDate() {
     this.currentDate = new Date();
   }
+
+
+  
+  cart_delete(itemId: any): void {
+
+  
+
+    this.http.delete(`http://localhost:8000/api/cart/delete/${itemId}`, {withCredentials: true}).subscribe(
+      (res: any) => {
+        alert(res)
+        this. ngOnInit()
+      }
+    );
+  }
+
+  payment(){
+    
+   
+    let bodyData = {
+      "price" : this.total, 'items':this.items
+    };
+
+
+    this.http.post("http://localhost:8000/api/paypal/payment",bodyData,{withCredentials: true}).subscribe((resultData: any)=>
+    { 
+      window.location.href=resultData['link']
+    });
+    
+    
+  
+}
+
+
+
 }
 
 
