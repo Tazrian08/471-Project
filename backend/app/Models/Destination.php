@@ -40,5 +40,10 @@ class Destination extends Model
         return $this->hasMany(Flight::class);
         
     }
+    public function image(){
+        return $this->hasOne(Image::class);
+        
+    }
+
 }
 

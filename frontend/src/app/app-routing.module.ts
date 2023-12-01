@@ -14,24 +14,35 @@ import { AttractionformComponent } from './adminpages/attractionform/attractionf
 import { DestinationIndexComponent } from './destination_pages/destination-index/destination-index.component';
 import { HotelfromComponent } from './hotelpages/hotelfrom/hotelfrom.component';
 import { HotelindexComponent } from './hotelpages/hotelindex/hotelindex.component';
+import { AirlineindexComponent } from './airline_pages/airlineindex/airlineindex.component';
+import { AirlineProfileComponent } from './airline_pages/airline-profile/airline-profile.component';
+import { FlightsComponent } from './airline_pages/flights/flights.component';
+import { DestinationProfileComponent } from './destination_pages/destination-profile/destination-profile.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
   {path: "login", component: LoginComponent},
   {path: "temp", component: TempComponent},
-  {path: "", component: HomeComponent },
+  {path: "home", component: HomeComponent },
   {path: "profile", component: ProfileComponent},
   {path : "travel-packages", component: TravelPackageComponent},
   {path : "admin/destination", component: DestinationformComponent},
   {path : "admin/travel-package", component: TravelPackageformComponent},
   {path : "admin/attraction", component: AttractionformComponent},
   {path : "admin/airline", component: AirlineformComponent},
-  { path: 'travel-packages', component: TravelPackageComponent },
-  { path: 'package-profile/:id', component: PackageProfileComponent },
+  {path: 'travel-packages', component: TravelPackageComponent },
+  {path: 'package-profile/:id', component: PackageProfileComponent },
   {path : "destination/index", component: DestinationIndexComponent},
+  {path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
+  {path : "destination/profile/:id", component: DestinationProfileComponent},
   { path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
   {path: "admin/hotels", component: HotelfromComponent},
   {path: "hotels", component: HotelindexComponent},
+  {path:"airline", component:AirlineindexComponent},
+  {path:"airline-profile/:id", component: AirlineProfileComponent},
+  {path:"flight", component:FlightsComponent},
+  {path:"destination/:id", component: DestinationIndexComponent},
+  // {path:"airline/:id", component: AirlineindexComponent},
 
 ];
 

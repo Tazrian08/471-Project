@@ -22,6 +22,15 @@ class Travel_Package extends Model
 
     ];
 
+    public function image(){
+        return $this->hasOne(Image::class);
+        
+    }
+    public function airline(){
+        return $this->belongsTo(Airlines::class);
+        
+    }
+
     public function booking(){
         return $this->hasMany(Booking::class);
         

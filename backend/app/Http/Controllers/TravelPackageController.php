@@ -35,16 +35,17 @@ class TravelPackageController extends Controller
             'return_flight_id' =>$request->input('return')
 
         ]);
-        $image = time() . '-' . $request->name . '.' . $request->file('image')->extension();
+        $image =time() . '-' . $request->name . '.' . $request->file('image')->extension();
 
         $request->file('image')->move(public_path('images'), $image);
     
         $img = Image::create([
             'travel_package_id' => $package->id,
-            'path' => $image
+            'path' =>asset('images/' . $image)
         ]);
 
-        return response()->json(['message'=>'Package created! ','package'=>$package,'image'=>asset('images/' . $img->path)]);
+        // return response()->json(['message'=>'Package created! ','package'=>$package,'image'=>asset('images/' . $img->path)]);
+        return response()->json(['message'=>'Package created! ','package'=>$package,'image'=>$img->path]);
 
     }
 

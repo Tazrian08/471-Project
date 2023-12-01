@@ -17,8 +17,8 @@ class HotelsController extends Controller
      */
     public function index()
     {
-        $hotels = Hotels::all();
-
+        $hotels = Hotels::with('image', 'destination')->get();
+        // $destinations = Destination::with('image')->get();
         return response()->json($hotels);
     }
 
@@ -40,7 +40,7 @@ class HotelsController extends Controller
         $request->file('image')->move(public_path('images'), $image);
     
         $img = Image::create([
-            'hotel_id' => $hotels->id,
+            'hotels_id' => $hotels->id,
             'path' => asset('images/' . $image)
         ]);
 
