@@ -12,7 +12,9 @@ class Hotels extends Model
     protected $fillable = [
         'name',
         'email',
-        'prices',
+        'classic_prices',
+        'deluxe_prices',
+        'presidential_prices',
         'destination_id',
         'phone_no',
 

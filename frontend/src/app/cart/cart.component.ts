@@ -15,6 +15,7 @@ export class CartComponent {
   items:any
   user:any
   currentDate: any;
+  total:any
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {
 
@@ -42,6 +43,14 @@ export class CartComponent {
       (res: any) => {
         console.log(res)
         this.items=res
+
+        const totalPrice = this.items.reduce((total: number, item: any) => {
+          const itemPrice = Number(item.travel_package.price) + (200 * Number(item.amount));
+          return total + itemPrice;
+        }, 0);
+
+        this.total=totalPrice
+
       }
     );
     
