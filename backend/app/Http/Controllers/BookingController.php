@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
-use App\Models\Travel_Package;
 use App\Models\Booking;
+use App\Mail\Book_confirm;
 use Illuminate\Http\Request;
+use App\Models\Travel_Package;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreBookingRequest;
 use App\Http\Requests\UpdateBookingRequest;
 
@@ -43,6 +45,7 @@ class BookingController extends Controller
                 'payment info' => $payment_info, 
                 'status' => $status,
             ]);
+            Mail::to($item->user->email)->send(new Book_confirm());
             $package=Travel_Package::find($item->travel_package->id);
             $package->update(['user_id' => $item->user->id,'amount'=> ($package->amount-$item->amount)]);
 
