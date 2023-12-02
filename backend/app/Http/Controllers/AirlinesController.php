@@ -17,7 +17,7 @@ class AirlinesController extends Controller
     public function index()
     {
         $airlines = Airlines::all();
-        $airline = Airline::with('image')->get();
+        // $airline = Airlines::with('image')->get();
 
         return response()->json($airlines);
     }
@@ -88,9 +88,20 @@ class AirlinesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAirlinesRequest $request, Airlines $airlines)
+    public function update(Request $request)
+
     {
-        //
+        $airline=Airlines::find( $request->input('id'));
+        $airline->update([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+
+            
+        ]);
+
+    
+        return response()->json(['airline'=>$airline]); 
+        
     }
 
     /**

@@ -2,9 +2,9 @@
     width: 100%;
     height: 55vh; /* Adjust as needed */
     background-image: url('/assets/images/airport-aircraft-airplane-aviation-transportation-travel.jpg');
-    background-color: #f2f2f2; 
-    background-size: cover; 
-    background-position: center; 
+    background-color: #f2f2f2; /* Add your preferred background color */
+    background-size: cover; /* This makes the background image cover the entire container */
+    background-position: center; /* Center the background image */
     position: relative;
   }
 

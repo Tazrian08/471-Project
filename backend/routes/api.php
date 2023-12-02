@@ -2,15 +2,16 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FlightController;
+use App\Http\Controllers\HotelsController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AirlinesController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\TravelPackageController;
-use App\Http\Controllers\HotelsController;
 
 
 /*
@@ -53,11 +54,14 @@ Route::post("/attraction/create",[AttractionController::class,"create"]);
 //HOTEL ROUTES
 Route::post("/hotels/create", [HotelsController::class,"create"]);
 Route::get("/hotels", [HotelsController::class, "index"]);
+Route::get('/hotelselector/{destinationID}',[HotelsController::class,"select"]);
 
 //AIRLINE ROUTES
 Route::post("/airline/create",[AirlinesController::class,"create"]);
 Route::get("/airline",[AirlinesController::class,"index"]);
 Route::get("/airline/{id}", [AirlinesController::class,"show2"]);
+Route::put("/airline/edit", [AirlinesController::class,"update"]);
+
 
 
 //FLIGHT ROUTES
@@ -67,11 +71,18 @@ Route::get('/flightselector/{airlineId}',[FlightController::class,"select"]);
 //PAYMENT ROUTES
 Route::post('paypal/payment', [PaypalController::class, 'payment']);
 
+//TEMP ROUTE FOR CUSTOM
+// Route::get('/custom-package', [TravelPackageController::class, 'custom']);
+Route::post('/custom-package', [TravelPackageController::class, 'customcreate']);
+Route::get('/hotel-room-details/{hotelId}', [HotelController::class, 'getRoomDetails']);
+
 
 //SANCTUM PROTECTED ROUTES
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [UserController::class, 'user']);
     Route::post('/logout', [UserController::class, 'logout']);
+    Route::post('/cart', [CartController::class, 'add']);
+    Route::get('/cart/index', [CartController::class, 'index']);
     Route::get('/profile', [ProfileController::class, 'profile']);
-
+    
 });

@@ -3,6 +3,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Emitters } from '../emiters/emitters';
 
 @Component({
   selector: 'app-package-profile',
@@ -15,6 +16,13 @@ export class PackageProfileComponent implements OnInit {
   showDescriptionDropdown: boolean = false;
   showDescriptionDropdown2: boolean = false;
   image: any
+  path: any
+  quantity: any
+  auth: boolean=false
+  admin: boolean =false
+  duration: any
+  
+  
 
 
 
@@ -29,8 +37,22 @@ export class PackageProfileComponent implements OnInit {
       // Fetch the specific package by ID
       this.http.get(`http://localhost:8000/api/travel-packages/${packageId}`, { withCredentials: true }).subscribe(
         (packageData: any) => {
-          this.package = packageData['package'];
-          this.image=packageData['image']
+          this.package = packageData["package"];
+          this.image=packageData["image"][0]
+
+           // Calculate the duration
+           const departureTimestamp = new Date(this.package.departure_flight.departure).getTime();
+           const returnTimestamp = new Date(this.package.return_flight.departure).getTime();
+ 
+           const timeDifference = returnTimestamp - departureTimestamp;
+ 
+           // Calculate days and minutes
+           const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+
+           this.duration = `${days} days`;
+          console.log(this.image)
+          console.log(this.package.hotel.name)
 
         },
         (error) => {
@@ -38,6 +60,31 @@ export class PackageProfileComponent implements OnInit {
         }
       );
     });
+
+
+    this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
+      (res: any) => {
+        console.log(res)
+        if (res.admin_access==1){
+          Emitters.adminEmitter.emit(true);
+        }
+        Emitters.authEmitter.emit(true);
+      }
+    );
+    Emitters.authEmitter.subscribe(
+      (data: any) => {
+        this.auth= data;
+        console.log("This is working1");
+      }
+    );
+    Emitters.adminEmitter.subscribe(
+      (data: any) => {
+        this.admin= data;
+        console.log("This is working2");
+      }
+    );
+
+
   }
 
 
@@ -61,8 +108,16 @@ export class PackageProfileComponent implements OnInit {
 // }
   
 
-  addToBag(): void {
-    // Implement the logic for adding the item to the bag
+  addToCart(): void {
+
+    let data={'package_id':this.package.id, 'amount':this.quantity}
+
+    this.http.post('http://localhost:8000/api/cart',data, {withCredentials: true}).subscribe(
+      (res: any) => {
+        console.log(res)
+        alert("Added to Cart")
+      }
+    );
   }
   toggleDescriptionDropdown(): void {
     this.showDescriptionDropdown = !this.showDescriptionDropdown;

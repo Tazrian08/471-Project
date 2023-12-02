@@ -1,0 +1,84 @@
+<!-- <img src="{{image}}" alt=""> -->
+<div class="container mt-4" >
+
+  <div class="card">
+      <h1>Custom Package </h1>
+
+<form>
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+
+  </div>
+
+  <div class="form-group">
+      <label>Price</label>
+      <input type="text" [(ngModel)]="hotel_price" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter Price">
+
+    </div>
+
+    <div class="form-group">
+      <label>Destination</label>
+      <select [(ngModel)]="destination_id" [ngModelOptions]="{standalone: true}" class="form-control" id="destination">
+        <option *ngFor="let destination of destinations" [value]="destination.id" (click)="getHotels(destination.id)">{{ destination.country }}, {{ destination.city }}</option>
+      </select>
+    </div>
+
+    <div *ngIf="destinationflag">
+      <label>Hotel</label>
+      <select [(ngModel)]="hotel_id" [ngModelOptions]="{standalone: true}" class="form-control" id="hotel">
+        <option *ngFor="let hotel of hotels" [value]="hotel.id">{{hotel.name}}</option>
+      </select>
+
+      <div *ngIf="roomPrices[hotel_id] && roomPrices[hotel_id].length > 0">
+        <label>Room Price</label>
+        <!-- Change [(ngModel)]="hotel_price" to [(ngModel)]="room_price" -->
+          <select [(ngModel)]="room_price" [ngModelOptions]="{standalone: true}" class="form-control" id="roomPrice">
+            <option *ngFor="let detail of roomPrices[hotel_id]" [value]="detail.price">{{detail.type}} - ${{detail.price}}</option>
+          </select>
+
+      </div>
+    </div>
+
+    
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter Description"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Airline</label>
+      <select [(ngModel)]="airline_id" [ngModelOptions]="{standalone: true}" class="form-control" id="airline">
+        <option *ngFor="let airline of airlines" [value]="airline.id" (click)="getFlight(airline.id)">{{ airline.name }}</option>
+      </select>
+    </div>
+    <div *ngIf="airlineflag">
+    <label>Departure Flight</label>
+    <select [(ngModel)]="departure" [ngModelOptions]="{standalone: true}" class="form-control" id="flight">
+      <option *ngFor="let flight of flights" [value]="flight.id" >Time: {{flight.departure}}, Destination: {{flight.destination.country}}, {{flight.destination.city}}</option>
+    </select>
+  </div>
+  <div *ngIf="airlineflag">
+      <label>Return Flight</label>
+      <select [(ngModel)]="return" [ngModelOptions]="{standalone: true}" class="form-control" id="flight">
+          <option *ngFor="let flight of flights" [value]="flight.id" >Time: {{flight.departure}}, Destination: {{flight.destination.country}}, {{flight.destination.city}}</option>
+      </select>
+    </div>
+    <!-- <div class="form-group">
+      <label for="image">Upload Image</label>
+      <input type="file" (change)="onFileSelected($event)" class="form-control-file" id="image" accept="image/*">
+    </div> -->
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Upload Image</label>
+      <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" accept="image/*">
+    </div>
+    
+  
+    <button type="submit" class="btn btn-primary mt-4" (click)="custom_package_sub()">Submit</button>
+  </form> 
+  </div>
+<div>
+
+
+
+

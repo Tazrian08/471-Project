@@ -9,24 +9,28 @@
 }
 
 .heading {
-    text-align: center;
+    /* margin-top: 30px; */
+    text-align: left;
     margin-bottom: 2rem;
 }
 
 .heading span {
     color: white;
     font-size: 2rem;
+    margin-bottom: 0px;
+    margin-left: 30px;
 }
 
 .heading h1 {
     color: white;
-    font-size: 4rem;
-    margin-top: 0.5rem;
+    font-size: 6rem;
+    margin-top: 3.5rem;
+    margin-left: 30px;
 }
 
 .photo-container{
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     background-image: url('/assets/images/antibes-town-surrounded-by-french-riveria-during-evening-france.jpg');
@@ -35,7 +39,7 @@
 
 .photo-container2 {
     width: 100%;
-    height: 90vh;
+    height: 60vh;
     background-size: cover;
     background-position: center;
     padding: 10px; /* Specify the unit (e.g., px) for padding */
@@ -301,4 +305,37 @@ width: 50%;
 .button-container button.hidden:hover {
     background-color: #fff; /* White background on hover */
     color: #000; /* Change text color on hover if needed */
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+/* Basic styles for the navbar */
+/* Resetting default margin and padding for the list */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar{
+  background-color: rgba(240, 248, 255, 0.226);
+}
+/* Style for each list item */
+.navbar li {
+  margin-left: 20px;
+  display: inline-block;
+  margin-right: 110px; /* Adjust spacing between list items */
+}
+
+/* Style for the anchor links */
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 28px;
+  transition: color 0.3s ease;
+}
+
+/* Change text color on hover */
+.navbar a:hover {
+  color: #ffcc00; /* Adjust the color as needed */
 }

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\Travel_Package;
+use App\Models\Destination;
+use App\Models\Flight;
+use App\Models\Hotels;
 use App\Http\Requests\StoreTravel_PackageRequest;
 use App\Http\Requests\UpdateTravel_PackageRequest;
 
@@ -30,6 +33,7 @@ class TravelPackageController extends Controller
             'description' => $request->input('description'),
             'price' =>$request->input('price'),
             'airline_id' =>$request->input('airline_id'),
+            'hotel_id' =>$request->input('hotel_id'),
             'destination_id' =>$request->input('destination_id'),
             'departure_flight_id' =>$request->input('departure'),
             'return_flight_id' =>$request->input('return')
@@ -62,7 +66,8 @@ class TravelPackageController extends Controller
      */
     public function show($id)
     {
-        $travelPackage = Travel_Package::find($id);
+        // $travelPackage = Travel_Package::find($id);
+        $travelPackage=Travel_Package::with('destination', 'airline', 'departure_flight','return_flight','hotel')->find($id);
         if (!$travelPackage){
             return response()->json(['error'=>'Travel package not found'],404);
         }
@@ -71,9 +76,9 @@ class TravelPackageController extends Controller
         if ($img->isEmpty()) {
             return response()->json(['package' => $travelPackage, 'image' => null]);
         }
-        $firstImage = $img->first();
+    
 
-        return response()->json(['package'=>$travelPackage,'image'=>asset('images/' . $firstImage->path)]);
+        return response()->json(['package'=>$travelPackage,'image'=>$img]);
     }
 
     /**
@@ -99,4 +104,38 @@ class TravelPackageController extends Controller
     {
         //
     }
+    public function custom() {
+        $destinations = Destination::all();
+        $hotels = Hotels::all();
+        $flights = Flight::all();
+    
+        $data = [
+            'destinations' => $destinations,
+            'hotels' => $hotels,
+            'flights' => $flights,
+        ];
+    
+        return response()->json($data);
+    }
+
+    public function addToCart(Request $request) {
+        // Validate request and add to the cart
+        // Your logic here
+        return response()->json(['message' => 'Item added to cart']);
+    }
+    public function customcreate(Request $request)
+    {
+        $package=Travel_Package::create([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'classic_price' =>$request->input('price'),
+            'airline_id' =>$request->input('airline_id'),
+            'hotel_id' =>$request->input('hotel_id'),
+            'destination_id' =>$request->input('destination_id'),
+            'departure_flight_id' =>$request->input('departure'),
+            'return_flight_id' =>$request->input('return')
+
+        ]);
+        return response()->json(['message'=>'Package created! ','package'=>$package]);
+}
 }
