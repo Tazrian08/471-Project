@@ -1,10 +1,10 @@
 <x-mail::message>
-# Introduction
+Booking Confirmed
 
-The body of your message.
+Your travel package has been booked
 
-<x-mail::button :url="''">
-Button Text
+<x-mail::button :url="'http://localhost:4200/home'">
+Visit Agency
 </x-mail::button>
 
 Thanks,<br>

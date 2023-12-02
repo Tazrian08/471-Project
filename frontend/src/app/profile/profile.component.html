@@ -16,7 +16,7 @@
             <div class="sidebar">
                 <a href="#">
                     <span class="material-icons-sharp">
-                        dashboard
+                        Dashboard
                     </span>
                 
                 </a>
@@ -37,12 +37,12 @@
                         Flights
                     </span>
                 </a>
-                <a href="#">
+                <!-- <a href="#">
                     <span class="material-icons-sharp">
                         Attractions
                     </span>
                   
-                </a>
+                </a> -->
                 <a  [routerLink]="['/travel-packages']">
                     <span class="material-icons-sharp">
                         Travel Packages
@@ -61,16 +61,52 @@
                     </span>
                    
                 </a>
+                <a *ngIf="admin" routerLink="/admin/destination">
+                    <span class="material-icons-sharp">
+                        Add Destination
+                    </span>
+                   
+                </a>
+                <a *ngIf="admin" routerLink="/admin/attraction">
+                    <span class="material-icons-sharp">
+                        Add Attraction
+                    </span>
+                   
+                </a>
+                <a *ngIf="admin" routerLink="/admin/travel-package">
+                    <span class="material-icons-sharp">
+                        Add Travel Package
+                    </span>
+                   
+                </a>
+                <a *ngIf="admin" routerLink="/admin/hotels">
+                    <span class="material-icons-sharp">
+                        Add Hotel
+                    </span>
+                   
+                </a>
+                <a *ngIf="admin" routerLink="/admin/hotel">
+                    <span class="material-icons-sharp">
+                        Add Hotel
+                    </span>
+                   
+                </a>
+                <a *ngIf="admin" routerLink="/admin/airline">
+                    <span class="material-icons-sharp">
+                        Add Airline
+                    </span>
+                   
+                </a>
                 <!-- <a  [routerLink]="['/register']">
                     <span class="material-icons-sharp">
                         regiater
                     </span>
                 </a> -->
-                <a href="#">
+                <!-- <a href="#">
                     <span class="material-icons-sharp">
-                        logout
+                        Logout
                     </span>
-                </a>
+                </a> -->
             </div>
         </aside> 
         <div class="photo-container2">
@@ -107,7 +143,6 @@
             </div>
             <h4>User Information</h4>
             <h2>{{ message }} this is your profile</h2>
-            <h2>ID: {{ id }}</h2>
             <h2>Email: {{ email }}</h2>
             <button (click)="logout()" class="logout-button">Logout</button>
           </div>
