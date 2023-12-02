@@ -1,10 +1,21 @@
 <div class="photo-container"> 
   <!-- billu -->
+  <nav class="navbar">
+    <ul>
+        <li><a href="#">Explore</a></li>
+        <li><a  [routerLink]="['/travel-packages']">Travel Packages</a></li>
+        <li><a [routerLink]="['/hotels']">Hotels</a></li>
+        <li><a [routerLink]="['/flight']">Flights</a></li>
+        <li><a [routerLink]="['/destination/index']">Desitnations</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a [routerLink]="['/login']">Login</a></li>
+        <li><a [routerLink]="['/register']">Register</a></li>
+    </ul>
+</nav>
     <div class="heading">
-        <span>Embark on a Journey</span>
+        <!-- <span>Embark on a Journey</span> -->
         <h1>Welcome to Wanderlust Travels.</h1>
-        <p>Uncover extraordinary destinations with our curated travel experiences.</p>
-    </div>
+        <span>Uncover extraordinary destinations with our curated travel experiences.</span>    </div>
   </div>
 <div class="photo-container2">
     <div class="container flex">
@@ -91,7 +102,7 @@
         </div>
         <div class="photo-container5">
             <!-- <span style="text-align: center;">Don't Know Where to Go? </span> -->
-                <h1 style="text-align: center;">Visit Our Destinations</h1>
+                <a  [routerLink]="['/destination/index']"> <h1 style="text-align: center;">Explore Our Destinations</h1></a>
             <div class="container3">
               <div class="semi-transparent-box2">
               </div>
@@ -110,7 +121,7 @@
             <div class="right">
                 <h1>Looking for hotels?</h1>
                 <p> We got you covered</p>
-                <button class="hidden" id="register" [routerLink]="['/register']">View Hotels</button>
+                <button class="hidden" id="register" [routerLink]="['/hotels']">View Hotels</button>
 
                 <div class="option flex">
                 </div>
@@ -148,7 +159,7 @@
                 <div class="right">
                     <h1>Never miss a flight</h1>
                     <p> See flight schedules now!</p>
-                    <button class="hidden" id="register" [routerLink]="['/register']">View Flight Schedules</button>
+                    <button class="hidden" id="register" [routerLink]="['/flight']">View Flight Schedules</button>
 
                 </div>
                     <div class="color flex">

@@ -21,6 +21,7 @@ import { DestinationProfileComponent } from './destination_pages/destination-pro
 import { AirlineEditComponent } from './adminpages/editpages/airline-edit/airline-edit.component';
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CustomPackageComponent } from './custom-package/custom-package.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
@@ -38,7 +39,7 @@ const routes: Routes = [
   {path : "destination/index", component: DestinationIndexComponent},
   {path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
   {path : "destination/profile/:id", component: DestinationProfileComponent},
-  { path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
+  {path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
   {path: "admin/hotels", component: HotelfromComponent},
   {path: "hotels", component: HotelindexComponent},
   {path:"airline", component:AirlineindexComponent},
@@ -49,6 +50,7 @@ const routes: Routes = [
   {path: "cart", component: CartComponent},
   {path: "payment/:id", component: PaymentComponent},
   // {path:"airline/:id", component: AirlineindexComponent},
+  {path: "custom-package", component: CustomPackageComponent},
 
 ];
 

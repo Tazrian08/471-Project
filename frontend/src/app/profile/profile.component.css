@@ -1,69 +1,293 @@
-/* src/app/profile/profile.component.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.photo-container{
+  width: 100%;
+  height: 110vh;
+  background-size: cover;
+  background-position: center;
+  /* background-image: url('/assets/images/antibes-town-surrounded-by-french-riveria-during-evening-france.jpg'); */
+  background-color: #e0dfff;
+}
+aside {
+  width: 300px;
+  height: 100%;
+  background-color: #fafafa;
+  color: #fff;
+  padding: 20px;
+  margin-left: 20px;
+  border-radius: 25px;
+  text-decoration-color: #555;
+}
+h2, span{
+  font-size: 1.4rem;
+  color: #555;
+}
+main {
+  grid-column: 2 / span 1;
+}
 
-/* Styles for the new container at the top */
-.dashboard-container {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .dashboard-title {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .profile-container {
-    height: 100vh;
-    width: 30%;
-    margin: 10px;
-    margin-right: 20px; /* Adjust this margin as needed */
-    padding: 20px;
-    border-radius: 15px;
-    background-color: midnightblue;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Roboto', sans-serif; /* Font family for the text */
-    color: white; /* Text color */
-    float: left; /* Float left to align to the left */
-  }
-  .welcome-header {
-    color: #FFC000;
-  }
-  .logout-button {
-    background-color: #f44336;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .logout-button:hover {
-    background-color: #d32f2f;
-  }
-  
-  .home-container {
-    height: 100vh;
+.right-section {
+  grid-column: 3 / span 1;
+}
+
+/* Add the rest of your styles */
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo h2 {
+  font-size: 1.5rem;
+}
+
+.logo .danger {
+  color: #ff0060;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar {
+  flex: 1; /* Fill the available space */
+  height:50%;
+}
+.sidebar a {
+  display: block;
+  padding: 10px 0;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border-radius: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.sidebar a:hover {
+  background-color: #e7eaea;
+  border-radius: 20px;
+}
+
+
+ 
+.material-icons-sharp {
+  margin-right: 8px;
+}
+
+/* Optional: Close button style */
+.close {
+  cursor: pointer;
+}
+
+/* Optional: Add hover effect to close button */
+.close:hover {
+  color: #ff0060;
+}
+.analyse > div {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.analyse > div:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the sales, visits, and searches boxes */
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.info h3 {
+  font-size: 1rem;
+  color: #333;
+}
+
+.info h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.progresss {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+circle {
+  fill: none;
+  stroke: #007bff;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transform: translate(4px, 4px);
+}
+
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.percentage p {
+  font-size: 0.8rem;
+  color: #007bff;
+  font-weight: bold;
+}
+.photo-container2 {
+  width: 55%; /* Adjust as needed */
+  height: 6vh;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  float: left;
+  background-color: #fafafa;
+
     position: fixed;
-    width: 6%;
+    
     top: 10px; /* Adjust the top position as needed */
+    right: 500px; /* Adjust the right position as needed */
+   
+    border-radius: 15px;
+  
+}
+.photo-container3 {
+  width: 55%; /* Adjust as needed */
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  float: left;
+  background-image: url('/assets/images/flat-lay-traveling-elements-collection.jpg');
+  background-color: #fafafa;
+
+    position: fixed;
+    
+    top: 80px; /* Adjust the top position as needed */
+    right: 500px; /* Adjust the right position as needed */
+   
+    border-radius: 15px;
+  
+}
+.photo-container5 {
+  width: 55%; /* Adjust as needed */
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  float: left;
+  background-color: #fafafa;
+
+    position: fixed;
+    
+    top: 500px; /* Adjust the top position as needed */
+    right: 500px; /* Adjust the right position as needed */
+   
+    border-radius: 15px;
+  
+}
+
+.container2 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0px;
+  height: 30vh;
+}
+
+/* Style for each semi-transparent box */
+.semi-transparent-box {
+  margin-top: 25px;
+  width: 25%;
+  height: 30vh;
+  background-color: rgba(254, 251, 251, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  border-radius: 30px;
+}
+.photo-container4 {
+  width: 22%; /* Adjust as needed */
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  float: left;
+  background-color: #fafafa;
+
+    position: fixed;
+    
+    top: 20px; /* Adjust the top position as needed */
     right: 20px; /* Adjust the right position as needed */
-    background-color: midnightblue;
+   
     border-radius: 15px;
-    float: right; /* Float right to align to the right */
-  }
   
-  .home-button {
-    margin-top: 30px;
-    background-color: midnightblue;
-    color: #fff;
-    padding: 13px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-  }
-  
-  .home-button:hover {
-    background-color: #4572a0;
-  }
-  
+}
+.pic {
+  margin-left: 50px;
+  margin-top: 50px;
+  width: 80%;
+  height: 40%;
+  border-radius: 380px;
+  background-image: url('/assets/images/anonymous-user-circle-icon-vector-18958255.jpg'); /* Set the path to your user's photo */
+  background-size: cover; /* Ensures the photo covers the entire container */
+  background-position: center; /* Center the photo within the container */
+}
+.info{
+  margin-top:30px ;
+  align-content: center;
+  width: 100%;
+  height: 50%;
+
+}
+.profile-container {
+  height: 100vh;
+  width: 30%;
+  margin: 10px;
+  margin-right: 20px; /* Adjust this margin as needed */
+  padding: 20px;
+  border-radius: 15px;
+
+}
+.welcome-header {
+  color: #a178b4;
+}
+.logout-button {
+  margin-top: 20px;
+  background-color: #555; /* Red background color */
+  color: #fff; /* White text color */
+  padding: 12px 20px; /* Padding for better button appearance */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s; /* Smooth transition for background color change */
+
+  /* Optional: Add box shadow for a subtle lift effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logout-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}

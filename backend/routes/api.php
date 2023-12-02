@@ -80,6 +80,11 @@ Route::post("/booking", [BookingController::class,"create"]);
 Route::delete("/cart/delete/{id}", [CartController::class,"destroy"]);
 Route::post('/cart/index2', [CartController::class, 'index2']);
 
+//TEMP ROUTE FOR CUSTOM
+// Route::get('/custom-package', [TravelPackageController::class, 'custom']);
+Route::post('/custom-package', [TravelPackageController::class, 'customcreate']);
+Route::get('/hotel-room-details/{hotelId}', [HotelController::class, 'getRoomDetails']);
+
 
 //SANCTUM PROTECTED ROUTES
 Route::middleware('auth:sanctum')->group(function () {
