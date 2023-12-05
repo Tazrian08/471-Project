@@ -20,9 +20,16 @@
       <div class="form-group">
         <label>Destination</label>
         <select [(ngModel)]="destination_id" [ngModelOptions]="{standalone: true}" class="form-control" id="destination">
-          <option *ngFor="let destination of destinations" [value]="destination.id">{{ destination.country }}, {{ destination.city }}</option>
+          <option *ngFor="let destination of destinations" [value]="destination.id" (click)="getHotels(destination.id)">{{ destination.country }}, {{ destination.city }}</option>
         </select>
       </div>
+      <div *ngIf="destinationflag">
+        <label>Hotels</label>
+        <select [(ngModel)]="hotel_id" [ngModelOptions]="{standalone: true}" class="form-control" id="flight">
+          <option *ngFor="let hotel of hotels" [value]="hotel.id" >{{hotel.name}}</option>
+        </select>
+      </div>
+      
       <div class="form-group">
         <label>Description</label>
         <textarea type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter Description"></textarea>

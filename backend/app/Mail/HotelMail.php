@@ -13,12 +13,11 @@ class HotelMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     */
-    public function __construct()
+    public $hotelName;
+
+    public function __construct($hotelName)
     {
-        //
+        $this->hotelName = $hotelName;
     }
 
     /**
@@ -27,7 +26,7 @@ class HotelMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Hotel Mail',
+            subject: 'Welcome to our Travel Agency',
         );
     }
 

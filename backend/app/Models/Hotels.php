@@ -12,8 +12,11 @@ class Hotels extends Model
     protected $fillable = [
         'name',
         'email',
-        'prices',
+        'classic_prices',
+        'deluxe_prices',
+        'presidential_prices',
         'destination_id',
+        'phone_no',
 
     ];
 
@@ -21,4 +24,14 @@ class Hotels extends Model
         return $this->belongsTo(Destination::class);
         
     }
+    public function image(){
+        return $this->hasOne(Image::class);
+        
+    }
+
+    public function travel_package(){
+        return $this->hasOne(Travel_Package::class);
+        
+    }
+
 }

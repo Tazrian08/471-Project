@@ -12,24 +12,45 @@ import { PackageProfileComponent } from './package-profile/package-profile.compo
 import { TravelPackageformComponent } from './adminpages/travel-packageform/travel-packageform.component';
 import { AttractionformComponent } from './adminpages/attractionform/attractionform.component';
 import { DestinationIndexComponent } from './destination_pages/destination-index/destination-index.component';
+import { HotelfromComponent } from './hotelpages/hotelfrom/hotelfrom.component';
+import { HotelindexComponent } from './hotelpages/hotelindex/hotelindex.component';
+import { AirlineindexComponent } from './airline_pages/airlineindex/airlineindex.component';
+import { AirlineProfileComponent } from './airline_pages/airline-profile/airline-profile.component';
+import { FlightsComponent } from './airline_pages/flights/flights.component';
 import { DestinationProfileComponent } from './destination_pages/destination-profile/destination-profile.component';
+import { AirlineEditComponent } from './adminpages/editpages/airline-edit/airline-edit.component';
+import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
+import { CustomPackageComponent } from './custom-package/custom-package.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
   {path: "login", component: LoginComponent},
   {path: "temp", component: TempComponent},
-  {path: "", component: HomeComponent },
+  {path: "home", component: HomeComponent },
   {path: "profile", component: ProfileComponent},
   {path : "travel-packages", component: TravelPackageComponent},
   {path : "admin/destination", component: DestinationformComponent},
   {path : "admin/travel-package", component: TravelPackageformComponent},
   {path : "admin/attraction", component: AttractionformComponent},
   {path : "admin/airline", component: AirlineformComponent},
-  { path: 'travel-packages', component: TravelPackageComponent },
-  { path: 'package-profile/:id', component: PackageProfileComponent },
+  {path: 'travel-packages', component: TravelPackageComponent },
+  {path: 'package-profile/:id', component: PackageProfileComponent },
   {path : "destination/index", component: DestinationIndexComponent},
+  {path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
   {path : "destination/profile/:id", component: DestinationProfileComponent},
-  { path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
+  {path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
+  {path: "admin/hotels", component: HotelfromComponent},
+  {path: "hotels", component: HotelindexComponent},
+  {path:"airline", component:AirlineindexComponent},
+  {path:"airline-profile/:id", component: AirlineProfileComponent},
+  {path:"flight", component:FlightsComponent},
+  {path:"destination/:id", component: DestinationIndexComponent},
+  {path: "admin/edit/airline/:id", component: AirlineEditComponent},
+  {path: "cart", component: CartComponent},
+  {path: "payment/:id", component: PaymentComponent},
+  // {path:"airline/:id", component: AirlineindexComponent},
+  {path: "custom-package", component: CustomPackageComponent},
 
 ];
 

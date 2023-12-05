@@ -14,7 +14,6 @@ class Booking extends Model
         'travel_package_id',
         'invoice',
         'status',
-        'date',
         "payment info",
     ];
 

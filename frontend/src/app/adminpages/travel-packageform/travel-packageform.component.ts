@@ -33,7 +33,7 @@ export class TravelPackageformComponent {
 
   { 
     
-    this.http.get("http://localhost:8000/api/allairline")
+    this.http.get("http://localhost:8000/api/airline")
   
     .subscribe((resultData: any)=>
     {
@@ -48,6 +48,7 @@ export class TravelPackageformComponent {
   description=""
   price=""
   destination_id=""
+  hotel_id=""
   airline_id=""
   departure=""
   return=""
@@ -57,8 +58,10 @@ export class TravelPackageformComponent {
   destinations:any
   airlines: any
   airlineflag: boolean =false
+  destinationflag: boolean =false
   flights: any
   image:any
+  hotels: any
   
 
 
@@ -93,6 +96,17 @@ getFlight(airlineId: any): void {
 }
 
 
+getHotels(destinationId: any): void {
+  console.log(destinationId)
+  this.http.get(`http://localhost:8000/api/hotelselector/${destinationId}`)
+    .subscribe((resultData: any) => {
+      this.hotels= resultData;
+      this.destinationflag = true;
+      console.log(this.hotels);
+    });
+}
+
+
 
 
 
@@ -107,6 +121,7 @@ getFlight(airlineId: any): void {
     formData.append('description', this.description);
     formData.append('destination_id', this.destination_id);
     formData.append('airline_id', this.airline_id);
+    formData.append('hotel_id', this.hotel_id);
     formData.append('departure', this.departure);
     formData.append('return', this.return);
 

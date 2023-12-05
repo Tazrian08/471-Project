@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+    <div class="photo-container">
+    <img src="" alt="">
+    <div class="container" style="overflow: auto;">
+        <app-des-nav [Attractions]="Attractions" [Profile]="Profile" [Packages]="Packages" [Hotels]="Hotels"></app-des-nav>
+        <div *ngIf="Profile" class="profile-container">
+            <div class="card">
+                <div class="card-content">
+                  <img src="{{destination.image.path}}" alt="" class="card-image">
+                </div>
+            </div>
+            <div class="card1">
+                <div class="card-content1"> 
+                <h1>Destination Profile:</h1>
+                <h2>City: {{destination.city}}</h2>
+                <h2>Country: {{destination.country}}</h2>
+                </div>
+            </div>
+            <div class="card2">
+                <h2>Description:</h2>
+                <div class="card-content2"> 
+                    <h4>{{destination.description}}</h4>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="Attractions" class="attraction-container" >
+            <div class="w3-row-padding w3-margin-top">
+                <h1>Attractions in {{destination.city}}, {{destination.country}}: </h1>
+                <div class="w3-third" *ngFor="let attraction of attractions">
+                  <div class="w3-container" style="text-align: center;">
+                    <h4>{{attraction.attraction}}</h4>
+                  </div>
+                  <div class="w3-card" style="position: relative;">
+                    <img [src]="attraction.image.path" class="card-image">
+                  </div>
+                </div>
+              </div>
+
+        </div>
+        <div *ngIf="Packages" class="attraction-container">
+          <h1 style="text-align: center;">Packages for {{destination.city}}</h1>
+          <table *ngIf="packages && packages.length > 0" class="package-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Airline</th>
+                <th>Start</th>
+                <th>Return</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Use ngFor to loop through your packages and populate the rows -->
+              <ng-container *ngFor="let package of packages">
+                <tr *ngIf="package.amount > 0">
+                  <td>{{ package.name }}</td>
+                  <td>{{ package.price }}</td>
+                  <td>{{ package.airline.name }}</td>
+                  <td>{{ package.departure_flight.departure | slice:0:10 }}</td>
+                  <td>{{ package.return_flight.departure | slice:0:10 }}</td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+          
+
+        </div>
+        <div *ngIf="Hotels">
+        <div class="w3-row-padding w3-margin-top">
+          <h1 style="text-align: center;">Hotels </h1>
+          <div class="w3-third" *ngFor="let hotel of hotels">
+            <div class="w3-container" style="text-align: center;">
+              <h4>{{hotel.name}}</h4>
+            </div>
+            <div class="w3-card" style="position: relative;">
+              <img [src]="hotel.image.path" class="card-image">
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+
+                <!-- <td *ngIf="package.amount===0">No</td>
+                <td *ngIf="package.amount>0">Yes</td> -->

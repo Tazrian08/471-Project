@@ -65,18 +65,29 @@ class DestinationController extends Controller
      */
     public function store(StoreDestinationRequest $request)
     {
-        
+        //
     }
 
     /**
      * Display the specified resource.
      */
+    public function show2($id)
+{
+    $destination = Destination::find($id);
+    if (!$destination){
+        return response()->json(['error' => 'Destination not found'], 404);
+
+    }}
+
     public function show($destinationID)
     {
-        $destination= Destination::with('image')->find($destinationID);
+        $destination= Destination::with('image',"travel_package.airline",'travel_package.departure_flight','travel_package.return_flight','attraction.image','hotel.image')->find($destinationID);
 
         return response()->json($destination);
     }
+
+
+
 
     /**
      * Show the form for editing the specified resource.

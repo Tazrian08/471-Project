@@ -1,0 +1,128 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Items in your cart</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <table class="table shoping-cart-table">
+                            <tbody>
+                            <tr *ngFor="let item of items" >
+                                <td width="90">
+                                    <div class="cart-product-imitation">
+                                    </div>
+                                    
+                                </td>
+                                <td class="desc">
+   
+                                    <h3>
+                                        {{item.travel_package.name}}
+                                    </h3>
+         
+                                    <h3>
+                                        Country: {{item.travel_package.destination.country}}
+                                    </h3>
+                                    <h3>
+                                        City: {{item.travel_package.destination.city}}
+                                    </h3>
+                                    <h3>
+                                        Price: ${{item.travel_package.price}}
+                                    </h3>
+                                    <h3>
+                                        Total No. of People: {{item.amount}}
+                                    </h3>
+
+
+                                    <div class="m-t-sm">
+                                        <a (click)="cart_delete(item.id)" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h4>
+                                        ${{ +item.travel_package.price + (+item.amount * 200) }}
+                                    </h4>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                
+                </div>
+                <div class="ibox-content">
+                    <button (click)="payment()" class="btn btn-primary pull-right"><i class="fa fa fa-shopping-cart"></i> Pay with Paypal</button>
+                    <button routerLink="/travel-packages" class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue Exploring</button>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Cart Summary</h5>
+                </div>
+                <div class="ibox-content">
+                    <span>
+                        Total
+                    </span>
+                    <h2 class="font-bold">
+                        ${{total}}
+                    </h2>
+
+                
+
+                </div>
+            </div>
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Support</h5>
+                </div>
+                <div class="ibox-content text-center">
+                    <h3><i class="fa fa-phone"></i>+1 (555) 123-4567</h3>
+                    <h3>Email: info@wanderlusttravels.com</h3>
+                    <span class="small">
+                        Please contact with us if you have any questions. We are avalible 24h.
+                    </span>
+                </div>
+            </div>
+
+            <div class="ibox">
+                <div class="ibox-content">
+
+                    <p class="font-bold">
+                    Check Out Our Site
+                    </p>
+                    <hr>
+                    <div>
+                        <h3>Destination Index</h3>
+                        <div class="small m-t-xs">
+                            See all the Travel destinations our site has to offer
+                        </div>
+                        <div class="m-t text-righ">
+
+                            <a routerLink="/destination/index" class="btn btn-xs btn-outline btn-primary">Destinations <i class="fa fa-long-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3> Travel Packages</h3>
+                        <div class="small m-t-xs">
+                            For more travel packages, click below:
+                        </div>
+                        <div class="m-t text-righ">
+
+                            <a routerLink="/travel-packages" class="btn btn-xs btn-outline btn-primary">Packages <i class="fa fa-long-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

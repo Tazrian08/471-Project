@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string("email");
-            $table->decimal('prices', 10, 2);
+            $table->decimal('classic_prices', 10, 2)->nullable();
+            $table->decimal('deluxe_prices', 10, 2)->nullable();
+            $table->decimal('presidential_prices', 10, 2)->nullable();;
             $table->unsignedBigInteger('destination_id');
             $table->foreign('destination_id')
                 ->references('id') 

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Emitters } from 'src/app/emiters/emitters';
 
 @Component({
   selector: 'app-destination-profile',
@@ -9,7 +10,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DestinationProfileComponent {
 
+
+  Profile: boolean = true;
+  Attractions: boolean = false ;
+  Packages: boolean = false ;
+  Hotels: boolean = false ;
+
+
+ 
+
+  attractions:any
   destination:any
+  packages: any
+  hotels: any
 
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {
@@ -22,6 +35,10 @@ export class DestinationProfileComponent {
       this.http.get(`http://localhost:8000/api/destination/profile/${destinationID}`).subscribe(
         (data: any) => {
           this.destination = data;
+          this.attractions=data.attraction
+          this.packages=data.travel_package
+          this.hotels=data.hotel
+          console.log(this.destination)
 
         },
         (error) => {
@@ -30,7 +47,32 @@ export class DestinationProfileComponent {
       );
     });
 
+    Emitters.profileEmitter.subscribe(
+      (data: any) => {
+        this.Profile= data;
+      }
+    );
+
+    Emitters.attractionsEmitter.subscribe(
+      (data: any) => {
+        this.Attractions= data;
+      }
+    );
+    Emitters.packagesEmitter.subscribe(
+      (data: any) => {
+        this.Packages= data;
+      }
+    );
+    Emitters.hotelsEmitter.subscribe(
+      (data: any) => {
+        this.Hotels= data;
+      }
+    );
+
+
+
   }
+
 
 
 }

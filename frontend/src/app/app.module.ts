@@ -18,7 +18,18 @@ import { PackageProfileComponent } from './package-profile/package-profile.compo
 import { TravelPackageformComponent } from './adminpages/travel-packageform/travel-packageform.component';
 import { AttractionformComponent } from './adminpages/attractionform/attractionform.component';
 import { DestinationIndexComponent } from './destination_pages/destination-index/destination-index.component';
+import { HotelfromComponent } from './hotelpages/hotelfrom/hotelfrom.component';
+import { HotelindexComponent } from './hotelpages/hotelindex/hotelindex.component';
+import { AirlineindexComponent } from './airline_pages/airlineindex/airlineindex.component';
+import { AirlineProfileComponent } from './airline_pages/airline-profile/airline-profile.component';
+import { FlightsComponent } from './airline_pages/flights/flights.component';
 import { DestinationProfileComponent } from './destination_pages/destination-profile/destination-profile.component';
+import { DesNavComponent } from './partials/des-nav/des-nav.component';
+import { DesEditComponent } from './adminpages/editpages/des-edit/des-edit.component';
+import { AirlineEditComponent } from './adminpages/editpages/airline-edit/airline-edit.component';
+import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
+import { CustomPackageComponent } from './custom-package/custom-package.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +47,18 @@ import { DestinationProfileComponent } from './destination_pages/destination-pro
     TravelPackageformComponent,
     AttractionformComponent,
     DestinationIndexComponent,
-    DestinationProfileComponent
+    HotelfromComponent,
+    HotelindexComponent,
+    AirlineindexComponent,
+    AirlineProfileComponent,
+    FlightsComponent,
+    DestinationProfileComponent,
+    DesNavComponent,
+    DesEditComponent,
+    AirlineEditComponent,
+    CartComponent,
+    PaymentComponent,
+    CustomPackageComponent
   ],
   imports: [
     BrowserModule,

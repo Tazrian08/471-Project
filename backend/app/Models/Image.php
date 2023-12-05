@@ -13,6 +13,7 @@ class Image extends Model
         'destination_id',
         'attraction_id',
         'activity_id',
+        'hotels_id',
         'path',
 
 
@@ -25,8 +26,18 @@ class Image extends Model
     }
 
 
-    public function travel(){
+    public function travel_package(){
         return $this->belongsTo(Travel_Package::class);
+        
+    }
+
+    public function attraction(){
+        return $this->belongsTo(Attraction::class);
+        
+    }
+
+    public function hotel(){
+        return $this->belongsTo(Hotels::class, "hotels_id");
         
     }
 
