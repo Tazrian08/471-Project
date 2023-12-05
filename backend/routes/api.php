@@ -39,6 +39,7 @@ Route::post("/login",[UserController::class,"login"]);
 Route::get("/travel-packages",[TravelPackageController::class,"index"]);
 Route::get("/travel-packages/{id}", [TravelPackageController::class, "show"]);
 Route::post("/travel-package/create",[TravelPackageController::class,"create"]);
+Route::get('/travel-package/search/{search}',[TravelPackageController::class,"search"]);
 
 
 //DESTINATION ROUTES

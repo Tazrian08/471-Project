@@ -16,9 +16,30 @@ class TravelPackageController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function search($search)
+    {
+        if (!empty($search)) {
+            if (is_numeric($search)) {
+                $searchPrice = (int)$search;
+                $travel_package = Travel_Package::where('price', '<=', $searchPrice)->get();
+            } else {
+            $travel_package = Travel_Package::where('name', 'LIKE', '%' . $search . '%')
+            ->with('image')
+            ->get();
+            }
+
+        }else{
+
+        $travel_package = Travel_Package::with('image')->get();
+        }
+                          
+        return response()->json($travel_package);
+    }
+
+
     public function index()
     {
-        $travelPackage = Travel_Package::all();
+        $travelPackage = Travel_Package::with("image","destination")->get();
 
         return response()->json($travelPackage);
     }
@@ -44,7 +65,7 @@ class TravelPackageController extends Controller
         $request->file('image')->move(public_path('images'), $image);
     
         $img = Image::create([
-            'travel_package_id' => $package->id,
+            'travel__package_id' => $package->id,
             'path' =>asset('images/' . $image)
         ]);
 
@@ -71,7 +92,7 @@ class TravelPackageController extends Controller
         if (!$travelPackage){
             return response()->json(['error'=>'Travel package not found'],404);
         }
-        $img=Image::where('travel_package_id', $id)->get();
+        $img=Image::where('travel__package_id', $id)->get();
 
         if ($img->isEmpty()) {
             return response()->json(['package' => $travelPackage, 'image' => null]);

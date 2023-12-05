@@ -32,7 +32,18 @@ export class TravelPackageComponent implements OnInit {
     this.router.navigate(['/package-profile', packageId]);
   }
 
-  packageSearch(search: any){
-    //
+  packageSearch(search: any): void {
+    let apiUrl: string;
+  
+    // Check if the search string is empty
+    if (search !== '') {
+      apiUrl = `http://localhost:8000/api/travel-package/search/${search}`;
+    } else {
+      apiUrl = 'http://localhost:8000/api/travel-packages';
+    }
+  
+    this.http.get(apiUrl).subscribe((resultData: any) => {
+      this.travelPackages = resultData;
+    });
   }
 }

@@ -27,7 +27,7 @@ class Image extends Model
 
 
     public function travel_package(){
-        return $this->belongsTo(Travel_Package::class);
+        return $this->belongsTo(Travel_Package::class,"travel_package_id");
         
     }
 
