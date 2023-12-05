@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./travel-package.component.css']
 })
 export class TravelPackageComponent implements OnInit {
-  travelPackages: any[] = [];
+  travelPackages: any
+  search:any
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -18,6 +19,7 @@ export class TravelPackageComponent implements OnInit {
     this.http.get('http://localhost:8000/api/travel-packages', { withCredentials: true }).subscribe(
       (packages: any) => {
         this.travelPackages = packages;
+        console.log(this.travelPackages)
       },
       (error) => {
         console.error('Error fetching travel packages:', error);
@@ -28,5 +30,9 @@ export class TravelPackageComponent implements OnInit {
   // Method to navigate to the package profile with the specific package ID
   goToPackageProfile(packageId: any): void {
     this.router.navigate(['/package-profile', packageId]);
+  }
+
+  packageSearch(search: any){
+    //
   }
 }

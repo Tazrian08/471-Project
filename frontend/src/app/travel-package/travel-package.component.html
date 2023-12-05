@@ -1,7 +1,6 @@
-<!-- src/app/components/travel-packages/travel-packages.component.html -->
+<!-- 
 <div class="photo-container">
-  <!-- <h2>Explore the World</h2>
-  <p>Discover amazing destinations with our travel packages.</p> -->
+
 </div>
 <div class="heading">
   <span>Explore the World</span>
@@ -12,7 +11,6 @@
 <div *ngIf="travelPackages.length > 0; else noPackages" class="box-container">
   <div *ngFor="let package of travelPackages" class="box">
       <div class="image">
-          <!-- Assuming package.imageSrc is the property containing the image source -->
           <img class="image" [src]="package.imageSrc" alt="Image not found">
       </div>
       <div class="content">
@@ -28,4 +26,43 @@
 
 <ng-template #noPackages>
   <p>No travel packages available.</p>
-</ng-template>
+</ng-template> -->
+<!DOCTYPE html>
+<html>
+<title>Destination Index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+  <app-navbar></app-navbar>
+
+  <div class="photo-container">
+    <div class="centered-text">
+      <h1>Travel Package Index</h1>
+      <div class="w3-row">
+        <div class="w3-col" style="width:80%">
+          <input
+            type="text"
+            [(ngModel)]="search" [ngModelOptions]="{standalone: true}"
+            placeholder="Search packages..."
+            class="w3-input w3-border transparent-search-bar"
+          />
+        </div>
+        <div class="w3-col" style="width:20%">
+          <button class="w3-btn w3-blue transparent-search-button" (click)="packageSearch(search)">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-third" *ngFor="let package of travelPackages">
+      <div class="w3-container" (click)="goToPackageProfile(package.id)" style="text-align: center;">
+        <h4>{{package.name}}</h4>
+      </div>
+      <div class="w3-card" (click)="goToPackageProfile(package.id)" style="position: relative;">
+        <img [src]="package.image.path" style="width: 100%; height: 100%;">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

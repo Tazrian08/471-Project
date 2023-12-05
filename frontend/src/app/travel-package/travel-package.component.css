@@ -1,80 +1,55 @@
-/* src/app/components/travel-packages/travel-packages.component.css */
 
-.photo-container {
+
+.w3-card {
+    height: 500px; /* Adjust the height as needed */
+    margin-bottom: 20px; /* Add margin to create space between cards */
+  }
+  
+  .w3-third {
+    transition: transform 0.3s ease-in-out;
+    width: 30%; /* Adjust the width as needed */
+    margin: 1.2%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  .w3-third:hover {
+    transform: scale(1.05);
+  }
+  
+  .photo-container {
     width: 100%;
-    height: 70vh; /* Adjust as needed */
+    height: 55vh; /* Adjust as needed */
     background-image: url('/assets/images/tourist.jpg');
     background-color: #f2f2f2; /* Add your preferred background color */
     background-size: cover; /* This makes the background image cover the entire container */
     background-position: center; /* Center the background image */
-}
-/* src/app/components/travel-packages/travel-packages.component.css */
-
-/* src/app/components/travel-packages/travel-packages.component.css */
-
-.heading {
+  }
+  
+  .centered-text {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    margin-bottom: 2rem;
-}
-
-.heading span {
-    color: blue; /* Assuming $blue is a variable you have defined */
-    font-size: 2rem;
-}
-
-.heading h1 {
-    color: black; /* Assuming $black is a variable you have defined */
-    font-size: 4rem;
-    margin-top: 0.5rem;
-}
-
-.box-container {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(25rem, 1fr));
-    gap: 2rem; /* Adjust the gap between boxes */
-    justify-content: center;
-    max-width: 900px; /* Optional: Add a max-width to limit the container width */
-    margin: 0 auto;  /* Optional: Center the container */
-}
-
-.box {
-    width: 100%;
-    max-width: calc(25% - 20px); /* Adjust as needed for spacing */
-    transition: transform 0.3s ease-in-out; /* Added transition property for hover effect */
-    overflow: hidden;
-}
-
-.box:hover {
-    transform: scale(1.05); /* Scale the container on hover */
-}
-
-.image {
-    width: 100%;
-    height: auto;
-    display: block; /* Make sure the image behaves as a block element */
-}
-
-.image img {
-    width: 100%;
-    height: auto;
-}
-
-.content {
-    padding: 15px;
-    background-color: #fff; /* Add a background color to the content for better visibility */
-}
-
-.view-details-button {
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Green background color */
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s; /* Add a smooth transition effect */
-}
-
-.view-details-button:hover {
-    background-color: #45a049; /* Darker green color on hover */
-}
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9); /* Adjust shadow as needed */
+  }
+  
+  .centered-text h1 {
+    font-size: 5em; /* Adjust font size as needed */
+    margin: 0;
+  }
+  .transparent-search-bar {
+    background: rgba(192, 188, 188, 0.5) !important; /* Adjust the alpha value to make it less transparent */
+    /* background: transparent !important; */
+    border: 1px solid #fff !important;
+    color: #ffffffc0 !important;
+    box-shadow: 2px 2px 2px rgba(26, 25, 25, 0.4);
+  }
+  .transparent-search-button {
+    background: rgba(192, 188, 188, 0.5) !important; /* Adjust the alpha value to make it less transparent */
+    /* background: transparent !important; */
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    box-shadow: 2px 2px 2px rgba(29, 28, 28, 0.4);
+  }
+  
