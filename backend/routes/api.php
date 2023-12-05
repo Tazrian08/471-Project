@@ -47,6 +47,7 @@ Route::get("/alldestination",[DestinationController::class,"index"]);
 Route::get("/alldestination/{id}", [DestinationController::class,"show2"]);
 Route::get('/destination/search/{search}',[DestinationController::class,"search"]);
 Route::get('/destination/profile/{destinationID}',[DestinationController::class,"show"]);
+Route::delete("/destination/delete/{id}", [DestinationController::class,"destroy"]);
 
 
 
@@ -63,6 +64,8 @@ Route::post("/airline/create",[AirlinesController::class,"create"]);
 Route::get("/airline",[AirlinesController::class,"index"]);
 Route::get("/airline/{id}", [AirlinesController::class,"show2"]);
 Route::put("/airline/edit", [AirlinesController::class,"update"]);
+Route::delete("/airline/delete/{id}", [AirlinesController::class,"destroy"]);
+
 
 
 
