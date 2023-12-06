@@ -31,6 +31,8 @@ import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CustomPackageComponent } from './custom-package/custom-package.component';
 import { AttractionProfileComponent } from './attraction-profile/attraction-profile.component';
+import { HotelProfileComponent } from './hotelpages/hotel-profile/hotel-profile.component';
+
 
 
 @NgModule({
@@ -62,6 +64,8 @@ import { AttractionProfileComponent } from './attraction-profile/attraction-prof
     PaymentComponent,
     CustomPackageComponent,
     AttractionProfileComponent,
+    HotelProfileComponent,
+
 
   ],
   imports: [

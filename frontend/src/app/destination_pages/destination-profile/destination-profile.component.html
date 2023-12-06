@@ -71,10 +71,10 @@
         <div class="w3-row-padding w3-margin-top">
           <h1 style="text-align: center;">Hotels </h1>
           <div class="w3-third" *ngFor="let hotel of hotels">
-            <div class="w3-container" style="text-align: center;">
+            <div class="w3-container" style="text-align: center;"(click)="goToHotelProfile(hotel.id)">
               <h4>{{hotel.name}}</h4>
             </div>
-            <div class="w3-card" style="position: relative;">
+            <div class="w3-card" style="position: relative;"(click)="goToHotelProfile(destination.hotel.id)">
               <img [src]="hotel.image.path" class="card-image">
             </div>
           </div>

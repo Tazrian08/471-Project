@@ -86,6 +86,18 @@ class HotelsController extends Controller
     /**
      * Display the specified resource.
      */
+
+     public function show2($id)
+    {
+
+        $hotel=Hotels::with('destination', 'image')->find($id);
+        if (!$hotel){
+            return response()->json(['error'=>'Attraction not found'],404);
+        }
+    
+
+        return response()->json($hotel);
+    }
     public function show($id)
     {
         $hotels = Hotels::find($id);

@@ -112,6 +112,9 @@ export class DestinationProfileComponent {
   goToAttractionProfile(attId: any): void {
     this.router.navigate(['/attraction-profile', attId]);
   }
+  goToHotelProfile(hotelId: any): void {
+    this.router.navigate(['/hotel-profile', hotelId]);
+  }
 
 
 

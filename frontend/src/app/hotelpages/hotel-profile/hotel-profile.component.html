@@ -1,0 +1,43 @@
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div>
+    <app-navbar [Login]="Login" [Register]="Register"></app-navbar>
+<body>
+
+    <div class="photo-container">
+    <img src="" alt="">
+    <div class="container" style="overflow: auto;">
+        <div class="profile-container">
+            <div class="card">
+                <div class="card-content">
+                  <img [src]="hotel.image.path" alt="" class="card-image">
+                </div>
+            </div>
+            <div class="card1">
+                <div class="card-content1"> 
+                <h1>Hotel Profile:</h1>
+                <h2>Name: {{hotel.attraction}}</h2>
+                <h2>Email: {{hotel.email}}</h2>
+                <h2 class="link" (click)="goToDestinationProfile(hotel.destination.id)">Destination: {{hotel.destination.country}}, {{hotel.destination.city}}</h2>
+                </div>
+            </div>
+            <div class="card2">
+                <h2>Prices:</h2>
+                <div class="card-content2"> 
+                    <h4>Classic Prices: {{hotel.classic_prices}}</h4>
+                    <h4>Deluxe Prices: {{hotel.deluxe_prices}}</h4>
+                    <h4>Presidential Prices: {{hotel.presidential_prices}}</h4>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+   
+    </div>
+</body>
+</div>
+
+
+    
+
+    

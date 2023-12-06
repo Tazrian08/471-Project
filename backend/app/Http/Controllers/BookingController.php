@@ -19,7 +19,12 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $booking=Booking::where("user_id", Auth::user()->id)
+        ->with('travel_package','travel_package.departure_flight')
+        ->get();
+
+        return response()->json($booking);
+
     }
 
     /**

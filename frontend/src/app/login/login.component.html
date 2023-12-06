@@ -18,7 +18,7 @@
 
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" [(ngModel)] ="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter password">
+                    <input type="password" [(ngModel)] ="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter password" minlength="8">
                 </div>
 
                 <button type="submit" class="btn btn-primary mt-3" (click)="login()">Login</button>

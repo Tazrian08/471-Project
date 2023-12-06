@@ -14,12 +14,6 @@
             </div>
 
             <div class="sidebar">
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        Dashboard
-                    </span>
-                
-                </a>
                 <a  [routerLink]="['/destination/index']">
                     <span class="material-icons-sharp">
                         Destinations
@@ -97,9 +91,9 @@
                     </span>
                    
                 </a>
-                <a *ngIf="!admin" routerLink="/art">
+                <a *ngIf="!admin" routerLink="/cart">
                     <span class="material-icons-sharp">
-                        Cart
+                        My Cart
                     </span>
                    
                 </a>
@@ -158,8 +152,30 @@
           </div>
         </div>
         <div class="photo-container5">
-          <div class="container2">
-            <h2>Your Past Travel History</h2>
+          <div *ngIf="!admin" class="container2">
+            <div *ngIf="bookings" class="attraction-container">
+            <h2 style="text-align: center;">Your Past Travel History</h2><br>
+            <table *ngIf="bookings && bookings.length > 0" class="package-table">
+                <thead>
+                  <tr>
+                    <th>Package</th>
+                    <th>Price</th>
+                    <th>Tour Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Use ngFor to loop through your packages and populate the rows -->
+                  <ng-container *ngFor="let booking of bookings">
+                    <tr>
+                      <td>{{ booking.travel_package.name }}</td>
+                      <td>{{ booking.travel_package.price }}</td>
+                      <td>{{ booking.travel_package.departure_flight.departure | slice:0:10 }}</td>
+
+                    </tr>
+                  </ng-container>
+                </tbody>
+              </table>
+              </div>
             </div>
             <!-- <div class="semi-transparent-box">
               <span class="step">Step 4</span>

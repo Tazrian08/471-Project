@@ -291,3 +291,75 @@ circle {
 .logout-button:hover {
   background-color: #d32f2f; /* Darker red on hover */
 }
+
+
+
+.package-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: auto;
+}
+
+.package-table th, .package-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.package-table th {
+  background-color: #f2f2f2;
+}
+
+.package-table tbody {
+  display: block;
+  max-height: inherit;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.package-table thead,
+.package-table tbody tr {
+  display: table;
+  width: 95%;
+  table-layout: fixed;
+}
+
+.package-table th:first-child,
+.package-table td:first-child {
+  width: 40%; /* Adjust the width of the "Name" column as needed */
+}
+
+.package-table th:nth-child(2),
+.package-table td:nth-child(2) {
+  width: 10%;
+}
+
+.package-table th:nth-child(3),
+.package-table td:nth-child(3) {
+  width: 15%;
+}
+
+.package-table th:nth-child(4),
+.package-table td:nth-child(4) {
+  width: 10%;
+}
+
+.package-table th:nth-child(5),
+.package-table td:nth-child(5) {
+  width: 10%;
+}
+
+.package-table th:nth-child(6),
+.package-table td:nth-child(6) {
+  width: 15%;
+}
+
+/* Reduce font size for smaller columns if necessary */
+.package-table th:not(:first-child),
+.package-table td:not(:first-child) {
+  font-size: 12px;
+}
+

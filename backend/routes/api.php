@@ -59,6 +59,7 @@ Route::get("/attraction/{id}", [AttractionController::class, "show"]);
 Route::post("/hotels/create", [HotelsController::class,"create"]);
 Route::get("/hotels", [HotelsController::class, "index"]);
 Route::get('/hotelselector/{destinationID}',[HotelsController::class,"select"]);
+Route::get("/hotel/{id}", [HotelsController::class, "show2"]);
 
 //AIRLINE ROUTES
 Route::post("/airline/create",[AirlinesController::class,"create"]);
@@ -95,6 +96,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/cart', [CartController::class, 'add']);
     Route::get('/cart/index', [CartController::class, 'index']);
     Route::get('/profile', [ProfileController::class, 'profile']);
+    Route::get('/bookingdetail', [BookingController::class, 'index']);
     //PAYMENT ROUTES
     Route::post('paypal/payment', [PaypalController::class, 'payment']);
 
