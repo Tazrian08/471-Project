@@ -30,11 +30,17 @@ export class LoginComponent {
   
   
       this.http.post("http://localhost:8000/api/login",bodyData,{withCredentials: true}).subscribe((resultData: any)=>
-      {   
+      { console.log(resultData)
+        if (resultData["flag"]==true) {
+          alert('Login failed. Enter Valid username and/or Password')
+      } else {
+        console.log(resultData)
           //alert(resultData['user'].name + " has been logged in");
           Emitters.authEmitter.emit(true);
           //Emitters.dataEmitter.emit(resultData['user']) FOR SENDING DATA TO ANOTHER COMPONENT
           this.router.navigate(['/profile'])
+      }
+          
 
 
       });

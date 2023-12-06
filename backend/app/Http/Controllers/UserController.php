@@ -24,7 +24,7 @@ class UserController extends Controller
     public function login(Request $request)
     {
         if (!Auth::attempt($request->only('email', 'password'))) {
-            return response()->json("Login Failed");
+            return response()->json(['flag'=>True]);
         }
 
         $user = Auth::user();
@@ -33,7 +33,7 @@ class UserController extends Controller
 
         $cookie = cookie('jwt', $token, 60 * 24); // 1 day
 
-        return response(['user'=>$user,
+        return response(['user'=>$user, 'flag'=>False,
             'message' => $token
         ])->withCookie($cookie);
     }
