@@ -14,6 +14,12 @@
             </div>
 
             <div class="sidebar">
+                <a routerLink="/home">
+                    <span class="material-icons-sharp">
+                        Home
+                    </span>
+                    
+                </a>
                 <a  [routerLink]="['/destination/index']">
                     <span class="material-icons-sharp">
                         Destinations
@@ -43,12 +49,13 @@
                     </span>
                     
                 </a>
-                <a href="#">
+                <!-- <a href="#">
                     <span class="material-icons-sharp">
                         Custom Packages
                     </span>
                     
-                </a>
+                </a> -->
+
                 <a href="#">
                     <span class="material-icons-sharp">
                         Your Reviews
@@ -168,7 +175,7 @@
                   <ng-container *ngFor="let booking of bookings">
                     <tr>
                       <td>{{ booking.travel_package.name }}</td>
-                      <td>{{ booking.travel_package.price }}</td>
+                      <td>${{ booking['payment info'] }}</td>
                       <td>{{ booking.travel_package.departure_flight.departure | slice:0:10 }}</td>
 
                     </tr>
