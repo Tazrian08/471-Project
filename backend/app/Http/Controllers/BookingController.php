@@ -47,7 +47,8 @@ class BookingController extends Controller
             ]);
             Mail::to($item->user->email)->send(new Book_confirm());
             $package=Travel_Package::find($item->travel_package->id);
-            $package->update(['user_id' => $item->user->id,'amount'=> ($package->amount-$item->amount)]);
+            $package->update(['user_id' => $item->user->id]);
+            $package->decrement('amount', $item->amount);
 
             $item->delete();
 

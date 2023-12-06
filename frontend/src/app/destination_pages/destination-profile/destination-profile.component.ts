@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Emitters } from 'src/app/emiters/emitters';
 
 @Component({
@@ -25,7 +25,7 @@ export class DestinationProfileComponent {
   hotels: any
 
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
 
 
     this.route.params.subscribe(params => {
@@ -71,6 +71,9 @@ export class DestinationProfileComponent {
 
 
 
+  }
+  goToPackageProfile(packageId: any): void {
+    this.router.navigate(['/package-profile', packageId]);
   }
 
 
