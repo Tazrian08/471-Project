@@ -30,6 +30,8 @@ import { AirlineEditComponent } from './adminpages/editpages/airline-edit/airlin
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CustomPackageComponent } from './custom-package/custom-package.component';
+import { AttractionProfileComponent } from './attraction-profile/attraction-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { CustomPackageComponent } from './custom-package/custom-package.componen
     AirlineEditComponent,
     CartComponent,
     PaymentComponent,
-    CustomPackageComponent
+    CustomPackageComponent,
+    AttractionProfileComponent,
+
   ],
   imports: [
     BrowserModule,

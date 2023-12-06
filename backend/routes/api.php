@@ -53,6 +53,7 @@ Route::get('/destination/profile/{destinationID}',[DestinationController::class,
 
 //ATTRACTION ROUTES
 Route::post("/attraction/create",[AttractionController::class,"create"]);
+Route::get("/attraction/{id}", [AttractionController::class, "show"]);
 
 //HOTEL ROUTES
 Route::post("/hotels/create", [HotelsController::class,"create"]);

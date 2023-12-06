@@ -29,10 +29,10 @@
             <div class="w3-row-padding w3-margin-top">
                 <h1>Attractions in {{destination.city}}, {{destination.country}}: </h1>
                 <div class="w3-third" *ngFor="let attraction of attractions">
-                  <div class="w3-container" style="text-align: center;">
+                  <div class="w3-container" style="text-align: center;"(click)="goToAttractionProfile(attraction.id)">
                     <h4>{{attraction.attraction}}</h4>
                   </div>
-                  <div class="w3-card" style="position: relative;">
+                  <div class="w3-card" style="position: relative;" (click)="goToAttractionProfile(attraction.id)">
                     <img [src]="attraction.image.path" class="card-image">
                   </div>
                 </div>

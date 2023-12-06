@@ -22,6 +22,7 @@ import { AirlineEditComponent } from './adminpages/editpages/airline-edit/airlin
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CustomPackageComponent } from './custom-package/custom-package.component';
+import { AttractionProfileComponent } from './attraction-profile/attraction-profile.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path : "admin/airline", component: AirlineformComponent},
   {path: 'travel-packages', component: TravelPackageComponent },
   {path: 'package-profile/:id', component: PackageProfileComponent },
+  {path: 'attraction-profile/:id', component: AttractionProfileComponent },
   {path : "destination/index", component: DestinationIndexComponent},
   {path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
   {path : "destination/profile/:id", component: DestinationProfileComponent},

@@ -109,6 +109,9 @@ export class DestinationProfileComponent {
   goToPackageProfile(packageId: any): void {
     this.router.navigate(['/package-profile', packageId]);
   }
+  goToAttractionProfile(attId: any): void {
+    this.router.navigate(['/attraction-profile', attId]);
+  }
 
 
 
