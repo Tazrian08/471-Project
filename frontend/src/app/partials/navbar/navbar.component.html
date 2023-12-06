@@ -5,12 +5,18 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ms-auto">
                 <li *ngIf="Login" class="nav-item">
                     <a class="nav-link" routerLink="/register">Register</a>
                 </li>
                 <li *ngIf="Register" class="nav-item">
                     <a class="nav-link" routerLink="/login">Login</a>
+                </li>
+                <li *ngIf="!Destination" class="nav-item">
+                    <a class="nav-link" routerLink="/destination/index">Destinations</a>
+                </li>
+                <li *ngIf="!Package" class="nav-item">
+                    <a class="nav-link" routerLink="/travel-packages">Travel Packages</a>
                 </li>
                 <li *ngIf="auth" class="nav-item">
                     <a class="nav-link" routerLink="/profile">Profile</a>

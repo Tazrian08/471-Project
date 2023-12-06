@@ -28,6 +28,7 @@ export class DestinationIndexComponent implements OnInit{
   admin:boolean=false
   Login:boolean=true
   Register:boolean=true
+  Destination:boolean=true
 
 
   constructor(private http: HttpClient, private router: Router) 

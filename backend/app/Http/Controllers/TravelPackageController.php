@@ -21,7 +21,9 @@ class TravelPackageController extends Controller
         if (!empty($search)) {
             if (is_numeric($search)) {
                 $searchPrice = (int)$search;
-                $travel_package = Travel_Package::where('price', '<=', $searchPrice)->get();
+                $travel_package = Travel_Package::where('price', '<=', $searchPrice)
+                ->with('image')
+                ->get();
             } else {
             $travel_package = Travel_Package::where('name', 'LIKE', '%' . $search . '%')
             ->with('image')
@@ -39,7 +41,9 @@ class TravelPackageController extends Controller
 
     public function index()
     {
-        $travelPackage = Travel_Package::with("image","destination")->get();
+        $travelPackage = Travel_Package::with("image", "destination")
+        ->where('custom_status', 0)
+        ->get();
 
         return response()->json($travelPackage);
     }

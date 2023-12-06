@@ -25,6 +25,13 @@ export class DestinationProfileComponent {
   hotels: any
 
 
+
+  auth:boolean=false
+  admin:boolean=false
+  Login:boolean=true
+  Register:boolean=true
+
+
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
 
 
@@ -66,6 +73,33 @@ export class DestinationProfileComponent {
     Emitters.hotelsEmitter.subscribe(
       (data: any) => {
         this.Hotels= data;
+      }
+    );
+
+
+
+
+    this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
+      (res: any) => {
+        console.log(res)
+        if (res.admin_access==1){
+          Emitters.adminEmitter.emit(true);
+        }
+        Emitters.authEmitter.emit(true);
+      }
+    );
+    Emitters.authEmitter.subscribe(
+      (data: any) => {
+        this.auth= data;
+        this.Login=false;
+        this.Register=false;
+        console.log("This is working1");
+      }
+    );
+    Emitters.adminEmitter.subscribe(
+      (data: any) => {
+        this.admin= data;
+        console.log("This is working2");
       }
     );
 
