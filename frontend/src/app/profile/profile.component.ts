@@ -16,6 +16,7 @@ export class ProfileComponent {
   email: any;
   auth=false;
   admin=false
+  bookings:any
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -38,15 +39,22 @@ export class ProfileComponent {
     Emitters.authEmitter.subscribe(
       (data: any) => {
         this.auth= data;
-        console.log("This is working1");
+
       }
     );
     Emitters.adminEmitter.subscribe(
       (data: any) => {
         this.admin= data;
-        console.log("This is working2");
       }
     );
+    this.http.get('http://localhost:8000/api/bookingdetail', {withCredentials: true})
+      .subscribe((Data: any) => {
+        this.bookings=Data
+        console.log(this.bookings)
+      });
+    
+
+
   }
 
   logout(): void {
@@ -60,5 +68,6 @@ export class ProfileComponent {
   goToLogin(): void {
     this.router.navigate(['/login']);
   }
+
 
 }

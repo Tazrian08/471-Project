@@ -28,7 +28,12 @@ import { DesNavComponent } from './partials/des-nav/des-nav.component';
 import { DesEditComponent } from './adminpages/editpages/des-edit/des-edit.component';
 import { AirlineEditComponent } from './adminpages/editpages/airline-edit/airline-edit.component';
 import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
 import { CustomPackageComponent } from './custom-package/custom-package.component';
+import { AttractionProfileComponent } from './attraction-profile/attraction-profile.component';
+import { HotelProfileComponent } from './hotelpages/hotel-profile/hotel-profile.component';
+
+
 
 @NgModule({
   declarations: [
@@ -56,7 +61,12 @@ import { CustomPackageComponent } from './custom-package/custom-package.componen
     DesEditComponent,
     AirlineEditComponent,
     CartComponent,
-    CustomPackageComponent
+    PaymentComponent,
+    CustomPackageComponent,
+    AttractionProfileComponent,
+    HotelProfileComponent,
+
+
   ],
   imports: [
     BrowserModule,

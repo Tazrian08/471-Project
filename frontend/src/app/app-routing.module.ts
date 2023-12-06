@@ -20,7 +20,10 @@ import { FlightsComponent } from './airline_pages/flights/flights.component';
 import { DestinationProfileComponent } from './destination_pages/destination-profile/destination-profile.component';
 import { AirlineEditComponent } from './adminpages/editpages/airline-edit/airline-edit.component';
 import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
 import { CustomPackageComponent } from './custom-package/custom-package.component';
+import { AttractionProfileComponent } from './attraction-profile/attraction-profile.component';
+import { HotelProfileComponent } from './hotelpages/hotel-profile/hotel-profile.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
@@ -35,6 +38,8 @@ const routes: Routes = [
   {path : "admin/airline", component: AirlineformComponent},
   {path: 'travel-packages', component: TravelPackageComponent },
   {path: 'package-profile/:id', component: PackageProfileComponent },
+  {path: 'attraction-profile/:id', component: AttractionProfileComponent },
+  {path: 'hotel-profile/:id', component: HotelProfileComponent },
   {path : "destination/index", component: DestinationIndexComponent},
   {path: '', redirectTo: '/travel-packages', pathMatch: 'full' },
   {path : "destination/profile/:id", component: DestinationProfileComponent},
@@ -47,6 +52,7 @@ const routes: Routes = [
   {path:"destination/:id", component: DestinationIndexComponent},
   {path: "admin/edit/airline/:id", component: AirlineEditComponent},
   {path: "cart", component: CartComponent},
+  {path: "payment/:id", component: PaymentComponent},
   // {path:"airline/:id", component: AirlineindexComponent},
   {path: "custom-package", component: CustomPackageComponent},
 

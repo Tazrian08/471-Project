@@ -56,9 +56,16 @@ class AttractionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Attraction $attraction)
+    public function show($id)
     {
-        //
+
+        $attraction=Attraction::with('destination', 'image')->find($id);
+        if (!$attraction){
+            return response()->json(['error'=>'Attraction not found'],404);
+        }
+    
+
+        return response()->json($attraction);
     }
 
     /**

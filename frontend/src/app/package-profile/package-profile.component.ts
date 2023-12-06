@@ -2,7 +2,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Emitters } from '../emiters/emitters';
 
 @Component({
@@ -27,7 +27,7 @@ export class PackageProfileComponent implements OnInit {
 
 
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     // Retrieve the package ID from the route parameters
@@ -124,5 +124,8 @@ export class PackageProfileComponent implements OnInit {
   }
   toggleDescriptionDropdown2(): void {
     this.showDescriptionDropdown2 = !this.showDescriptionDropdown2;
+  }
+  goToDestinationProfile(destinationID: any): void {
+    this.router.navigate(['/destination/profile', destinationID]);
   }
 }

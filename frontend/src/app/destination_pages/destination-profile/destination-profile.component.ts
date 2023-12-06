@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Emitters } from 'src/app/emiters/emitters';
 
 @Component({
@@ -25,7 +25,14 @@ export class DestinationProfileComponent {
   hotels: any
 
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {
+
+  auth:boolean=false
+  admin:boolean=false
+  Login:boolean=true
+  Register:boolean=true
+
+
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
 
 
     this.route.params.subscribe(params => {
@@ -71,6 +78,42 @@ export class DestinationProfileComponent {
 
 
 
+
+    this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
+      (res: any) => {
+        console.log(res)
+        if (res.admin_access==1){
+          Emitters.adminEmitter.emit(true);
+        }
+        Emitters.authEmitter.emit(true);
+      }
+    );
+    Emitters.authEmitter.subscribe(
+      (data: any) => {
+        this.auth= data;
+        this.Login=false;
+        this.Register=false;
+        console.log("This is working1");
+      }
+    );
+    Emitters.adminEmitter.subscribe(
+      (data: any) => {
+        this.admin= data;
+        console.log("This is working2");
+      }
+    );
+
+
+
+  }
+  goToPackageProfile(packageId: any): void {
+    this.router.navigate(['/package-profile', packageId]);
+  }
+  goToAttractionProfile(attId: any): void {
+    this.router.navigate(['/attraction-profile', attId]);
+  }
+  goToHotelProfile(hotelId: any): void {
+    this.router.navigate(['/hotel-profile', hotelId]);
   }
 
 

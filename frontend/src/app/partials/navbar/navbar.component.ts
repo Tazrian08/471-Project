@@ -29,6 +29,8 @@ export class NavbarComponent {
   admin: any
   @Input() Login: boolean = false;
   @Input() Register: boolean = false ;
+  @Input() Destination: boolean = false;
+  @Input() Package: boolean = false ;
 
 
 

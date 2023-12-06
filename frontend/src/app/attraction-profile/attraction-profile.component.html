@@ -1,0 +1,41 @@
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <div>
+    <app-navbar></app-navbar>
+  <body>
+  
+      <div class="photo-container">
+      <img src="" alt="">
+      <div class="container" style="overflow: auto;">
+          <div class="profile-container">
+              <div class="card">
+                  <div class="card-content">
+                    <img [src]="attraction.image.path" alt="" class="card-image">
+                  </div>
+              </div>
+              <div class="card1">
+                  <div class="card-content1"> 
+                  <h1>Attraction Profile:</h1>
+                  <h2>Name: {{attraction.attraction}}</h2>
+                  <h2 class="link" (click)="goToDestinationProfile(attraction.destination.id)">Destination: {{attraction.destination.country}}, {{attraction.destination.city}}</h2>
+                  </div>
+              </div>
+              <div class="card2">
+                  <h2>Description:</h2>
+                  <div class="card-content2"> 
+                      <h4>{{attraction.details}}</h4>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+     
+      </div>
+  </body>
+  </div>
+  
+  
+      
+  
+      
+  

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\HotelsController;
 use App\Http\Controllers\PaypalController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AirlinesController;
 use App\Http\Controllers\AttractionController;
@@ -37,6 +39,7 @@ Route::post("/login",[UserController::class,"login"]);
 Route::get("/travel-packages",[TravelPackageController::class,"index"]);
 Route::get("/travel-packages/{id}", [TravelPackageController::class, "show"]);
 Route::post("/travel-package/create",[TravelPackageController::class,"create"]);
+Route::get('/travel-package/search/{search}',[TravelPackageController::class,"search"]);
 
 
 //DESTINATION ROUTES
@@ -50,11 +53,13 @@ Route::get('/destination/profile/{destinationID}',[DestinationController::class,
 
 //ATTRACTION ROUTES
 Route::post("/attraction/create",[AttractionController::class,"create"]);
+Route::get("/attraction/{id}", [AttractionController::class, "show"]);
 
 //HOTEL ROUTES
 Route::post("/hotels/create", [HotelsController::class,"create"]);
 Route::get("/hotels", [HotelsController::class, "index"]);
 Route::get('/hotelselector/{destinationID}',[HotelsController::class,"select"]);
+Route::get("/hotel/{id}", [HotelsController::class, "show2"]);
 
 //AIRLINE ROUTES
 Route::post("/airline/create",[AirlinesController::class,"create"]);
@@ -68,8 +73,15 @@ Route::put("/airline/edit", [AirlinesController::class,"update"]);
 Route::get("flight", [FlightController::class,"index"]);
 Route::get('/flightselector/{airlineId}',[FlightController::class,"select"]);
 
-//PAYMENT ROUTES
-Route::post('paypal/payment', [PaypalController::class, 'payment']);
+//BOOKING ROUTES
+Route::post("/booking", [BookingController::class,"create"]);
+
+
+
+
+//CART ROUTES
+Route::delete("/cart/delete/{id}", [CartController::class,"destroy"]);
+Route::post('/cart/index2', [CartController::class, 'index2']);
 
 //TEMP ROUTE FOR CUSTOM
 // Route::get('/custom-package', [TravelPackageController::class, 'custom']);
@@ -84,5 +96,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/cart', [CartController::class, 'add']);
     Route::get('/cart/index', [CartController::class, 'index']);
     Route::get('/profile', [ProfileController::class, 'profile']);
-    
+    Route::get('/bookingdetail', [BookingController::class, 'index']);
+    //PAYMENT ROUTES
+    Route::post('paypal/payment', [PaypalController::class, 'payment']);
+
+
 });

@@ -27,7 +27,7 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->string('invoice'); //location of generated pdf
             $table->boolean("status");
-            $table->date('date');
+            $table->timestamps('date');
             $table->string("payment info"); //location of info pdf
             $table->timestamps();
         });

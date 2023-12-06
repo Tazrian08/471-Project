@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class PaypalController extends Controller
 {
     public function payment(Request $request)
     {
+
+        $user_id=Auth::user()->id;
+        
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $paypalToken = $provider->getAccessToken();
@@ -16,7 +20,7 @@ class PaypalController extends Controller
         $response = $provider->createOrder([
             "intent" => "CAPTURE",
             "application_context" => [
-                "return_url" => route('paypal_success'),
+                "return_url" => 'http://localhost:4200/payment/' . $user_id,
                 "cancel_url" => route('paypal_cancel')
             ],
             "purchase_units" => [

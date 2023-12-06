@@ -249,3 +249,9 @@ body {
 .package-table td:not(:first-child) {
   font-size: 12px;
 }
+
+.link {
+  color: blue; /* Set the desired link color */
+  text-decoration: underline; /* Add an underline to mimic a link */
+  cursor: pointer; /* Show the pointer cursor on hover to indicate interactivity */
+}

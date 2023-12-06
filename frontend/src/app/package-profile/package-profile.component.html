@@ -49,20 +49,21 @@
                 </div>
             </div>
         </div>
+        <div class="bottom-box">
+          <button class="secondary" (click)="toggleDescriptionDropdown()">Show Details ▼</button>
+          <div *ngIf="showDescriptionDropdown" class="description-dropdown-box">
+            <h3 class="pointer" (click)="goToDestinationProfile(package.destination.id)">Destination: {{package.destination.country}}, {{package.destination.city}}</h3>
+            <h3>Airline: {{package.airline.name}}</h3>
+            <h3>Hotel: {{package.hotel.name}}</h3>
+            <h3>Departure time: {{package.departure_flight.departure}}</h3>
+            <h3>Return Time: {{package.return_flight.departure}}</h3>
+            <h3> Duration of Package: {{duration}}</h3> 
+            <h3>Price: {{package.price}}</h3>
+            <small>*Rates are for single person. For each aditional person, the price goes up by 200 USD</small>
+          </div>
+        </div>
     </div>
-    <div class="bottom-box">
-      <button class="secondary" (click)="toggleDescriptionDropdown()">Show Details ▼</button>
-      <div *ngIf="showDescriptionDropdown" class="description-dropdown-box">
-        <h3>Destination: {{package.destination.country}}, {{package.destination.city}}</h3>
-        <h3>Airline: {{package.airline.name}}</h3>
-        <h3>Hotel: {{package.hotel.name}}</h3>
-        <h3>Departure time: {{package.departure_flight.departure}}</h3>
-        <h3>Return Time: {{package.return_flight.departure}}</h3>
-        <h3> Duration of Package: {{duration}}</h3> 
-        <h3>Price: {{package.price}}</h3>
-        <small>*Rates are for single person. For each aditional person, the price goes up by 200 USD</small>
-      </div>
-    </div>
+   
     </div>
 </body>
 </div>

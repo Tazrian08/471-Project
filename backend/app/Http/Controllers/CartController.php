@@ -34,6 +34,16 @@ class CartController extends Controller
         return response()->json($cart);
     }
 
+
+    public function index2(Request $request)
+    {  
+        $cart = Cart::where('user_id', $request->input('user_id'))
+        ->with('user', 'travel_package.destination')
+        ->get();
+
+        return response()->json($cart);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -77,8 +87,14 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cart $cart)
+    public function destroy($id)
     {
-        //
+        $cart=Cart::find($id);
+
+        $cart->delete();
+
+        
+        return response()->json("Removed");
+
     }
 }
