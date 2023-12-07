@@ -55,7 +55,8 @@ const routes: Routes = [
   {path: "payment/:id", component: PaymentComponent},
   // {path:"airline/:id", component: AirlineindexComponent},
   {path: "custom-package", component: CustomPackageComponent},
-
+  { path: 'rate-package', component: PackageProfileComponent },
+  { path: 'package-rating/:id', component: PackageProfileComponent },
 ];
 
 @NgModule({

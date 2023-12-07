@@ -68,17 +68,15 @@ Route::get("/airline/{id}", [AirlinesController::class,"show2"]);
 Route::put("/airline/edit", [AirlinesController::class,"update"]);
 
 
-
 //FLIGHT ROUTES
 Route::get("flight", [FlightController::class,"index"]);
 Route::get('/flightselector/{airlineId}',[FlightController::class,"select"]);
-Route::post("/desflight", [FlightController::class,"desflight"]);
-Route::post("/desairflight", [FlightController::class,"desairflight"]);
-Route::post("/airflight", [FlightController::class,"airflight"]);
 
 //BOOKING ROUTES
 Route::post("/booking", [BookingController::class,"create"]);
 
+//RATING
+Route::get('/average-rating/{packageId}', [TravelPackageController::class, 'ratePackage']);
 
 
 
@@ -100,6 +98,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/cart/index', [CartController::class, 'index']);
     Route::get('/profile', [ProfileController::class, 'profile']);
     Route::get('/bookingdetail', [BookingController::class, 'index']);
+    Route::post('/rate-package', [TravelPackageController::class, 'ratePackage']);
     //PAYMENT ROUTES
     Route::post('paypal/payment', [PaypalController::class, 'payment']);
 

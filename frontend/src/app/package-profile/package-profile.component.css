@@ -227,3 +227,19 @@ body {
   color: #000280;
 }
 
+.star-container {
+  display: flex;
+  size: 50px;
+}
+
+.star {
+  cursor: pointer;
+  margin-right: 5px; /* Adjust the margin as needed */
+}
+
+.star span {
+  display: inline-block;
+  width: 30px; /* Adjust the width and height as needed */
+  font-size: 30px;
+  text-align: center;
+}

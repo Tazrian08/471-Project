@@ -14,7 +14,6 @@ class Review extends Model
         'user_id',
         'travel_package_id',
         'ratings',
-        'comments',
 
     ];
 

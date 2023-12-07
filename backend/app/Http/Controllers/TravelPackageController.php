@@ -10,6 +10,7 @@ use App\Models\Flight;
 use App\Models\Hotels;
 use App\Http\Requests\StoreTravel_PackageRequest;
 use App\Http\Requests\UpdateTravel_PackageRequest;
+use App\Models\Review;
 
 class TravelPackageController extends Controller
 {
@@ -106,17 +107,29 @@ class TravelPackageController extends Controller
         return response()->json(['package'=>$travelPackage,'image'=>$img]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Travel_Package $travel_Package)
+    public function ratePackage(Request $request)
     {
-        //
+        $packageId = $request->input('package_id');
+        $rating = $request->input('rating');
+    
+        // Uncomment this line if you have authentication
+        $userId = auth()->user()->id;
+    
+        // Save the rating in the Review table
+        $review = new Review([
+            'user_id' => $userId,  // Update this line based on your user object structure
+            'travel_package_id' => $packageId,
+            'ratings' => $rating,
+            'comments' => $request->input('comments'), // Assuming you want to store comments too
+        ]);
+        $review->save();
+    
+        // Calculate and return the average rating for the specified travel package
+        $averageRating = Review::where('travel_package_id', $packageId)->avg('ratings');
+    
+        // Respond with the updated average rating
+        return response()->json(['rating' => $averageRating]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateTravel_PackageRequest $request, Travel_Package $travel_Package)
     {
         //

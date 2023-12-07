@@ -35,6 +35,27 @@
                 <h1>Package Profile:</h1>
                 <h2>Name: {{package.name}}</h2>
                 <h2>Price: {{package.price}}</h2>
+                <div *ngIf="auth">
+                  <div>
+    
+                    <!-- Star rating input -->
+            <!-- <div>
+              <span *ngFor="let star of [1, 2, 3, 4, 5]" class="star" (click)="onStarClick(star)">
+                {{ star <= (selectedRating ?? 0) ? '★' : '☆' }}
+              </span>
+              
+            </div>
+             -->
+            <!-- Submit button -->
+            <!-- <button class="btn btn-primary" (click)="submitRating()">Submit Rating</button> -->
+                  </div>
+                </div>
+                <div *ngIf="averageRating !== null">
+                  <h4>Average Rating: {{ averageRating }}</h4>
+                </div>
+                
+      
+                
                 <button *ngIf="auth" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   Add to Cart
                 </button>
@@ -49,6 +70,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="bottom-box">
           <button class="secondary" (click)="toggleDescriptionDropdown()">Show Details ▼</button>
           <div *ngIf="showDescriptionDropdown" class="description-dropdown-box">
@@ -61,7 +83,24 @@
             <h3>Price: {{package.price}}</h3>
             <small>*Rates are for single person. For each aditional person, the price goes up by 200 USD</small>
           </div>
+          <button class="secondary" (click)="toggleDescriptionDropdown2()">Want to Rate ▼</button>
+          <div *ngIf="showDescriptionDropdown2" class="description-dropdown-box">
+            <h2>Rate this package</h2>
+            <div class="star-container">
+              <span *ngFor="let star of [1, 2, 3, 4, 5]" class="star" (click)="onStarClick(star)">
+                <span [innerHTML]="star <= (selectedRating ?? 0) ? '★' : '☆'"></span>
+              </span>
+            </div>
+            
+            
+            
+            <!-- Submit button -->
+            <button class="btn btn-primary" (click)="submitRating()">Submit Rating</button>
+                 
+            
+          </div>
         </div>
+        
     </div>
    
     </div>

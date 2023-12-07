@@ -35,6 +35,7 @@ import { HotelProfileComponent } from './hotelpages/hotel-profile/hotel-profile.
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
