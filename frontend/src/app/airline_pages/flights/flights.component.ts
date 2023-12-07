@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
+import { Emitters } from 'src/app/emiters/emitters';
 
 @Component({
   selector: 'app-flights',
@@ -12,6 +13,15 @@ export class FlightsComponent implements OnInit {
 
 
   flights: any
+  auth:boolean=false
+  admin:boolean=false
+  Login:boolean=true
+  Register:boolean=true
+
+
+  selectedDestination:any
+  selectedAirline:any
+  selectedDeparture: any
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -29,6 +39,34 @@ export class FlightsComponent implements OnInit {
         console.error('Error fetching flights:', error);
       }
     );
+
+
+    this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
+      (res: any) => {
+        console.log(res)
+        if (res.admin_access==1){
+          Emitters.adminEmitter.emit(true);
+        }
+        Emitters.authEmitter.emit(true);
+      }
+    );
+    Emitters.authEmitter.subscribe(
+      (data: any) => {
+        this.auth= data;
+        this.Login=false;
+        this.Register=false;
+        console.log("This is working1");
+      }
+    );
+    Emitters.adminEmitter.subscribe(
+      (data: any) => {
+        this.admin= data;
+        console.log("This is working2");
+      }
+    );
+
+
+
   }
 
   // Method to navigate to the package profile with the specific package ID
