@@ -12,6 +12,38 @@ class FlightController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function airflight(Request $request)
+     {
+        $flights=Flight::where("airlines_id",$request->input('airline'))
+        ->with("destination","airlines")
+        ->get();
+        return response()->json($flights);
+
+
+
+     }
+
+    public function desairflight(Request $request)
+    {
+        $flights = Flight::where('destination_id', $request->input('destination'))
+        ->where('airlines_id', $request->input('airline'))
+       ->with("destination","airlines")
+       ->get();
+       return response()->json($flights);
+
+
+
+    }
+     public function desflight(Request $request)
+     {
+        $flights=Flight::where("destination_id",$request->input('destination'))
+        ->with("destination","airlines")
+        ->get();
+        return response()->json($flights);
+
+
+
+     }
     public function select($id)
     {
 

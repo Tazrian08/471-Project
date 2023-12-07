@@ -72,6 +72,9 @@ Route::put("/airline/edit", [AirlinesController::class,"update"]);
 //FLIGHT ROUTES
 Route::get("flight", [FlightController::class,"index"]);
 Route::get('/flightselector/{airlineId}',[FlightController::class,"select"]);
+Route::post("/desflight", [FlightController::class,"desflight"]);
+Route::post("/desairflight", [FlightController::class,"desairflight"]);
+Route::post("/airflight", [FlightController::class,"airflight"]);
 
 //BOOKING ROUTES
 Route::post("/booking", [BookingController::class,"create"]);

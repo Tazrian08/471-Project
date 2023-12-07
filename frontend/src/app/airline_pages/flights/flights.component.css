@@ -67,3 +67,15 @@
   button:hover {
     background-color: #218838;
   }
+
+
+  .select-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Adjust the margin-bottom to your preference */
+  }
+
+  .select-boxes label,
+  .select-boxes select {
+    margin-bottom: 10px; /* Adjust the margin-bottom to your preference */
+  }
