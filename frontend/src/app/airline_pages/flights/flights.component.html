@@ -4,6 +4,7 @@
 <title>Destination Index</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<app-navbar [Login]="Login" [Register]="Register"></app-navbar>
 <body>
   <div class="photo-container">
     <div class="centered-text">
@@ -11,30 +12,55 @@
     </div>
   </div>
 
+  <!-- Add three dropdown select boxes -->
   <div class="container">
+    <div class="select-boxes">
+      <label for="destinationSelect">Select Destination:</label>
+      <select id="destinationSelect" [(ngModel)]="selectedDestination" (change)="getflight()">
+        <option value="Default">Default</option>
+        <option *ngFor="let destination of destinations" [value]="destination.id" >{{ destination.country }}, {{destination.city }}</option>
+        <!-- Add options dynamically if needed -->
+      </select>
+
+      <label for="airlineSelect">Select Airline:</label>
+      <select id="airlineSelect" [(ngModel)]="selectedAirline" (change)="getflight()">
+        <option value="Default">Default</option>
+        <option *ngFor="let airline of airlines" [value]="airline.id" >{{airline.name }}</option>
+        <!-- Add options dynamically if needed -->
+      </select>
+
+      <label for="departureSelect">Sort By:</label>
+      <select id="departureSelect" [(ngModel)]="sort"(change)="Sort()">
+        <option value="Price">Prices</option>
+        <option value="Date">Date</option>
+        <!-- Add options dynamically if needed -->
+      </select>
+    </div>
+
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Destination Name</th>
+          <th>Country Name</th>
+          <th>City Name</th>
           <th>Airlines Name</th>
           <th>Departure</th>
           <th>Prices</th>
-          <th>Action</th>
+          <!-- <th>Action</th> -->
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let flight of flights">
           <td>{{ flight.destination.country }}</td>
+          <td>{{ flight.destination.city }}</td>
           <td>{{ flight.airlines.name }}</td>
           <td>{{ flight.departure }}</td>
-          <td>{{ flight.prices }}</td>
-          <td>
+          <td>${{ flight.prices }} (per person)</td>
+          <!-- <td>
             <button (click)="goToAirlineFlights(flight.airlines_id)">View Airline Flights</button>
-          </td>
+          </td> -->
         </tr>
       </tbody>
     </table>
   </div>
 </body>
 </html>
-
