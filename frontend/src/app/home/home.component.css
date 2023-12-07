@@ -39,7 +39,7 @@
 
 .photo-container2 {
     width: 100%;
-    height: 60vh;
+    height: 55vh;
     background-size: cover;
     background-position: center;
     padding: 10px; /* Specify the unit (e.g., px) for padding */
@@ -49,7 +49,7 @@
 .photo-container3 {
     background-image: url('/assets/images/vertical-shot-foamy-waves-water-sea.jpg');
     width: 100%;
-    height: 70vh;
+    height: 65vh;
     background-size: cover;
     background-position: center;
     padding: 10px; /* Specify the unit (e.g., px) for padding */
@@ -66,7 +66,7 @@
 }
 .photo-container5 {
     width: 100%;
-    height: 240vh;
+    height: 230vh;
     background-size: cover;
     background-position: center;
     padding: 10px; /* Specify the unit (e.g., px) for padding */
@@ -98,6 +98,26 @@
     background-position: center;
     padding: 10px; /* Specify the unit (e.g., px) for padding */
     background-color: #0a0e23;}
+  .photo-container9 {
+    /* background-image: url('/assets/images/vertical-shot-foamy-waves-water-sea.jpg'); */
+    width: 100%;
+    height: 35vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px; /* Specify the unit (e.g., px) for padding */
+    background-color: black;
+    text-align: center;
+}
+.photo-container10{
+  /* background-image: url('/assets/images/vertical-shot-foamy-waves-water-sea.jpg'); */
+  width: 100%;
+  height: 29vh;
+  background-size: cover;
+  background-position: center;
+  padding: 10px; /* Specify the unit (e.g., px) for padding */
+  background-color: black;
+  text-align: center;
+}
 
 .left,
   .right {
@@ -338,4 +358,84 @@ a{
 /* Change text color on hover */
 .navbar a:hover {
   color: #ffcc00; /* Adjust the color as needed */
+}
+.semi-transparent-box11 {
+  width: 15%; 
+  height: 30vh; 
+  background-color: rgba(254, 251, 251, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  margin-right: 10px;
+  background-image: url("/assets/images/maisa.jpg");
+  background-size: cover; 
+  background-position: center; 
+  border-radius: 200px;
+}
+.semi-transparent-box22 {
+  width: 15%; 
+  height: 30vh; 
+  background-color: rgba(254, 251, 251, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  margin-right: 10px;
+  background-image: url("/assets/images/tazri.jpg");
+  border-radius: 200px;
+  background-size: cover; 
+  background-position: center; 
+}
+.semi-transparent-box33 {
+  width: 15%;
+  height: 30vh;
+  background-color: rgba(254, 251, 251, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  margin-right: 10px;
+  background-image: url("/assets/images/promu.jpg");
+  border-radius: 200px;
+  background-size: cover; 
+  background-position: center; 
+}
+.semi-transparent-box8 {
+  margin-top: 10px;
+  width: 20%; 
+  height: 20vh; 
+  /* background-color: rgba(254, 251, 251, 0.5); */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  margin-right: 10px;
+  line-height: 0.5;
+
+}
+.semi-transparent-box9 {
+  margin-top: 10px;
+  width: 20%; 
+  height: 20vh; 
+  /* background-color: rgba(254, 251, 251, 0.5); */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  margin-right: 10px;
+  line-height: 0.5;
+
+}
+.semi-transparent-box10 {
+  margin-top: 10px;
+  width: 20%; 
+  height: 20vh; 
+  /* background-color: rgba(254, 251, 251, 0.5); */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  margin-right: 10px;
+  line-height: 0.5;
 }

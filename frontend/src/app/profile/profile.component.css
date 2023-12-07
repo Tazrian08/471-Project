@@ -20,6 +20,7 @@ aside {
   margin-left: 20px;
   border-radius: 25px;
   text-decoration-color: #555;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 h2, span{
   font-size: 1.4rem;
@@ -94,7 +95,7 @@ main {
   background-color: #f0f0f0;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: box-shadow 0.3s ease;
 }
@@ -155,24 +156,22 @@ circle {
   font-weight: bold;
 }
 .photo-container2 {
-  width: 55%; /* Adjust as needed */
+  width: 55%; 
   height: 6vh;
   background-size: cover;
   background-position: center;
   padding: 10px;
   float: left;
   background-color: #fafafa;
-
-    position: fixed;
-    
-    top: 10px; /* Adjust the top position as needed */
-    right: 500px; /* Adjust the right position as needed */
-   
-    border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 10px; 
+  right: 500px; 
+  border-radius: 15px;
   
 }
 .photo-container3 {
-  width: 55%; /* Adjust as needed */
+  width: 55%;
   height: 40vh;
   background-size: cover;
   background-position: center;
@@ -180,30 +179,26 @@ circle {
   float: left;
   background-image: url('/assets/images/flat-lay-traveling-elements-collection.jpg');
   background-color: #fafafa;
-
-    position: fixed;
-    
-    top: 80px; /* Adjust the top position as needed */
-    right: 500px; /* Adjust the right position as needed */
-   
-    border-radius: 15px;
+  position: fixed;
+  top: 80px;
+  right: 500px; 
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   
 }
 .photo-container5 {
-  width: 55%; /* Adjust as needed */
+  width: 55%; 
   height: 40vh;
   background-size: cover;
   background-position: center;
   padding: 10px;
   float: left;
   background-color: #fafafa;
-
-    position: fixed;
-    
-    top: 500px; /* Adjust the top position as needed */
-    right: 500px; /* Adjust the right position as needed */
-   
-    border-radius: 15px;
+  position: fixed;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  top: 500px; 
+  right: 500px; 
+  border-radius: 15px;
   
 }
 
@@ -214,7 +209,7 @@ circle {
   height: 30vh;
 }
 
-/* Style for each semi-transparent box */
+
 .semi-transparent-box {
   margin-top: 25px;
   width: 25%;
@@ -228,7 +223,7 @@ circle {
   border-radius: 30px;
 }
 .photo-container4 {
-  width: 22%; /* Adjust as needed */
+  width: 22%; 
   height: 80vh;
   background-size: cover;
   background-position: center;
@@ -236,12 +231,12 @@ circle {
   float: left;
   background-color: #fafafa;
 
-    position: fixed;
-    
-    top: 20px; /* Adjust the top position as needed */
-    right: 20px; /* Adjust the right position as needed */
-   
-    border-radius: 15px;
+  position: fixed;
+
+  top: 20px; 
+  right: 20px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
   
 }
 .pic {
@@ -249,10 +244,11 @@ circle {
   margin-top: 50px;
   width: 80%;
   height: 40%;
-  border-radius: 380px;
-  background-image: url('/assets/images/anonymous-user-circle-icon-vector-18958255.jpg'); /* Set the path to your user's photo */
-  background-size: cover; /* Ensures the photo covers the entire container */
-  background-position: center; /* Center the photo within the container */
+  border-radius: 600px;
+  background-image: url('/assets/images/anonymous-user-circle-icon-vector-18958255.jpg'); 
+  background-size: cover;
+  background-position: center; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .info{
@@ -266,7 +262,7 @@ circle {
   height: 100vh;
   width: 30%;
   margin: 10px;
-  margin-right: 20px; /* Adjust this margin as needed */
+  margin-right: 20px;
   padding: 20px;
   border-radius: 15px;
 
@@ -276,21 +272,20 @@ circle {
 }
 .logout-button {
   margin-top: 20px;
-  background-color: #555; /* Red background color */
-  color: #fff; /* White text color */
-  padding: 12px 20px; /* Padding for better button appearance */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Cursor style on hover */
-  font-size: 16px; /* Font size */
-  transition: background-color 0.3s; /* Smooth transition for background color change */
-
-  /* Optional: Add box shadow for a subtle lift effect */
+  background-color: #555; 
+  color: #fff; 
+  padding: 12px 20px; 
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  transition: background-color 0.3s; 
+  
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logout-button:hover {
-  background-color: #d32f2f; /* Darker red on hover */
+  background-color: #d32f2f; 
 }
 
 
@@ -330,7 +325,7 @@ circle {
 
 .package-table th:first-child,
 .package-table td:first-child {
-  width: 40%; /* Adjust the width of the "Name" column as needed */
+  width: 40%; 
 }
 
 .package-table th:nth-child(2),

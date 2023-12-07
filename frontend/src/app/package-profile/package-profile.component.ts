@@ -105,7 +105,7 @@ export class PackageProfileComponent implements OnInit {
   
 
     fetchAverageRating(): void {
-      // Make sure you have access to the package ID
+      
       if (this.package && this.package.id) {
         this.http.get(`http://localhost:8000/api/average-rating/${this.package.id}`, { withCredentials: true }).subscribe(
           (response: any) => {
@@ -117,25 +117,23 @@ export class PackageProfileComponent implements OnInit {
         );
       }
     }
-  // Update the method to track the selected rating
+ 
   onStarClick(rating: number): void {
     this.selectedRating = rating;
   }
 
-  // Add a method to submit the rating
+  
   submitRating(): void {
     if (this.selectedRating !== null) {
-      // Send the rating data to the backend
+      
       const data = {
         package_id: this.package.id,
         rating: this.selectedRating,
-        comments: '', // Add any comments logic here if needed
-        user_id: this.userId // Assuming you have a user ID available
+        user_id: this.userId 
       };
 
       this.http.post('http://localhost:8000/api/rate-package', data, { withCredentials: true }).subscribe(
         (res: any) => {
-          // Handle the response (if needed)
           alert("Rating Submitted")
           console.log(res);
           
@@ -144,29 +142,27 @@ export class PackageProfileComponent implements OnInit {
           console.error('Error submitting rating:', error);
         });
 
-      // Reset the selected rating
+      //reset
       this.selectedRating = null;
     } else {
-      // Handle case where no rating is selected
+      
       console.warn('Please select a rating before submitting.');
     }
   }
 
-  // Add this method to handle user rating changes
   ratePackage(rating: number): void {
     this.userRating = rating;
 
-    // Send the rating data to the backend
+   
     const data = {
       package_id: this.package.id,
       rating: this.userRating,
-      comments: '', // Add any comments logic here if needed
-      user_id: this.userId // Assuming you have a user ID available
+      comments: '', 
+      user_id: this.userId 
     };
 
     this.http.post('http://localhost:8000/api/rate-package', data, { withCredentials: true }).subscribe(
       (res: any) => {
-        // Handle the response (if needed)
         console.log(res);
       },
       (error) => {
