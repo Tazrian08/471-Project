@@ -359,3 +359,7 @@ circle {
   font-size: 12px;
 }
 
+.attraction-container{
+  overflow: auto;
+  height: 100%;
+}
