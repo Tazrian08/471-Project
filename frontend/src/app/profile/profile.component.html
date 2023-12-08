@@ -119,29 +119,30 @@
         <div class="photo-container2">
           <span>Welcome to your Travel dashboard</span></div>
 
-        <div class="photo-container3">
+          <div class="photo-container3" [ngClass]="{'admin-background': admin, 'user-background': !admin}">
         </div>
         
+        
         <div class="photo-container4">
-          <div class="pic"></div>
-          <div class='info'>
-            <div *ngIf="admin">
-              <h2 class="welcome-header">Welcome admin!</h2>
+            <div [ngClass]="{'admin-pic': admin, 'user-pic': !admin}" class="pic"></div>
+            <div class='info'>
+              <div *ngIf="admin">
+                <h2 class="welcome-header">Welcome admin!</h2>
+              </div>
+            
+              <div *ngIf="!admin">
+                <h2 class="welcome-header">Welcome user!</h2>
+              </div>
+              <h4>User Information</h4>
+              <h2>{{ message }} this is your profile</h2>
+              <h2>Email: {{ email }}</h2>
+              <button (click)="logout()" class="logout-button">Logout</button>
             </div>
-          
-            <div *ngIf="!admin">
-              <h2 class="welcome-header">Welcome user!</h2>
+            <div class="profile-container" *ngIf="!auth">
+              <h2>You're not logged in</h2>
             </div>
-            <h4>User Information</h4>
-            <h2>{{ message }} this is your profile</h2>
-            <h2>Email: {{ email }}</h2>
-            <button (click)="logout()" class="logout-button">Logout</button>
           </div>
-          <div class="profile-container" *ngIf="!auth">
-            <h2>You're not logged in</h2>
           
-          </div>
-        </div>
         <div class="photo-container5">
           <div *ngIf="!admin" class="container2">
             <div *ngIf="bookings" class="attraction-container">

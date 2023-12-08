@@ -16,7 +16,7 @@
 .photo-container {
   width: 100%;
   height: 55vh; /* Adjust as needed */
-  background-image: url('/assets/images/mountains.jpg');
+  background-image: url('/assets/images/famous-view-lyon-with-saone-river-night.jpg');
   background-color: #f2f2f2; /* Add your preferred background color */
   background-size: cover; /* This makes the background image cover the entire container */
   background-position: center; /* Center the background image */

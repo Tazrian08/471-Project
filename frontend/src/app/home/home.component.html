@@ -7,7 +7,6 @@
         <li><a [routerLink]="['/hotels']">Hotels</a></li>
         <li><a [routerLink]="['/flight']">Flights</a></li>
         <li><a [routerLink]="['/destination/index']">Desitnations</a></li>
-        <li><a href="#">Reviews</a></li>
         <li *ngIf="!auth"><a  [routerLink]="['/login']">Login</a></li>
         <li *ngIf="!auth"><a [routerLink]="['/register']">Register</a></li>
         <li *ngIf="auth"><a [routerLink]="['/profile']">Profile</a></li>
