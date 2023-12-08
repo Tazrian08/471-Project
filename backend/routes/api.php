@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Review;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -8,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\HotelsController;
 use App\Http\Controllers\PaypalController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AirlinesController;
@@ -88,6 +90,10 @@ Route::post("/booking", [BookingController::class,"create"]);
 Route::get('/average-rating/{packageId}', [TravelPackageController::class, 'avg']);
 
 
+//REVIEW ROUTES
+Route::get('/reviews', [ReviewController::class, 'index']);
+
+
 
 //CART ROUTES
 Route::delete("/cart/delete/{id}", [CartController::class,"destroy"]);
@@ -97,6 +103,8 @@ Route::post('/cart/index2', [CartController::class, 'index2']);
 // Route::get('/custom-package', [TravelPackageController::class, 'custom']);
 Route::post('/custom-package', [TravelPackageController::class, 'customcreate']);
 Route::get('/hotel-room-details/{hotelId}', [HotelController::class, 'getRoomDetails']);
+
+
 
 
 //SANCTUM PROTECTED ROUTES

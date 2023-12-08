@@ -17,6 +17,7 @@ export class ProfileComponent {
   auth=false;
   admin=false
   bookings:any
+  reviews:any
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -51,6 +52,12 @@ export class ProfileComponent {
       .subscribe((Data: any) => {
         this.bookings=Data
         console.log(this.bookings)
+      });
+
+      this.http.get('http://localhost:8000/api/reviews', {withCredentials: true})
+      .subscribe((Data: any) => {
+        this.reviews=Data
+        console.log(this.reviews)
       });
     
 

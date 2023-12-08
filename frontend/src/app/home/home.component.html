@@ -10,6 +10,7 @@
         <li *ngIf="!auth"><a  [routerLink]="['/login']">Login</a></li>
         <li *ngIf="!auth"><a [routerLink]="['/register']">Register</a></li>
         <li *ngIf="auth"><a [routerLink]="['/profile']">Profile</a></li>
+        <li *ngIf="auth && !admin"><a [routerLink]="['/cart']">Cart</a></li>
     </ul>
 </nav>
     <div class="heading">

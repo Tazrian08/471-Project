@@ -13,7 +13,11 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews=Review::with("travel","user")->get();
+        return response()->json($reviews);
+
+
+
     }
 
     /**
