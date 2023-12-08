@@ -9,7 +9,7 @@ class Image extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'travel_package_id',
+        'travel__package_id',
         'destination_id',
         'attraction_id',
         'activity_id',

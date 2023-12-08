@@ -31,6 +31,9 @@ export class HotelfromComponent {
   prices =''
   phone_no =''
   destination_id =''
+  classic_prices:any
+  deluxe_prices:any
+  presidential_prices:any
   
   destinations:any[]=[];
   image:any;
@@ -41,7 +44,9 @@ export class HotelfromComponent {
 
     formData.append('name', this.name);
     formData.append('email', this.email);
-    formData.append('prices', this.prices);
+    formData.append('classic_prices', this.classic_prices);
+    formData.append('deluxe_prices', this.deluxe_prices);
+    formData.append('presidential_prices', this.presidential_prices);
     formData.append('phone_no', this.phone_no);
     formData.append('destination_id', this.destination_id);
 

@@ -210,4 +210,7 @@ export class PackageProfileComponent implements OnInit {
       }
     );
   }
+  goToHotelProfile(hotelId: any): void {
+    this.router.navigate(['/hotel-profile', hotelId]);
+  }
 }

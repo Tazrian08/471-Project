@@ -56,7 +56,9 @@ class HotelsController extends Controller
         $hotels = Hotels::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
-            'prices' => $request->input('prices'),
+            'classic_prices' => $request->input('classic_prices'),
+            'deluxe_prices' => $request->input('deluxe_prices'),
+            'presidential_prices' => $request->input('presidential_prices'),
             'phone_no' => $request->input('phone_no'),
             'destination_id' => $request->input('destination_id'),
         ]);

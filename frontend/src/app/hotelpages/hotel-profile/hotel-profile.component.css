@@ -124,3 +124,7 @@ body {
     background-size: cover; /* This makes the background image cover the entire container */
     background-position: center; /* Center the background image */
 }
+.link{
+  cursor: pointer;
+  color: #9188e0;
+}

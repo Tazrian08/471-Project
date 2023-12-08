@@ -51,7 +51,7 @@
                   </div>
                 </div>
                 <div *ngIf="averageRating !== null">
-                  <h4>Average Rating:</h4>
+                  <h4>Rating:</h4>
                   <div class="star-container1">
                     <span *ngFor="let star of [1, 2, 3, 4, 5]" class="star">
                       <span [innerHTML]="star <= (averageRating ) ? '★' : '☆'"></span>
@@ -84,7 +84,7 @@
           <div *ngIf="showDescriptionDropdown" class="description-dropdown-box">
             <h3 class="pointer" (click)="goToDestinationProfile(package.destination.id)">Destination: {{package.destination.country}}, {{package.destination.city}}</h3>
             <h3>Airline: {{package.airline.name}}</h3>
-            <h3>Hotel: {{package.hotel.name}}</h3>
+            <h3 class="pointer" (click)="goToHotelProfile(package.hotel.id)">Hotel: {{package.hotel.name}}</h3>
             <h3>Departure time: {{package.departure_flight.departure}}</h3>
             <h3>Return Time: {{package.return_flight.departure}}</h3>
             <h3> Duration of Package: {{duration}}</h3> 

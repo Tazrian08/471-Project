@@ -4,7 +4,7 @@ Welcome to our Family. Here's to a long and prosperous journey
 
 
 
-<x-mail::button :url="'http://localhost:4200/login'">
+<x-mail::button :url="'http://localhost:4200/home'">
 Visit Agency
 </x-mail::button>
 
