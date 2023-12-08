@@ -177,7 +177,7 @@ circle {
   background-position: center;
   padding: 10px;
   float: left;
-  background-image: url('/assets/images/flat-lay-traveling-elements-collection.jpg');
+  /* background-image: url('/assets/images/flat-lay-traveling-elements-collection.jpg'); */
   background-color: #fafafa;
   position: fixed;
   top: 80px;
@@ -185,6 +185,15 @@ circle {
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   
+}
+.admin-background {
+  background-image: url('/assets/images/top-view-traveling-essentials-collection.jpg'); /* Replace with your admin background image */
+  background-color: #fafafa; /* Add admin background color */
+}
+
+.user-background {
+  background-image: url('/assets/images/high-angle-traveling-essentials-collection.jpg'); /* Replace with your user background image */
+  background-color: #fafafa; /* Add user background color */
 }
 .photo-container5 {
   width: 55%; 
@@ -230,7 +239,7 @@ circle {
   padding: 10px;
   float: left;
   background-color: #fafafa;
-
+  align-items: center;
   position: fixed;
 
   top: 20px; 
@@ -239,16 +248,23 @@ circle {
   border-radius: 15px;
   
 }
+
 .pic {
-  margin-left: 50px;
-  margin-top: 50px;
-  width: 80%;
-  height: 40%;
-  border-radius: 600px;
-  background-image: url('/assets/images/anonymous-user-circle-icon-vector-18958255.jpg'); 
+  width: 400px;
+  height: 400px;
   background-size: cover;
-  background-position: center; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-right: 20px;
+  align-content: center;
+}
+
+
+.admin-pic {
+  background-image: url('/assets/images/8843427.jpg');
+  align-content: center;
+}
+
+.user-pic {
+  background-image: url('/assets/images/7294811.jpg');
 }
 
 .info{
