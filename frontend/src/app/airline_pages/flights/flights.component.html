@@ -56,8 +56,9 @@
             <div class="flight-info">
               <span>{{ flight.airlines.name }}</span>
               <div *ngIf="admin" class="container70">
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-primary">Delete</button>
+                <button (click)="goToAirlineEdit(flight.airlines.id)" class="btn btn-primary">Edit</button>
+                <button (click)="deleteairline(flight.airlines.id)" class="btn btn-primary">Delete</button>
+                
               </div>
             </div>
           </td>

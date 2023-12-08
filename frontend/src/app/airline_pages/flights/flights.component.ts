@@ -219,4 +219,16 @@ export class FlightsComponent implements OnInit {
   //   );
     
   // }
+  deleteairline(airlineId: any): void {
+    this.http.delete(`http://localhost:8000/api/airline/delete/${airlineId}`, {withCredentials: true}).subscribe(
+      (res: any) => {
+        alert(res)
+        this. ngOnInit()
+      }
+    );
+
+}
+goToAirlineEdit(airlineId: any): void {
+  this.router.navigate(['/admin/edit/airline', airlineId]);
+}
 }
