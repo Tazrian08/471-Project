@@ -107,8 +107,14 @@ class AirlinesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Airlines $airlines)
+    public function destroy($id)
     {
-        //
+        $airline=Airlines::find($id);
+
+        $airline->delete();
+
+        
+        return response()->json("Removed");
+        
     }
 }

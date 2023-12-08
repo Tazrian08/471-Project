@@ -53,6 +53,7 @@ Route::delete("/destination/delete/{id}",[DestinationController::class,"destroy"
 
 
 
+
 //ATTRACTION ROUTES
 Route::post("/attraction/create",[AttractionController::class,"create"]);
 Route::get("/attraction/{id}", [AttractionController::class, "show"]);
@@ -68,6 +69,8 @@ Route::post("/airline/create",[AirlinesController::class,"create"]);
 Route::get("/airline",[AirlinesController::class,"index"]);
 Route::get("/airline/{id}", [AirlinesController::class,"show2"]);
 Route::put("/airline/edit", [AirlinesController::class,"update"]);
+Route::delete("/airline/delete/{id}", [AirlinesController::class,"destroy"]);
+
 
 
 //FLIGHT ROUTES

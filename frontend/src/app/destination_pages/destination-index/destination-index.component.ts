@@ -93,7 +93,10 @@ export class DestinationIndexComponent implements OnInit{
 
   goToDestinationProfile(destinationID: any): void {
     this.router.navigate(['/destination/profile', destinationID]);
+
   }
+
+
   
   
 }
