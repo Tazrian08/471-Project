@@ -93,7 +93,7 @@ class TravelPackageController extends Controller
     public function show($id)
     {
         // $travelPackage = Travel_Package::find($id);
-        $travelPackage=Travel_Package::with('destination', 'airline', 'departure_flight','return_flight','hotel')->find($id);
+        $travelPackage=Travel_Package::with('destination', 'airline', 'departure_flight','return_flight','hotel','review')->find($id);
         if (!$travelPackage){
             return response()->json(['error'=>'Travel package not found'],404);
         }
@@ -130,6 +130,14 @@ class TravelPackageController extends Controller
         // Respond with the updated average rating
         return response()->json(['rating' => $averageRating]);
     }
+
+    public function avg($packageId)
+    {
+        $averageRating = Review::where('travel_package_id', $packageId)->avg('ratings');
+        return response()->json($averageRating);
+    }
+
+    
     public function update(UpdateTravel_PackageRequest $request, Travel_Package $travel_Package)
     {
         //

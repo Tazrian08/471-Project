@@ -42,7 +42,20 @@ export class PackageProfileComponent implements OnInit {
         (packageData: any) => {
           this.package = packageData["package"];
           this.image = packageData["image"][0];
+          console.log(this.package)
 
+          if (this.package && this.package.review && this.package.review.length > 0) {
+            const totalRatings = this.package.review.reduce(
+              (acc: any, review: any) => acc + review.ratings,
+              0
+            );
+            const averageRatings = totalRatings / this.package.review.length;
+            this.averageRating= averageRatings;
+          } else {
+            // Handle the case where there are no reviews or package is undefined
+            this.averageRating= 0; //
+          }
+          console.log(this.averageRating)
           // Calculate the duration
           const departureTimestamp = new Date(this.package.departure_flight.departure).getTime();
           const returnTimestamp = new Date(this.package.return_flight.departure).getTime();
@@ -53,8 +66,6 @@ export class PackageProfileComponent implements OnInit {
           const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
           this.duration = `${days} days`;
-          console.log(this.image);
-          console.log(this.package.hotel.name);
         },
         (error) => {
           console.error('Error fetching package profile:', error);
@@ -65,7 +76,6 @@ export class PackageProfileComponent implements OnInit {
     // Fetch user's rating for the current package
     this.http.get('http://localhost:8000/api/user', { withCredentials: true }).subscribe(
       (res: any) => {
-        console.log(res);
         this.userId = res.id;  // Adjust this based on your user object structure
         if (res.admin_access == 1) {
           Emitters.adminEmitter.emit(true);
@@ -76,7 +86,6 @@ export class PackageProfileComponent implements OnInit {
 
     this.http.get('http://localhost:8000/api/user', { withCredentials: true }).subscribe(
       (res: any) => {
-        console.log(res);
         if (res.admin_access == 1) {
           Emitters.adminEmitter.emit(true);
         }
@@ -98,25 +107,25 @@ export class PackageProfileComponent implements OnInit {
       }
     );
     // Fetch and display the average rating after getting the user's ID
-    this.fetchAverageRating();
+    // this.fetchAverageRating();
     
   }
 
   
 
-    fetchAverageRating(): void {
+    // fetchAverageRating(): void {
       
-      if (this.package && this.package.id) {
-        this.http.get(`http://localhost:8000/api/average-rating/${this.package.id}`, { withCredentials: true }).subscribe(
-          (response: any) => {
-            this.averageRating = response.average_rating;
-          },
-          (error) => {
-            console.error('Error fetching average rating:', error);
-          }
-        );
-      }
-    }
+    //   if (this.package && this.package.id) {
+    //     this.http.get(`http://localhost:8000/api/average-rating/${this.package.id}`, { withCredentials: true }).subscribe(
+    //       (response: any) => {
+    //         this.averageRating = response
+    //       },
+    //       (error) => {
+    //         console.error('Error fetching average rating:', error);
+    //       }
+    //     );
+    //   }
+    // }
  
   onStarClick(rating: number): void {
     this.selectedRating = rating;
@@ -135,7 +144,7 @@ export class PackageProfileComponent implements OnInit {
       this.http.post('http://localhost:8000/api/rate-package', data, { withCredentials: true }).subscribe(
         (res: any) => {
           alert("Rating Submitted")
-          console.log(res);
+          // console.log(res);
           
         },
         (error) => {
@@ -148,6 +157,7 @@ export class PackageProfileComponent implements OnInit {
       
       console.warn('Please select a rating before submitting.');
     }
+    this.ngOnInit()
   }
 
   ratePackage(rating: number): void {
@@ -163,12 +173,12 @@ export class PackageProfileComponent implements OnInit {
 
     this.http.post('http://localhost:8000/api/rate-package', data, { withCredentials: true }).subscribe(
       (res: any) => {
-        console.log(res);
       },
       (error) => {
         console.error('Error submitting rating:', error);
       }
     );
+    this.ngOnInit()
   }
 
 

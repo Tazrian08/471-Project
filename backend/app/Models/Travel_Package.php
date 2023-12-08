@@ -39,7 +39,7 @@ class Travel_Package extends Model
     }
 
     public function review(){
-        return $this->hasMany(Review::class);
+        return $this->hasMany(Review::class, 'travel_package_id');
         
     }
 

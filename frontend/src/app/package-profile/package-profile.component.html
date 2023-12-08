@@ -51,7 +51,12 @@
                   </div>
                 </div>
                 <div *ngIf="averageRating !== null">
-                  <h4>Average Rating: {{ averageRating }}</h4>
+                  <h4>Average Rating:</h4>
+                  <div class="star-container1">
+                    <span *ngFor="let star of [1, 2, 3, 4, 5]" class="star">
+                      <span [innerHTML]="star <= (averageRating ) ? '★' : '☆'"></span>
+                    </span>
+                  </div>
                 </div>
                 
       

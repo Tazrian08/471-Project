@@ -23,7 +23,7 @@ class Review extends Model
     }
 
     public function travel(){
-        return $this->belongsTo(Travel_Package::class);
+        return $this->belongsTo(Travel_Package::class, 'travel_package_id');
         
     }
 }

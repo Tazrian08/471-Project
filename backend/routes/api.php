@@ -76,7 +76,7 @@ Route::get('/flightselector/{airlineId}',[FlightController::class,"select"]);
 Route::post("/booking", [BookingController::class,"create"]);
 
 //RATING
-Route::get('/average-rating/{packageId}', [TravelPackageController::class, 'ratePackage']);
+Route::get('/average-rating/{packageId}', [TravelPackageController::class, 'avg']);
 
 
 
