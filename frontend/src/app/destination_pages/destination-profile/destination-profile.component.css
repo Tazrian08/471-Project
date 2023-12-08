@@ -255,3 +255,33 @@ body {
   text-decoration: underline; /* Add an underline to mimic a link */
   cursor: pointer; /* Show the pointer cursor on hover to indicate interactivity */
 }
+
+button {
+  font: Montserrat, sans-serif;
+  width: 60%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: #120641;
+  color: white;
+  margin-top: auto; 
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  margin-right: 10px;
+  
+}
+button.secondary {
+  width: 100%;
+  text-align: left;
+  background-color: rgb(234, 247, 247);
+  border-radius: 15px;
+  color: #120641;
+  border-color: rgb(2, 2, 2);
+}
+
+button:hover {
+  background: #48497a;
+}
+button.secondary:hover {
+  background: #48497a;
+}

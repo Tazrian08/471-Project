@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Image;
 use App\Models\Destination;
 use Illuminate\Http\Request;
+use App\Models\Travel_Package;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreDestinationRequest;
 use App\Http\Requests\UpdateDestinationRequest;
 
@@ -108,8 +110,33 @@ class DestinationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Destination $destination)
-    {
-        //
+    public function destroy($id)
+{
+    $destination = Destination::find($id);
+
+    if ($destination) {
+        $packages = Travel_Package::where("destination_id", $id)->get();
+
+        foreach ($packages as $package) {
+            // Assuming you have a relationship between TravelPackage and Image models
+            $image = Image::where("travel__package_id", $package->id)->first();
+
+            if ($image) {
+                Storage::delete($image->path);
+                $image->delete(); // Assuming you want to delete the image record as well
+            }
+        }
+
+        $desimg = Image::where("destination_id", $destination->id)->first();
+
+        if ($desimg) {
+            Storage::delete($desimg->path);
+            $desimg->delete(); // Assuming you want to delete the image record as well
+        }
+
+        $destination->delete();
     }
+
+    // Add any additional logic or response as needed...
+}
 }

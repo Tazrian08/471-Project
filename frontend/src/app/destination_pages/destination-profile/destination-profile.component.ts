@@ -115,6 +115,14 @@ export class DestinationProfileComponent {
   goToHotelProfile(hotelId: any): void {
     this.router.navigate(['/hotel-profile', hotelId]);
   }
+  Delete(id:any){
+    this.http.delete(`http://localhost:8000/api/destination/delete/${id}`, {withCredentials: true}).subscribe(
+      (res: any) => {
+        alert(res)
+        this.router.navigate(['/destination/index']);
+      }
+    );
+  }
 
 
 

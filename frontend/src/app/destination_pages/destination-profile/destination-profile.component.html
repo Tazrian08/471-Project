@@ -16,6 +16,9 @@
                 <h1>Destination Profile:</h1>
                 <h2>City: {{destination.city}}</h2>
                 <h2>Country: {{destination.country}}</h2>
+                <button *ngIf="admin" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="Delete(destination.id)">
+                  Delete
+                </button>
                 </div>
             </div>
             <div class="card2">
