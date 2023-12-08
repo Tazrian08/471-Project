@@ -94,14 +94,7 @@ export class DestinationIndexComponent implements OnInit{
     this.router.navigate(['/destination/profile', destinationID]);
 
   }
-  Des_delete(destinationID: any): void {
-    this.http.delete(`http://localhost:8000/api/destination/delete/${destinationID}`, {withCredentials: true}).subscribe(
-        (res: any) => {
-          alert(res)
-          this. ngOnInit()
-        }
-      );
-  }
+
 
   
   
