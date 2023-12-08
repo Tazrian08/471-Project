@@ -52,7 +52,15 @@
         <tr *ngFor="let flight of flights">
           <td>{{ flight.destination.country }}</td>
           <td>{{ flight.destination.city }}</td>
-          <td>{{ flight.airlines.name }}</td>
+          <td>
+            <div class="flight-info">
+              <span>{{ flight.airlines.name }}</span>
+              <div *ngIf="admin" class="container70">
+                <button class="btn btn-primary">Edit</button>
+                <button class="btn btn-primary">Delete</button>
+              </div>
+            </div>
+          </td>
           <td>{{ flight.departure }}</td>
           <td>${{ flight.prices }} (per person)</td>
           <!-- <td>

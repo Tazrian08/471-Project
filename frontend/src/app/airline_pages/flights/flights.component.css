@@ -79,3 +79,26 @@
   .select-boxes select {
     margin-bottom: 10px; /* Adjust the margin-bottom to your preference */
   }
+
+  .btn{
+    margin-right: 2%;
+    background-color: #131166;
+
+  }
+  
+  .btn:hover{
+    background-color: #363585;
+
+  }
+  .container70 {
+    display: inline-block;
+  }
+  
+  /* Add some margin to separate the buttons from the text */
+  .container70 button {
+    margin-right: 5px; /* Adjust the margin as needed */
+  }
+  .flight-info {
+    display: flex;
+    justify-content: space-between;
+  }
