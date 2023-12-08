@@ -61,12 +61,15 @@
                 
       
                 
-                <button *ngIf="auth" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button *ngIf="auth && !admin" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   Add to Cart
                 </button>
-                <button *ngIf="admin" type="button" class="btn btn-delete"  (click)="Delete(package.id)" >
+                <button *ngIf="admin" type="button" class="btn btn-primary" (click)="Delete(package.id)">
                   Delete
                 </button>
+                <!-- <button *ngIf="admin" type="button" class="btn btn-delete"  (click)="Delete(package.id)" >
+                  Delete
+                </button> -->
                 
                 <button *ngIf="!auth" class="btn btn-primary" type="button" routerLink="/login">Login in to book</button>
                 </div>
@@ -91,7 +94,7 @@
             <h3>Price: {{package.price}}</h3>
             <small>*Rates are for single person. For each aditional person, the price goes up by 200 USD</small>
           </div>
-          <button *ngIf="auth" class="secondary" (click)="toggleDescriptionDropdown2()">Want to Rate ▼</button>
+          <button *ngIf="auth && !admin"  class="secondary" (click)="toggleDescriptionDropdown2()">Want to Rate ▼</button>
           <div *ngIf="showDescriptionDropdown2" class="description-dropdown-box">
             <h2>Rate this package</h2>
             <div class="star-container">

@@ -136,6 +136,8 @@ class DestinationController extends Controller
 
         $destination->delete();
     }
+    return response()->json("Deleted");
+
 
     // Add any additional logic or response as needed...
 }
