@@ -91,7 +91,7 @@
             <h3>Price: {{package.price}}</h3>
             <small>*Rates are for single person. For each aditional person, the price goes up by 200 USD</small>
           </div>
-          <button class="secondary" (click)="toggleDescriptionDropdown2()">Want to Rate ▼</button>
+          <button *ngIf="auth" class="secondary" (click)="toggleDescriptionDropdown2()">Want to Rate ▼</button>
           <div *ngIf="showDescriptionDropdown2" class="description-dropdown-box">
             <h2>Rate this package</h2>
             <div class="star-container">
