@@ -40,6 +40,7 @@ Route::get("/travel-packages",[TravelPackageController::class,"index"]);
 Route::get("/travel-packages/{id}", [TravelPackageController::class, "show"]);
 Route::post("/travel-package/create",[TravelPackageController::class,"create"]);
 Route::get('/travel-package/search/{search}',[TravelPackageController::class,"search"]);
+Route::delete('/travel-package/delete/{id}',[TravelPackageController::class,"destroy"]);
 
 
 //DESTINATION ROUTES

@@ -202,4 +202,12 @@ export class PackageProfileComponent implements OnInit {
   goToDestinationProfile(destinationID: any): void {
     this.router.navigate(['/destination/profile', destinationID]);
   }
+  Delete(id:any){
+    this.http.delete(`http://localhost:8000/api/travel-package/delete/${id}`, {withCredentials: true}).subscribe(
+      (res: any) => {
+        alert(res)
+        this.router.navigate(['/travel-packages']);
+      }
+    );
+  }
 }

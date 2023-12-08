@@ -248,3 +248,22 @@ body {
   font-size: 30px;
   text-align: center;
 }
+
+/* Update styles for the delete button */
+button.btn-delete {
+  width: 15%; /* Set width to auto for a smaller button */
+  height: 10%;
+  padding: 5px 10px; /* Adjust padding for smaller button size */
+  font-size: 12px; /* Adjust font size for smaller text */
+  border-radius: 10%; /* Add border-radius for rounded corners */
+  background-color: #40E0D0; /* Set your desired background color for the delete button */
+  color: white; /* Set text color for better visibility */
+  position: absolute;
+  top: 0px; /* Adjust top position for spacing from the top */
+  right: 10px; /* Adjust right position for spacing from the right */
+}
+
+/* Add hover styles for better interaction */
+button.btn-delete:hover {
+  background-color: #35a5ac; /* Set hover background color */
+}

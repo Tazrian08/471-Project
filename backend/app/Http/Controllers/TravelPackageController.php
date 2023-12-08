@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
-use Illuminate\Http\Request;
-use App\Models\Travel_Package;
-use App\Models\Destination;
 use App\Models\Flight;
 use App\Models\Hotels;
+use App\Models\Review;
+use App\Models\Destination;
+use Illuminate\Http\Request;
+use App\Models\Travel_Package;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreTravel_PackageRequest;
 use App\Http\Requests\UpdateTravel_PackageRequest;
-use App\Models\Review;
 
 class TravelPackageController extends Controller
 {
@@ -146,9 +147,18 @@ class TravelPackageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Travel_Package $travel_Package)
+    public function destroy($id)
     {
-        //
+        $package = Travel_Package::find($id);
+        $image = Image::where("travel__package_id", $package->id)->first();
+
+        if ($image) {
+            Storage::delete($image->path);
+            $image->delete(); // Assuming you want to delete the image record as well
+        }
+
+        $package->delete();
+        return response()->json("Deleted");
     }
     public function custom() {
         $destinations = Destination::all();

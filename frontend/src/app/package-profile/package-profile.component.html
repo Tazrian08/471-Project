@@ -64,6 +64,9 @@
                 <button *ngIf="auth" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   Add to Cart
                 </button>
+                <button *ngIf="admin" type="button" class="btn btn-delete"  (click)="Delete(package.id)" >
+                  Delete
+                </button>
                 
                 <button *ngIf="!auth" class="btn btn-primary" type="button" routerLink="/login">Login in to book</button>
                 </div>
