@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2023 at 04:25 PM
+-- Generation Time: Dec 09, 2023 at 05:32 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -62,7 +62,6 @@ INSERT INTO `airlines` (`id`, `name`, `email`, `created_at`, `updated_at`) VALUE
 (116, 'MAisa', 'maisa@airline', '2023-11-18 01:56:58', '2023-11-18 01:56:58'),
 (118, 'Qatar Airways', 'Qatar@airways.org', '2023-11-21 05:34:02', '2023-11-21 05:34:02'),
 (119, 'Turkish Airline', 'Turkish@airline.com', '2023-11-21 05:37:07', '2023-11-21 05:37:07'),
-(120, 'American Airlines', 'Airline@america.com', '2023-11-21 05:42:56', '2023-11-21 05:42:56'),
 (121, 'Biman', 'Biman@Airline.com.bd', '2023-11-21 05:43:48', '2023-11-21 05:43:48'),
 (122, 'Etihad Airways', 'Etihad@Airways.org', '2023-11-21 05:56:33', '2023-11-21 05:56:33'),
 (123, 'Singapore Airlines', 'Singapore@Airline', '2023-11-21 10:49:51', '2023-11-21 10:49:51'),
@@ -126,7 +125,10 @@ INSERT INTO `bookings` (`id`, `user_id`, `travel_package_id`, `status`, `date`, 
 (18, 8, 5715, 1, '2023-12-06 12:42:37', '2400', '2023-12-06 06:42:37', '2023-12-06 06:42:37'),
 (19, 8, 5714, 1, '2023-12-06 15:03:22', '2600', '2023-12-06 09:03:22', '2023-12-06 09:03:22'),
 (20, 8, 5716, 1, '2023-12-06 15:03:26', '2400', '2023-12-06 09:03:26', '2023-12-06 09:03:26'),
-(21, 8, 5717, 1, '2023-12-06 15:03:27', '1800', '2023-12-06 09:03:27', '2023-12-06 09:03:27');
+(21, 8, 5717, 1, '2023-12-06 15:03:27', '1800', '2023-12-06 09:03:27', '2023-12-06 09:03:27'),
+(22, 13, 5713, 1, '2023-12-08 10:59:54', '2400', '2023-12-08 04:59:54', '2023-12-08 04:59:54'),
+(23, 13, 5717, 1, '2023-12-08 10:59:59', '1200', '2023-12-08 04:59:59', '2023-12-08 04:59:59'),
+(24, 13, 5716, 1, '2023-12-08 11:01:41', '2800', '2023-12-08 05:01:41', '2023-12-08 05:01:41');
 
 -- --------------------------------------------------------
 
@@ -148,7 +150,8 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id`, `created_at`, `updated_at`, `user_id`, `travel_package_id`, `amount`) VALUES
-(1, '2023-11-30 12:29:02', '2023-11-30 12:29:02', 7, 5713, 3);
+(1, '2023-11-30 12:29:02', '2023-11-30 12:29:02', 7, 5713, 3),
+(24, '2023-12-06 09:32:17', '2023-12-06 09:32:17', 5, 5713, 2);
 
 -- --------------------------------------------------------
 
@@ -207,7 +210,7 @@ CREATE TABLE `flights` (
   `airlines_id` bigint(20) UNSIGNED NOT NULL,
   `destination_id` bigint(20) UNSIGNED NOT NULL,
   `departure` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `prices,10,2` decimal(8,2) NOT NULL,
+  `prices` decimal(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -216,7 +219,7 @@ CREATE TABLE `flights` (
 -- Dumping data for table `flights`
 --
 
-INSERT INTO `flights` (`id`, `airlines_id`, `destination_id`, `departure`, `prices,10,2`, `created_at`, `updated_at`) VALUES
+INSERT INTO `flights` (`id`, `airlines_id`, `destination_id`, `departure`, `prices`, `created_at`, `updated_at`) VALUES
 (1, 114, 129, '2024-03-30 09:36:14', 400.00, '2023-11-22 09:36:58', '2023-11-22 09:36:58'),
 (2, 114, 128, '2024-03-30 09:36:14', 400.00, '2023-11-22 09:37:51', '2023-11-22 09:37:51'),
 (3, 114, 127, '2024-02-22 09:36:14', 600.00, '2023-11-22 09:38:13', '2023-11-22 09:38:13'),
@@ -225,7 +228,11 @@ INSERT INTO `flights` (`id`, `airlines_id`, `destination_id`, `departure`, `pric
 (6, 114, 131, '2024-02-22 09:36:14', 600.00, '2023-11-22 09:39:43', '2023-11-22 09:39:43'),
 (7, 114, 134, '2023-11-22 09:40:36', 600.00, '2023-11-22 09:40:00', '2023-11-22 09:40:00'),
 (8, 114, 133, '2024-02-22 09:36:14', 600.00, '2023-11-22 09:41:47', '2023-11-22 09:41:47'),
-(50, 114, 136, '2024-01-14 07:31:01', 580.00, '2023-11-25 07:31:21', '2023-11-25 07:31:21');
+(9, 119, 129, '2024-04-18 03:52:05', 500.00, '2023-12-09 03:52:05', '2023-12-09 03:52:05'),
+(10, 119, 130, '2024-04-17 03:52:45', 500.00, '2023-12-09 03:52:45', '2023-12-09 03:52:45'),
+(11, 119, 132, '2024-04-17 03:53:15', 749.00, '2023-12-09 03:53:15', '2023-12-09 03:53:15'),
+(50, 114, 136, '2024-01-14 07:31:01', 580.00, '2023-11-25 07:31:21', '2023-11-25 07:31:21'),
+(99, 113, 127, '2024-04-27 10:45:01', 699.00, '2023-12-08 10:45:01', '2023-12-08 10:45:01');
 
 -- --------------------------------------------------------
 
@@ -486,7 +493,26 @@ INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `n
 (100, 'App\\Models\\User', 8, 'token', '774d4c367d3fa0070cd3ce2d74c3f35fc2e748621c4b94bf67e2bb30b9935ae9', '[\"*\"]', '2023-12-06 08:34:27', NULL, '2023-12-06 07:59:01', '2023-12-06 08:34:27'),
 (101, 'App\\Models\\User', 8, 'token', 'c019fdd09130ef9c08f284854817b3b8b0bbd10e02461d36a1f11ed477e2446e', '[\"*\"]', '2023-12-06 09:10:29', NULL, '2023-12-06 08:34:52', '2023-12-06 09:10:29'),
 (102, 'App\\Models\\User', 7, 'token', 'b429722374f0a7f7fe83370e8b99826ea0bf6a4a6cfb13a6001699bbf754b79e', '[\"*\"]', '2023-12-06 09:15:18', NULL, '2023-12-06 09:10:36', '2023-12-06 09:15:18'),
-(103, 'App\\Models\\User', 8, 'token', '5c38d7ff6d2dc043ee57050a830f2520077bb30e858e42dee5326be2adf64ecc', '[\"*\"]', '2023-12-06 09:23:32', NULL, '2023-12-06 09:15:24', '2023-12-06 09:23:32');
+(103, 'App\\Models\\User', 8, 'token', '5c38d7ff6d2dc043ee57050a830f2520077bb30e858e42dee5326be2adf64ecc', '[\"*\"]', '2023-12-06 09:23:32', NULL, '2023-12-06 09:15:24', '2023-12-06 09:23:32'),
+(104, 'App\\Models\\User', 5, 'token', '616cbff516990e4d88e412eae84fde66322435537aad0a3d83b5ce725c43910a', '[\"*\"]', '2023-12-06 09:32:27', NULL, '2023-12-06 09:30:47', '2023-12-06 09:32:27'),
+(105, 'App\\Models\\User', 8, 'token', '2c6d1291391ad0265c611a1f4342cc78b598d6add0b11e71e35c50877497805b', '[\"*\"]', '2023-12-06 10:02:55', NULL, '2023-12-06 09:33:16', '2023-12-06 10:02:55'),
+(106, 'App\\Models\\User', 12, 'token', 'cdd080a6333047605a9caa137437d892adf5ff69e7c2c1ecd13afa7f9f953602', '[\"*\"]', '2023-12-06 10:04:49', NULL, '2023-12-06 10:04:31', '2023-12-06 10:04:49'),
+(107, 'App\\Models\\User', 12, 'token', 'd2446e56c027c992b28701e706b733867d484ea50416818e7e79e396b94910b9', '[\"*\"]', '2023-12-06 10:08:55', NULL, '2023-12-06 10:05:20', '2023-12-06 10:08:55'),
+(108, 'App\\Models\\User', 8, 'token', 'b62653f5e1a07aab51d589fdd8e79a31e3905ac57aa1d1aee424c598f891b88a', '[\"*\"]', '2023-12-08 04:05:19', NULL, '2023-12-07 11:33:57', '2023-12-08 04:05:19'),
+(109, 'App\\Models\\User', 12, 'token', '546d69fb0b8ae6360f2081adf4c3b6e474cb3282075d8cd3fe644c855dcae51a', '[\"*\"]', '2023-12-08 04:10:30', NULL, '2023-12-08 04:05:29', '2023-12-08 04:10:30'),
+(110, 'App\\Models\\User', 5, 'token', '18149f5dc2816fe31d08aa59eddcdf99d6f479e20354d9323a7dd7ba4a828b6d', '[\"*\"]', '2023-12-08 04:10:56', NULL, '2023-12-08 04:10:38', '2023-12-08 04:10:56'),
+(111, 'App\\Models\\User', 12, 'token', '5ba05bccb1c217f0c057dbaa17e820e12a73993c5e2c33837c3f5645538f6531', '[\"*\"]', '2023-12-08 04:23:35', NULL, '2023-12-08 04:11:04', '2023-12-08 04:23:35'),
+(112, 'App\\Models\\User', 5, 'token', '71cf7033c435178b4c60e5b04e66e13c155fbb8cba47e018965de9f2d5f204aa', '[\"*\"]', '2023-12-08 04:25:38', NULL, '2023-12-08 04:23:44', '2023-12-08 04:25:38'),
+(113, 'App\\Models\\User', 12, 'token', 'f35ec108bd03d21e4ea287e0d59c49b1af2311e4bb8f30468a22e56603786ebb', '[\"*\"]', '2023-12-08 04:25:45', NULL, '2023-12-08 04:25:45', '2023-12-08 04:25:45'),
+(114, 'App\\Models\\User', 7, 'token', '762e93c259dc5724c7485dac4fcaeb46810d4a2d5062e48afd563e1b4c5bc18f', '[\"*\"]', '2023-12-08 04:44:31', NULL, '2023-12-08 04:33:08', '2023-12-08 04:44:31'),
+(115, 'App\\Models\\User', 13, 'token', 'b5473fab0a03babd9ba1433392529b78fe70defb68e2ec3346f1e5fe50446a60', '[\"*\"]', '2023-12-08 04:54:30', NULL, '2023-12-08 04:54:23', '2023-12-08 04:54:30'),
+(116, 'App\\Models\\User', 8, 'token', 'fce7888e53ddabaae44f96a5b26eabbac82c429cbf7797dd27e807518c27c4ce', '[\"*\"]', '2023-12-08 04:54:39', NULL, '2023-12-08 04:54:34', '2023-12-08 04:54:39'),
+(117, 'App\\Models\\User', 13, 'token', 'f07ee1f24c704fd72e98f1954774c69c9a3639a8d992292a14a5b5a6c6e21d43', '[\"*\"]', '2023-12-08 05:02:31', NULL, '2023-12-08 04:54:48', '2023-12-08 05:02:31'),
+(118, 'App\\Models\\User', 7, 'token', 'c3ada2e65c25f5c8a581284bd7560d9de4c3560ee529f2d3eff637e4d5036803', '[\"*\"]', '2023-12-08 05:40:51', NULL, '2023-12-08 05:02:40', '2023-12-08 05:40:51'),
+(119, 'App\\Models\\User', 8, 'token', '89826836b61a357bb8790f70bcba870b9e0b7741e462982b8c87673a3cd98dfe', '[\"*\"]', '2023-12-08 05:41:25', NULL, '2023-12-08 05:40:56', '2023-12-08 05:41:25'),
+(120, 'App\\Models\\User', 7, 'token', '36bcf37515ca1d905aed49164c63084d25152a7dae9b49782a61b8752c711ed8', '[\"*\"]', '2023-12-08 05:51:13', NULL, '2023-12-08 05:41:35', '2023-12-08 05:51:13'),
+(121, 'App\\Models\\User', 8, 'token', 'a4a03a724107a00546840dbf64b0acb4158bdc142d8498a71e1c5cc4bf698ba3', '[\"*\"]', '2023-12-08 05:51:35', NULL, '2023-12-08 05:51:18', '2023-12-08 05:51:35'),
+(122, 'App\\Models\\User', 7, 'token', 'dbe972f0c7cfc9191cd1b5d2c182f95ca412c006d9d0d2542e88b84cde6a4261', '[\"*\"]', '2023-12-08 21:54:55', NULL, '2023-12-08 05:51:47', '2023-12-08 21:54:55');
 
 -- --------------------------------------------------------
 
@@ -499,7 +525,6 @@ CREATE TABLE `reviews` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `travel_package_id` bigint(20) UNSIGNED NOT NULL,
   `ratings` bigint(20) UNSIGNED NOT NULL,
-  `comments` longtext NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -508,9 +533,12 @@ CREATE TABLE `reviews` (
 -- Dumping data for table `reviews`
 --
 
-INSERT INTO `reviews` (`id`, `user_id`, `travel_package_id`, `ratings`, `comments`, `created_at`, `updated_at`) VALUES
-(588, 10, 5713, 8, 'T\'was good', '2023-11-30 16:59:01', '2023-11-30 16:59:01'),
-(589, 9, 5713, 7, 'Noice', '2023-11-30 17:00:31', '2023-11-30 17:00:31');
+INSERT INTO `reviews` (`id`, `user_id`, `travel_package_id`, `ratings`, `created_at`, `updated_at`) VALUES
+(588, 10, 5713, 5, '2023-11-30 16:59:01', '2023-11-30 16:59:01'),
+(589, 9, 5713, 4, '2023-11-30 17:00:31', '2023-11-30 17:00:31'),
+(590, 8, 5715, 3, '2023-12-07 12:32:31', '2023-12-07 12:32:31'),
+(600, 13, 5713, 1, '2023-12-08 04:55:58', '2023-12-08 04:55:58'),
+(602, 8, 5717, 1, '2023-12-08 05:41:05', '2023-12-08 05:41:05');
 
 -- --------------------------------------------------------
 
@@ -540,11 +568,11 @@ CREATE TABLE `travel__packages` (
 --
 
 INSERT INTO `travel__packages` (`id`, `name`, `description`, `price`, `user_id`, `airline_id`, `destination_id`, `custom_status`, `hotel_id`, `departure_flight_id`, `return_flight_id`, `amount`, `created_at`, `updated_at`) VALUES
-(5713, 'Rio De Janeiro Tour', 'Experience the vibrant energy and breathtaking beauty of Rio de Janeiro with our all-inclusive travel package! Immerse yourself in the rhythm of this iconic Brazilian city known for its sizzling beaches, lively samba music, and stunning landscapes. Your package includes accommodations at top-rated hotels, guided tours to iconic landmarks such as Christ the Redeemer and Sugarloaf Mountain, and exclusive access to the world-famous Copacabana and Ipanema beaches. Indulge in delectable Brazilian cuisine with included meals at renowned local restaurants, and dance the night away at exciting samba clubs. Our Rio de Janeiro travel package ensures an unforgettable adventure, blending cultural richness with the enchanting spirit of this South American gem. Let the festivities, natural wonders, and warm hospitality of Rio de Janeiro create memories that last a lifetime.', 2000.00, NULL, 114, 127, 0, 12, 3, 2, 67, '2023-11-30 10:27:34', '2023-12-06 06:42:37'),
+(5713, 'Rio De Janeiro Tour', 'Experience the vibrant energy and breathtaking beauty of Rio de Janeiro with our all-inclusive travel package! Immerse yourself in the rhythm of this iconic Brazilian city known for its sizzling beaches, lively samba music, and stunning landscapes. Your package includes accommodations at top-rated hotels, guided tours to iconic landmarks such as Christ the Redeemer and Sugarloaf Mountain, and exclusive access to the world-famous Copacabana and Ipanema beaches. Indulge in delectable Brazilian cuisine with included meals at renowned local restaurants, and dance the night away at exciting samba clubs. Our Rio de Janeiro travel package ensures an unforgettable adventure, blending cultural richness with the enchanting spirit of this South American gem. Let the festivities, natural wonders, and warm hospitality of Rio de Janeiro create memories that last a lifetime.', 2000.00, NULL, 114, 127, 0, 12, 3, 2, 65, '2023-11-30 10:27:34', '2023-12-08 04:59:59'),
 (5714, 'Munich Tour', 'Embark on a captivating journey to Munich with our meticulously curated travel package! Immerse yourself in the rich cultural tapestry of this Bavarian gem, renowned for its historic charm, beer gardens, and picturesque landscapes. Your all-inclusive package features accommodations at well-appointed hotels, guided tours to iconic landmarks like Nymphenburg Palace and the Marienplatz, and VIP access to the world-famous Oktoberfest if you time your visit right. Savor the flavors of traditional Bavarian cuisine with included meals at authentic beer gardens and local eateries. Explore Munich\'s cultural scene with visits to renowned museums and art galleries. Whether you\'re captivated by history, architecture, or the lively atmosphere of beer halls, our Munich travel package promises an immersive experience that captures the heart of this enchanting city. Join us in celebrating the unique blend of tradition and modernity that makes Munich a must-visit destination.', 2000.00, NULL, 114, 131, 0, 14, 6, 2, 67, '2023-11-30 10:32:02', '2023-12-06 09:03:26'),
 (5715, 'Dortmund Tour', 'Immerse yourself in the dynamic spirit of Dortmund with our comprehensive travel package! Discover the perfect blend of modernity and history as you explore iconic landmarks like the Signal Iduna Park stadium, the Dortmund U-Tower, and the vibrant Old Town. Your package includes comfortable accommodations, guided tours to key attractions, and an opportunity to experience the lively atmosphere of local beer gardens. Dive into the cultural scene, sample delectable regional cuisine, and embrace the energy of this German city with our Dortmund travel package.', 2000.00, NULL, 114, 130, 0, 15, 5, 2, 68, '2023-11-30 10:36:10', '2023-12-06 06:42:38'),
-(5716, 'Madrid Tour', 'Embark on a journey to the heart of Spain with our vibrant Madrid travel package! Discover the cultural treasures of this lively capital, from the iconic Prado Museum to the bustling Puerta del Sol. Enjoy comfortable stays in centrally located hotels, guided tours to landmarks like the Royal Palace, and the opportunity to savor authentic Spanish cuisine with included meals. Dive into the energetic atmosphere of local tapas bars, explore the historic neighborhoods, and experience the passion of flamenco dancing. Madrid, with its blend of history, art, and modern flair, awaits your exploration with our thoughtfully curated travel package.', 2000.00, NULL, 114, 136, 0, 13, 50, 2, 68, '2023-11-30 10:38:01', '2023-12-06 09:03:27'),
-(5717, 'Kolkata Tour', 'Experience the cultural richness of Kolkata with our immersive travel package! Dive into the history of the city with visits to Victoria Memorial and Howrah Bridge, and explore the vibrant markets and colonial architecture of this Indian metropolis. Your package includes comfortable accommodations, guided tours to iconic sites, and a taste of the diverse culinary offerings of Kolkata. Immerse yourself in the arts and literature scene, witness the Durga Puja festivities, and discover the warmth and hospitality of the City of Joy. Join us in exploring the unique blend of tradition and modernity that defines Kolkata.', 1000.00, NULL, 114, 134, 0, 16, 7, 2, 61, '2023-11-30 10:40:05', '2023-12-06 09:03:28');
+(5716, 'Madrid Tour', 'Embark on a journey to the heart of Spain with our vibrant Madrid travel package! Discover the cultural treasures of this lively capital, from the iconic Prado Museum to the bustling Puerta del Sol. Enjoy comfortable stays in centrally located hotels, guided tours to landmarks like the Royal Palace, and the opportunity to savor authentic Spanish cuisine with included meals. Dive into the energetic atmosphere of local tapas bars, explore the historic neighborhoods, and experience the passion of flamenco dancing. Madrid, with its blend of history, art, and modern flair, awaits your exploration with our thoughtfully curated travel package.', 2000.00, NULL, 114, 136, 0, 13, 50, 2, 64, '2023-11-30 10:38:01', '2023-12-08 05:01:45'),
+(5717, 'Kolkata Tour', 'Experience the cultural richness of Kolkata with our immersive travel package! Dive into the history of the city with visits to Victoria Memorial and Howrah Bridge, and explore the vibrant markets and colonial architecture of this Indian metropolis. Your package includes comfortable accommodations, guided tours to iconic sites, and a taste of the diverse culinary offerings of Kolkata. Immerse yourself in the arts and literature scene, witness the Durga Puja festivities, and discover the warmth and hospitality of the City of Joy. Join us in exploring the unique blend of tradition and modernity that defines Kolkata.', 1000.00, NULL, 114, 134, 0, 16, 7, 2, 60, '2023-11-30 10:40:05', '2023-12-08 05:00:00');
 
 -- --------------------------------------------------------
 
@@ -575,7 +603,9 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `admin
 (7, 'Tazrian', 'taz@rian', '$2y$10$2l1kKslto/vMAYw3R0nEHe33pNFqeOXFoUbG8AJfg2p/D4ADJTjCS', NULL, 1, '2023-11-17 00:56:19', '2023-11-17 00:56:19'),
 (8, 'Rahim', 'ra@him', '$2y$10$zI0P1ag/GtXz4EltfrwEounDVdxtZdVrImSz.vwQyV6hcb3tpD3Kq', NULL, 0, '2023-11-17 23:18:31', '2023-11-17 23:18:31'),
 (9, 'Rahim', 'rahim@gmail', '$2y$10$QZaUlGmNGcl36Uotu80I..vnNWECSxCG0splbK86go9B5nNx.zOnW', NULL, 0, '2023-11-18 01:50:49', '2023-11-18 01:50:49'),
-(10, 'Sakib', 'Sakib@gmail.com', '$2y$10$q6n4bCsvoHL1CPYU9ediyeghll0w0WKwDsCXdDMjDzsl77wA3G.eG', NULL, 1, '2023-11-24 21:10:05', '2023-11-24 21:10:05');
+(10, 'Sakib', 'Sakib@gmail.com', '$2y$10$q6n4bCsvoHL1CPYU9ediyeghll0w0WKwDsCXdDMjDzsl77wA3G.eG', NULL, 1, '2023-11-24 21:10:05', '2023-11-24 21:10:05'),
+(12, 'promu', 'pro@ma', '$2y$10$QtsjotnPsOigtZuQs5FV.eiLd6uBO5ovds/rv2srTq2st6zr917pK', NULL, 1, '2023-12-06 10:04:15', '2023-12-06 10:04:15'),
+(13, 'Purple', 'purple@cat', '$2y$10$tiqOBsagmJRxxWT37piaOuMT4KmVoWNDtTs2oDMloj.LdK1IiSc8i', NULL, 0, '2023-12-08 04:54:11', '2023-12-08 04:54:11');
 
 --
 -- Indexes for dumped tables
@@ -717,31 +747,31 @@ ALTER TABLE `activities`
 -- AUTO_INCREMENT for table `airlines`
 --
 ALTER TABLE `airlines`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- AUTO_INCREMENT for table `attractions`
 --
 ALTER TABLE `attractions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `destinations`
 --
 ALTER TABLE `destinations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -759,13 +789,13 @@ ALTER TABLE `flights`
 -- AUTO_INCREMENT for table `hotels`
 --
 ALTER TABLE `hotels`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -777,25 +807,25 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=590;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=603;
 
 --
 -- AUTO_INCREMENT for table `travel__packages`
 --
 ALTER TABLE `travel__packages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5718;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5721;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
